@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>GCES 2026 – Programm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #151b23;
+    --bg3: #1c2330;
+    --border: rgba(255,255,255,0.08);
+    --text: #e8edf2;
+    --text-muted: #7a8898;
+    --text-dim: #4a5568;
+    --accent: #f5c842;
+    --accent-glow: rgba(245,200,66,0.15);
+
+    --c-k6: #e05a2b;
+    --c-k4: #4a9eff;
+    --c-k2: #7c5cfc;
+    --c-p1: #2bbd7e;
+    --c-foyer: #f5c842;
+    --c-alabama: #e84393;
+
+    --c-policy: #4a9eff;
+    --c-markets: #2bbd7e;
+    --c-futures: #f5c842;
+    --c-impact: #e84393;
+
+    --sidebar: 220px;
+    --radius: 10px;
+    --transition: 0.18s ease;
+  }
+
+  [data-theme="light"] {
+    --bg: #f4f1eb;
+    --bg2: #ebe7df;
+    --bg3: #e2ddd4;
+    --border: rgba(0,0,0,0.1);
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --text-dim: #9a9a9a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── LAYOUT ─── */
+  .app-shell {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ─── SIDEBAR (desktop) ─── */
+  .sidebar {
+    width: var(--sidebar);
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-logo {
+    padding: 20px 18px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-badge {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 3px 7px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .logo-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .logo-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  .sidebar-section {
+    padding: 14px 12px 6px;
+  }
+
+  .sidebar-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 6px;
+    margin-bottom: 6px;
+  }
+
+  .day-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 2px;
+  }
+
+  .day-btn:hover { background: var(--bg3); color: var(--text); }
+  .day-btn.active {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .stage-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 2px;
+  }
+
+  .stage-btn:hover { background: var(--bg3); color: var(--text); }
+  .stage-btn.active { background: var(--bg3); color: var(--text); font-weight: 500; }
+
+  .stage-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .track-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .track-pill-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+  }
+
+  .track-pill-btn:hover { background: var(--bg3); color: var(--text); }
+  .track-pill-btn.active { background: var(--bg3); border-color: var(--border); color: var(--text); }
+  .track-pill-btn.active .track-check { opacity: 1; }
+
+  .track-check { opacity: 0; font-size: 10px; margin-left: auto; }
+
+  .sidebar-bottom {
+    margin-top: auto;
+    padding: 14px 12px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .clock-display {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.05em;
+  }
+
+  .theme-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 13px;
+    transition: var(--transition);
+  }
+
+  .theme-btn:hover { color: var(--text); }
+
+  /* ─── MAIN CONTENT ─── */
+  .main-content {
+    margin-left: var(--sidebar);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .main-header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-day-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .header-stage-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 4px;
+  }
+
+  .fav-count-badge {
+    margin-left: auto;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .fav-count-badge:hover { background: var(--accent); color: #000; }
+  .fav-count-badge.empty { display: none; }
+
+  /* ─── DESKTOP GRID VIEW ─── */
+  .desktop-grid {
+    padding: 20px 20px 40px;
+  }
+
+  .stage-columns {
+    display: grid;
+    gap: 14px;
+  }
+
+  .stage-col-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-bottom: 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .stage-col-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* ─── SESSION CARDS ─── */
+  .session-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    border-left: 3px solid;
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .session-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .session-card.is-live {
+    background: var(--bg3);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+  }
+
+  .session-card.is-past { opacity: 0.45; }
+
+  .live-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: #22dd88;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: pulse 1.4s infinite;
+    vertical-align: middle;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.8); }
+  }
+
+  .session-time {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .session-format-pill {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--bg3);
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .session-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .session-speaker {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .session-track-pill {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid;
+  }
+
+  .card-fav-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: var(--transition);
+    line-height: 1;
+  }
+
+  .card-fav-btn:hover { opacity: 1; transform: scale(1.2); }
+  .card-fav-btn.is-fav { opacity: 1; }
+
+  .conflict-badge {
+    position: absolute;
+    top: 10px; right: 32px;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  /* ─── MOBILE HEADER ─── */
+  .mobile-header {
+    display: none;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent);
+    flex: 1;
+  }
+
+  .mobile-clock { font-size: 12px; color: var(--text-muted); }
+
+  .mobile-theme-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  /* Mobile day tabs */
+  .mobile-day-tabs {
+    display: none;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    gap: 8px;
+  }
+
+  .mobile-day-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .mobile-day-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Mobile fav tab */
+  .mobile-fav-tab {
+    margin-left: auto;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .mobile-fav-tab.has-favs {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Mobile stage nav */
+  .mobile-stage-nav {
+    display: none;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 16px;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 110px;
+    z-index: 90;
+  }
+
+  .stage-nav-arrow {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 14px;
+    transition: var(--transition);
+    flex-shrink: 0;
+  }
+
+  .stage-nav-arrow:hover { color: var(--text); background: var(--bg); }
+
+  .stage-nav-info {
+    flex: 1;
+    text-align: center;
+  }
+
+  .stage-nav-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .stage-nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .stage-dot-nav {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: var(--transition);
+  }
+
+  .stage-dot-nav.active { background: var(--text-muted); }
+
+  /* Mobile sessions list */
+  .mobile-sessions {
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .mobile-stage-panel {
+    min-width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-swipe-container {
+    display: flex;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ─── FAVORITES VIEW ─── */
+  .favs-view {
+    padding: 20px 24px;
+  }
+
+  .favs-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+  }
+
+  .favs-empty-icon { font-size: 40px; margin-bottom: 12px; }
+  .favs-empty-text { font-size: 14px; }
+
+  .conflict-warning {
+    background: rgba(232,67,147,0.1);
+    border: 1px solid rgba(232,67,147,0.3);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #e84393;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* ─── TRACK COLORS ─── */
+  .track-policy { color: var(--c-policy); border-color: rgba(74,158,255,0.3); background: rgba(74,158,255,0.08); }
+  .track-markets { color: var(--c-markets); border-color: rgba(43,189,126,0.3); background: rgba(43,189,126,0.08); }
+  .track-futures { color: var(--c-futures); border-color: rgba(245,200,66,0.3); background: rgba(245,200,66,0.08); }
+  .track-impact { color: var(--c-impact); border-color: rgba(232,67,147,0.3); background: rgba(232,67,147,0.08); }
+  .track-none { color: var(--text-dim); border-color: var(--border); background: var(--bg3); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+    .main-header { display: none; }
+    .mobile-header { display: flex; }
+    .mobile-day-tabs { display: flex; }
+    .mobile-stage-nav { display: flex; }
+    .mobile-sessions { display: flex; }
+    .desktop-grid { display: none; }
+  }
+
+  @media (min-width: 901px) {
+    .mobile-header, .mobile-day-tabs, .mobile-stage-nav, .mobile-sessions { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="app-shell" id="app">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-badge">GCES 2026</div>
+      <div class="logo-title">German Creative<br>Economy Summit</div>
+      <div class="logo-date">28.–29. April · Kampnagel Hamburg</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Tag</div>
+      <button class="day-btn active" onclick="setDay(0)">Di, 28. April</button>
+      <button class="day-btn" onclick="setDay(1)">Mi, 29. April</button>
+      <button class="day-btn" onclick="showFavs()" id="favs-btn-sidebar">♥ Meine Favoriten</button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Stages</div>
+      <button class="stage-btn active" onclick="filterStage('all')" id="sb-all">
+        <span class="stage-dot" style="background:var(--text-dim)"></span> Alle Stages
+      </button>
+      <button class="stage-btn" onclick="filterStage('K6')" id="sb-K6">
+        <span class="stage-dot" style="background:var(--c-k6)"></span> K6 Main Stage
+      </button>
+      <button class="stage-btn" onclick="filterStage('K4')" id="sb-K4">
+        <span class="stage-dot" style="background:var(--c-k4)"></span> K4
+      </button>
+      <button class="stage-btn" onclick="filterStage('K2')" id="sb-K2">
+        <span class="stage-dot" style="background:var(--c-k2)"></span> K2
+      </button>
+      <button class="stage-btn" onclick="filterStage('P1')" id="sb-P1">
+        <span class="stage-dot" style="background:var(--c-p1)"></span> P1 Workshop
+      </button>
+      <button class="stage-btn" onclick="filterStage('Foyer')" id="sb-Foyer">
+        <span class="stage-dot" style="background:var(--c-foyer)"></span> Foyer
+      </button>
+      <button class="stage-btn" onclick="filterStage('Alabama')" id="sb-Alabama">
+        <span class="stage-dot" style="background:var(--c-alabama)"></span> Alabama Kino
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Tracks</div>
+      <div class="track-filter" id="track-filters">
+        <button class="track-pill-btn active" data-track="Policy" onclick="toggleTrack('Policy')">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--c-policy);flex-shrink:0;display:inline-block"></span>
+          Policy <span class="track-check">✓</span>
+        </button>
+        <button class="track-pill-btn active" data-track="Markets" onclick="toggleTrack('Markets')">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--c-markets);flex-shrink:0;display:inline-block"></span>
+          Markets & Capital <span class="track-check">✓</span>
+        </button>
+        <button class="track-pill-btn active" data-track="Futures" onclick="toggleTrack('Futures')">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--c-futures);flex-shrink:0;display:inline-block"></span>
+          Creative Futures <span class="track-check">✓</span>
+        </button>
+        <button class="track-pill-btn active" data-track="Impact" onclick="toggleTrack('Impact')">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--c-impact);flex-shrink:0;display:inline-block"></span>
+          Impact <span class="track-check">✓</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="clock-display" id="sidebar-clock">--:--</div>
+      <button class="theme-btn" onclick="toggleTheme()" title="Dark/Light Mode">◐</button>
+    </div>
+  </aside>
+
+  <!-- ═══ MOBILE HEADER ═══ -->
+  <div class="mobile-header">
+    <div class="mobile-logo">GCES 2026</div>
+    <div class="mobile-clock" id="mobile-clock">--:--</div>
+    <button class="mobile-theme-btn" onclick="toggleTheme()">◐</button>
+  </div>
+
+  <div class="mobile-day-tabs" id="mobile-day-tabs">
+    <button class="mobile-day-tab active" onclick="setDay(0,true)">28. Apr</button>
+    <button class="mobile-day-tab" onclick="setDay(1,true)">29. Apr</button>
+    <button class="mobile-fav-tab" id="mobile-fav-tab" onclick="showFavs(true)">♥</button>
+  </div>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <div class="main-content">
+    <!-- Desktop header -->
+    <div class="main-header">
+      <span class="header-day-label" id="header-day-label">Dienstag, 28. April 2026</span>
+      <span class="header-stage-label" id="header-stage-label"></span>
+      <div class="fav-count-badge empty" id="fav-count-badge" onclick="showFavs()">♥ <span id="fav-count">0</span> Favoriten</div>
+    </div>
+
+    <!-- ─── Desktop grid ─── -->
+    <div class="desktop-grid" id="desktop-grid">
+      <div class="stage-columns" id="stage-columns-container"></div>
+    </div>
+
+    <!-- ─── Mobile stage nav ─── -->
+    <div class="mobile-stage-nav" id="mobile-stage-nav">
+      <button class="stage-nav-arrow" onclick="mobileStageStep(-1)">‹</button>
+      <div class="stage-nav-info">
+        <div class="stage-nav-name" id="mobile-stage-name">K6</div>
+        <div class="stage-nav-dots" id="stage-dots"></div>
+      </div>
+      <button class="stage-nav-arrow" onclick="mobileStageStep(1)">›</button>
+    </div>
+
+    <!-- ─── Mobile sessions ─── -->
+    <div class="mobile-sessions" id="mobile-sessions">
+      <div class="mobile-swipe-container" id="mobile-swipe-container"></div>
+    </div>
+
+    <!-- ─── Favs view ─── -->
+    <div class="favs-view" id="favs-view" style="display:none">
+      <div class="conflict-warning" id="conflict-warning" style="display:none">
+        <span>⚡</span>
+        <div>
+          <strong>Zeitkonflikt!</strong>
+          <div id="conflict-text" style="margin-top:4px;font-size:11px"></div>
+        </div>
+      </div>
+      <div id="favs-list"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════
+const STAGES = [
+  { id: 'K6',      label: 'K6 Main Stage', color: '#e05a2b' },
+  { id: 'K4',      label: 'K4',            color: '#4a9eff' },
+  { id: 'K2',      label: 'K2',            color: '#7c5cfc' },
+  { id: 'P1',      label: 'P1 Workshop',   color: '#2bbd7e' },
+  { id: 'Foyer',   label: 'Foyer',         color: '#f5c842' },
+  { id: 'Alabama', label: 'Alabama Kino',  color: '#e84393' },
+];
+
+const TRACK_MAP = {
+  'Policy': { label: 'Policy', cls: 'track-policy' },
+  'Markets': { label: 'Markets & Capital', cls: 'track-markets' },
+  'Futures': { label: 'Creative Futures', cls: 'track-futures' },
+  'Impact': { label: 'Impact', cls: 'track-impact' },
+  '': { label: '', cls: 'track-none' },
+};
+
+function t(str) {
+  // parse time like "09:30" to minutes since midnight
+  const [h,m] = str.split(':').map(Number);
+  return h * 60 + m;
+}
+
+const SESSIONS = [
+  // ─── TAG 1: 28. APRIL ───
+  // K6
+  { id:1,  day:0, stage:'K6', start:'09:30', end:'09:45', title:'Begrüßung von Egbert Rühl', speaker:'Egbert Rühl', format:'Keynote', track:'Policy', url:'https://german-creative-economy-summit.de/programm/eroeffnung-egbert-ruehl/' },
+  { id:2,  day:0, stage:'K6', start:'09:45', end:'10:00', title:'Impuls von Carsten Brosda – Senator der Hamburger Behörde für Kultur und Medien', speaker:'Dr. Carsten Brosda', format:'Impuls', track:'Policy', url:'https://german-creative-economy-summit.de/programm/impuls-von-carsten-brodsa/' },
+  { id:3,  day:0, stage:'K6', start:'10:00', end:'10:15', title:'Impuls von Gitta Connemann – Parlamentarische Staatssekretärin Bundesministerium für Wirtschaft und Energie', speaker:'Gitta Connemann', format:'Impuls', track:'Policy' },
+  { id:4,  day:0, stage:'K6', start:'10:15', end:'10:30', title:'Impuls von Björn Böhning – Staatssekretär im Bundesministerium der Finanzen', speaker:'Björn Böhning', format:'Impuls', track:'Policy' },
+  { id:5,  day:0, stage:'K6', start:'10:25', end:'10:30', title:'Digitales Grußwort von Wolfram Weimer – Staatsminister für Kultur und Medien', speaker:'Wolfram Weimer', format:'Impuls', track:'' },
+  { id:6,  day:0, stage:'K6', start:'13:00', end:'13:45', title:'Wie KI-Assistenten dein Business skalieren', speaker:'Dominic von Proeck', format:'Impuls', track:'Markets' },
+  { id:7,  day:0, stage:'K6', start:'14:15', end:'14:30', title:'KI wird Infrastruktur: Wie FUNKE Redaktionen befähigt', speaker:'Dr. Paul Elvers', format:'Impuls', track:'Markets' },
+  { id:8,  day:0, stage:'K6', start:'14:30', end:'14:45', title:'Von Unsicherheit zu Wachstum: KI als Hebel für Solo-Selbstständige', speaker:'Jenny Habermehl', format:'Impuls', track:'Markets' },
+  { id:9,  day:0, stage:'K6', start:'14:45', end:'15:00', title:'Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung und Creator*innen', speaker:'Jenny Habermehl · Dr. Paul Elvers · Nina Matzat · Katrin Krall', format:'Panel', track:'Markets' },
+  { id:10, day:0, stage:'K6', start:'15:30', end:'16:00', title:'Digital Erwachsen: Warum wir wissen müssen, was Digitalisierung ist – um sie zu ändern', speaker:'Wolf Lotter', format:'Keynote', track:'Policy' },
+  // K4
+  { id:11, day:0, stage:'K4', start:'16:00', end:'17:00', title:'MAIA & CyberLÄND: Wie 3D-Avatare Community, Content und Business verbinden', speaker:'Dr. Frank Dürr', format:'Case', track:'Futures' },
+  { id:12, day:0, stage:'K4', start:'16:00', end:'17:00', title:'Städte als Sandboxes der Zukunft: Lernen aus "Test in Heidelberg"', speaker:'Katharina Pelka · Prof. Benjamin Zierock', format:'Case', track:'Futures' },
+  // K2
+  { id:13, day:0, stage:'K2', start:'13:00', end:'13:15', title:'Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter', speaker:'Dr. Dorothea Winter', format:'Impuls', track:'Policy' },
+  { id:14, day:0, stage:'K2', start:'13:15', end:'14:00', title:'KI & Ethik: Verantwortung in der digitalen Transformation', speaker:'Eric Bartoletti · Dr. Dorothea Winter · Florian Scheible · Maike Scholz', format:'Panel', track:'Policy' },
+  { id:15, day:0, stage:'K2', start:'14:00', end:'15:00', title:'Wahrheit im Feed: Journalismus zwischen Plattformlogik, KI und Bildung', speaker:'Gregor Schmalzried · Svea Eckert', format:'Panel', track:'Policy' },
+  { id:16, day:0, stage:'K2', start:'16:15', end:'17:00', title:'KI, Urheberrecht, Business: Wem gehört Kreativität im neuen KI-Zeitalter?', speaker:'Michael Duderstädt · Dr. Sebastian Rengshausen · Katharina Uppenbrink', format:'Panel', track:'Policy' },
+  { id:17, day:0, stage:'K2', start:'17:15', end:'17:30', title:'Reinventing Manufacturing Through XR-Based Skill Transfer and AI', speaker:'Osamu Oji', format:'Case', track:'Markets' },
+  { id:18, day:0, stage:'K2', start:'17:30', end:'17:45', title:'Interaktive Audioformate: Neue Chancen für Verlage, Games und Marken', speaker:'Christian Mahnke', format:'Case', track:'Markets' },
+  // P1
+  { id:19, day:0, stage:'P1', start:'10:00', end:'19:00', title:'Antifaschistische Hüpfburg', speaker:'Frieder Bohaumilitzky', format:'Rahmenprogramm', track:'' },
+  { id:20, day:0, stage:'P1', start:'10:45', end:'12:00', title:'Analog fokussiert: Das Beste aus der Bullet Journal® Methode', speaker:'Kerstin Schiemenz', format:'Workshop', track:'Futures' },
+  { id:21, day:0, stage:'P1', start:'13:00', end:'14:30', title:'Was kommt nach dem Prompt? – Wie KI Teil deines Teams wird', speaker:'Carena Barkow · Stefanie Bilen', format:'Workshop', track:'Futures' },
+  { id:22, day:0, stage:'P1', start:'15:30', end:'17:00', title:'Zukunft KKW 2030: Welche Visionen tragen uns durch den Wandel?', speaker:'Lore Kurtz · Tanja Schindler', format:'Workshop', track:'Policy' },
+  { id:23, day:0, stage:'P1', start:'17:00', end:'18:00', title:'Decoding AI – Künstliche Intelligenz in der Content Produktion', speaker:'Martin Schlösser', format:'Workshop', track:'Futures' },
+  // Foyer
+  { id:24, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'Smart Hans', speaker:'Max Haarich', format:'Rahmenprogramm', track:'' },
+  { id:25, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA', speaker:'Katja Schurr', format:'Rahmenprogramm', track:'' },
+  { id:26, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'The Rug Project – United Threads', speaker:'Mona Steinhäußer', format:'Rahmenprogramm', track:'' },
+  { id:27, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'COLLIMBO. Collaborative Artistic Intelligence in Action', speaker:'Sandra Freygarten · Dr. Lucia Rainer', format:'Rahmenprogramm', track:'' },
+  { id:28, day:0, stage:'Foyer', start:'14:00', end:'14:15', title:'Warum KI-Ökonomien kulturelle Legitimität brauchen', speaker:'Detlef Schwarte', format:'Impuls', track:'Futures' },
+  { id:29, day:0, stage:'Foyer', start:'15:30', end:'15:45', title:'Jenseits klassischer Payments: Blockchain-Märkte für Kreative am Beispiel worksheer', speaker:'Kerstin Groh', format:'Impuls', track:'Futures' },
+  { id:30, day:0, stage:'Foyer', start:'16:30', end:'16:45', title:'KI im Event Marketing: Erkenntnisse aus der wissenschaftlichen Forschung', speaker:'Prof. Dr. Oliver Lohmar', format:'Impuls', track:'Futures' },
+  { id:31, day:0, stage:'Foyer', start:'17:00', end:'17:15', title:'People, not AI: Unsere Unique Shining Proposition zum Leuchten bringen', speaker:'Griselda Welsing', format:'Impuls', track:'Futures' },
+  // Alabama Kino
+  { id:32, day:0, stage:'Alabama', start:'13:15', end:'14:00', title:'Curating AI: Gestaltung und Verantwortung in Kulturinstitutionen', speaker:'Marion Mair · Daniela Vogel · Felix Becker', format:'Panel', track:'Futures' },
+  { id:33, day:0, stage:'Alabama', start:'14:15', end:'15:00', title:'IMPACT NOW - Vom Meckern zum Machen', speaker:'Marianne Bullwinkel · Judith Augustin · Sophie Dobrigheit · Petra Lammers · Melanie Hölting-Eckert', format:'Panel', track:'Impact' },
+  { id:34, day:0, stage:'Alabama', start:'15:30', end:'16:00', title:'Future Collaboration: Neue Formen der Zusammenarbeit für eine komplexe Welt', speaker:'Nina Mönich', format:'Keynote', track:'Futures' },
+  { id:35, day:0, stage:'Alabama', start:'16:00', end:'17:00', title:'Back to Real Life? Warum die Gen Z den physischen Raum neu entdeckt', speaker:'Dennis Bajer', format:'Panel', track:'Futures' },
+  { id:36, day:0, stage:'Alabama', start:'17:00', end:'18:00', title:'Wer nur optimiert, verliert – Wie Cross Innovation über Wettbewerbsfähigkeit entscheidet', speaker:'Robin Bühlmann · Prof. Dr. Martin Kiel · Christian Weyers u.a.', format:'Panel', track:'Futures' },
+  { id:37, day:0, stage:'Alabama', start:'18:15', end:'19:30', title:'Filmvorführung: Der Unternehmer das Dorf und die Künstler', speaker:'', format:'Filmvorführung', track:'Futures' },
+
+  // ─── TAG 2: 29. APRIL ───
+  // K6
+  { id:38, day:1, stage:'K6', start:'10:15', end:'10:45', title:'Von Politik zu Kapital: Wie öffentliche Mittel private Kreativ-Investments hebeln', speaker:'Caroline Norbury', format:'Impuls', track:'Policy' },
+  { id:39, day:1, stage:'K6', start:'11:00', end:'11:15', title:'Decoding Political Influence: Wie Social Media die politische Kommunikation neu definiert', speaker:'Maurice van gen Hassend', format:'Impuls', track:'Policy' },
+  { id:40, day:1, stage:'K6', start:'11:15', end:'12:00', title:'From Content to Community: Creator Economy zwischen Unternehmertum und demokratischer Verantwortung', speaker:'Maurice van gen Hassend · Peter Hoffmann', format:'Panel', track:'' },
+  { id:41, day:1, stage:'K6', start:'13:15', end:'14:00', title:'Made in Europe: Der Datenraum als Rückenwind für KI und Kreative', speaker:'Dr. Florian Harms · Max Haarich · Martin Andree · Dr. Nikolas Hill', format:'Panel', track:'Policy' },
+  { id:42, day:1, stage:'K6', start:'14:00', end:'15:00', title:"Let's Join Creative Forces: Politische Positionierung der Kreativwirtschaft für die Zukunft", speaker:'Egbert Rühl · Daniel Knöll u.a.', format:'Panel', track:'Policy' },
+  { id:43, day:1, stage:'K6', start:'14:45', end:'15:45', title:'The Creative Shift: Transformation, KI und politische Verantwortung für die Kreativwirtschaft', speaker:'Daniel Knöll · Jörn Freynick · Olaf Zimmermann · Prof. Lena Falkenhagen', format:'Panel', track:'Policy' },
+  // K4
+  { id:44, day:1, stage:'K4', start:'10:30', end:'10:35', title:'Anleitung zum dezentralen Eskalieren: Underdog-Know-how als Innovationsmotor', speaker:'Jakob Jochmann', format:'Case', track:'Markets' },
+  // K2
+  { id:45, day:1, stage:'K2', start:'09:30', end:'09:45', title:'KI kann alles – Aber für wen?', speaker:'Zamina Ahmad', format:'Impuls', track:'Impact' },
+  { id:46, day:1, stage:'K2', start:'09:30', end:'11:00', title:'Social Impact mit KI: Was Unternehmen aus einem Betroffenensupport-Case lernen', speaker:'Said Haider', format:'Impuls', track:'Impact' },
+  { id:47, day:1, stage:'K2', start:'09:45', end:'10:00', title:'Inklusion gestalten mit KI: Gesellschaftlicher Mehrwert trifft Business Value', speaker:'Claudia S. Friedrich · Timo Wietzke', format:'Impuls', track:'Impact' },
+  { id:48, day:1, stage:'K2', start:'10:15', end:'10:30', title:'Women in Design – Where Are We Now?', speaker:'Sophie Dobrigheit · Judith Augustin', format:'Impuls', track:'Impact' },
+  { id:49, day:1, stage:'K2', start:'11:00', end:'11:15', title:'Impuls von Dr. Peter Kurz', speaker:'Dr. Peter Kurz', format:'Impuls', track:'Policy' },
+  { id:50, day:1, stage:'K2', start:'13:00', end:'14:00', title:'Bye-bye Parkplatz? Wie neue Mobilität unsere Städte lebenswerter macht', speaker:'Dr. Anjes Tjarks · Dr. Kirsten Matheus', format:'Panel', track:'Markets' },
+  { id:51, day:1, stage:'K2', start:'14:00', end:'15:00', title:'Finanzierung 4.0: KI, digitale Märkte und neue Monetarisierungsstrategien', speaker:'Aissu Diallo · Kerstin Gold', format:'Panel', track:'Markets' },
+  { id:52, day:1, stage:'K2', start:'15:00', end:'15:30', title:'Nachwuchs vs. KI: Wie junge Kreative Agenturen heute verändern', speaker:'Nina Kirst · Jonas Kratz', format:'Q&A', track:'Futures' },
+  // P1
+  { id:53, day:1, stage:'P1', start:'09:30', end:'10:45', title:'Wenn die Brücke wackelt: Resilienz-Baukasten für Cross Innovation', speaker:'Mira Kleine u.a.', format:'Workshop', track:'Futures' },
+  { id:54, day:1, stage:'P1', start:'10:45', end:'12:00', title:'Disruptive Produktinnovationen: Mit Design Futuring das Morgen prägen', speaker:'Marc Behlau · Kathlen Jost', format:'Workshop', track:'Futures' },
+  { id:55, day:1, stage:'P1', start:'12:00', end:'16:00', title:'Antifaschistische Hüpfburg', speaker:'Frieder Bohaumilitzky', format:'Rahmenprogramm', track:'' },
+  // Foyer
+  { id:56, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'Smart Hans', speaker:'Max Haarich', format:'Rahmenprogramm', track:'' },
+  { id:57, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA', speaker:'Katja Schurr', format:'Rahmenprogramm', track:'' },
+  { id:58, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'The Rug Project – United Threads', speaker:'Mona Steinhäußer', format:'Rahmenprogramm', track:'' },
+  { id:59, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'COLLIMBO. Collaborative Artistic Intelligence in Action', speaker:'Sandra Freygarten · Dr. Lucia Rainer', format:'Rahmenprogramm', track:'' },
+  { id:60, day:1, stage:'Foyer', start:'11:00', end:'11:15', title:'KI lernen, Kreativität stärken: Internationale Studienprogramme im Überblick', speaker:'Dr. Ulrike Müller', format:'Impuls', track:'Futures' },
+  { id:61, day:1, stage:'Foyer', start:'13:00', end:'13:30', title:'Innovationsprogramm für Geschäftsmodelle und Pionierlösungen', speaker:'Robin von Hardenberg · Joanna Szlauderbach', format:'Impuls', track:'Markets' },
+  { id:62, day:1, stage:'Foyer', start:'13:30', end:'13:45', title:'KI in Gamification und Serious Games: Von Prototyping bis Balancing neu gedacht', speaker:'Dr. Philipp Busch', format:'Impuls', track:'Futures' },
+  // Alabama Kino
+  { id:63, day:1, stage:'Alabama', start:'09:30', end:'10:15', title:'Stadtentwicklung: Wie Immobilien mit Kreativnutzungen urbane Wirkung entfalten', speaker:'Bettina Steindl · Dr. Katja Wolframm · Christopher Weiß', format:'Panel', track:'Futures' },
+  { id:64, day:1, stage:'Alabama', start:'11:30', end:'12:00', title:'Scaffolding for Transcendence: Die Zukunft der Bildung in einer KI-Ökonomie', speaker:'Prof. Christoph Weckerle · Prof. Dr. Simon Grand', format:'Impuls', track:'Futures' },
+  { id:65, day:1, stage:'Alabama', start:'14:15', end:'14:45', title:'Where Do We Draw the Vertical Line? Technology, Territory, and the Material Cost of Intelligence', speaker:'David Odiase', format:'Keynote', track:'Impact' },
+];
+
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+let currentDay = 0;
+let currentStageFilter = 'all';
+let activeTrackFilters = new Set(['Policy','Markets','Futures','Impact']);
+let favorites = new Set(JSON.parse(localStorage.getItem('gces_favs') || '[]'));
+let showingFavs = false;
+let mobileStageIndex = 0;
+const EVENT_DATES = ['2026-04-28','2026-04-29'];
+
+// ══════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════
+function getStageColor(stageId) {
+  const s = STAGES.find(s => s.id === stageId);
+  return s ? s.color : '#888';
+}
+
+function getTrackCls(track) {
+  return TRACK_MAP[track]?.cls || 'track-none';
+}
+
+function getTrackLabel(track) {
+  return TRACK_MAP[track]?.label || '';
+}
+
+function getTrackKey(track) {
+  if (track === 'Policy') return 'Policy';
+  if (track === 'Markets & Capital') return 'Markets';
+  if (track === 'Creative Futures') return 'Futures';
+  if (track === 'Impact') return 'Impact';
+  return track;
+}
+
+function nowMins() {
+  const now = new Date();
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+function isLive(s) {
+  const today = new Date().toISOString().slice(0,10);
+  if (EVENT_DATES[s.day] !== today) return false;
+  const nm = nowMins();
+  return nm >= t(s.start) && nm < t(s.end);
+}
+
+function isPast(s) {
+  const today = new Date().toISOString().slice(0,10);
+  if (EVENT_DATES[s.day] > today) return false;
+  if (EVENT_DATES[s.day] < today) return true;
+  return nowMins() >= t(s.end);
+}
+
+function saveFavs() {
+  localStorage.setItem('gces_favs', JSON.stringify([...favorites]));
+}
+
+function getFavConflicts() {
+  const favSessions = SESSIONS.filter(s => favorites.has(s.id));
+  const conflicts = [];
+  for (let i = 0; i < favSessions.length; i++) {
+    for (let j = i + 1; j < favSessions.length; j++) {
+      const a = favSessions[i], b = favSessions[j];
+      if (a.day !== b.day) continue;
+      if (t(a.start) < t(b.end) && t(b.start) < t(a.end)) {
+        conflicts.push([a,b]);
+      }
+    }
+  }
+  return conflicts;
+}
+
+function hasConflict(sessionId) {
+  const s = SESSIONS.find(x => x.id === sessionId);
+  if (!s || !favorites.has(sessionId)) return false;
+  return SESSIONS.some(other => {
+    if (other.id === sessionId || !favorites.has(other.id)) return false;
+    if (other.day !== s.day) return false;
+    return t(s.start) < t(other.end) && t(other.start) < t(s.end);
+  });
+}
+
+// ══════════════════════════════════════════
+// BUILD CARD HTML
+// ══════════════════════════════════════════
+function buildCard(s, showStage = false) {
+  const live = isLive(s);
+  const past = isPast(s);
+  const fav = favorites.has(s.id);
+  const conflict = hasConflict(s.id);
+  const stageColor = getStageColor(s.stage);
+  const trackCls = getTrackCls(s.track);
+  const trackLabel = getTrackLabel(s.track);
+  const stageInfo = STAGES.find(x => x.id === s.stage);
+
+  return `<div class="session-card ${live?'is-live':''} ${past?'is-past':''}" style="border-left-color:${stageColor}" id="card-${s.id}">
+    <div class="session-time">
+      ${live ? '<span class="live-dot"></span>' : ''}
+      ${s.start}–${s.end}
+      ${s.format ? `<span class="session-format-pill">${s.format}</span>` : ''}
+      ${showStage && stageInfo ? `<span class="session-format-pill" style="color:${stageInfo.color}">${stageInfo.label}</span>` : ''}
+    </div>
+    <div class="session-title">${s.title}</div>
+    ${s.speaker ? `<div class="session-speaker">${s.speaker}</div>` : ''}
+    ${trackLabel ? `<span class="session-track-pill ${trackCls}">${trackLabel}</span>` : ''}
+    ${conflict ? '<span class="conflict-badge" title="Zeitkonflikt mit anderem Favoriten">⚡</span>' : ''}
+    <button class="card-fav-btn ${fav?'is-fav':''}" onclick="event.stopPropagation();toggleFav(${s.id})" title="${fav?'Aus Favoriten entfernen':'Zu Favoriten hinzufügen'}">
+      ${fav ? '♥' : '♡'}
+    </button>
+  </div>`;
+}
+
+// ══════════════════════════════════════════
+// RENDER DESKTOP
+// ══════════════════════════════════════════
+function renderDesktop() {
+  const container = document.getElementById('stage-columns-container');
+  if (!container) return;
+
+  const stagesToShow = currentStageFilter === 'all'
+    ? STAGES
+    : STAGES.filter(s => s.id === currentStageFilter);
+
+  const colCount = Math.min(stagesToShow.length, 4);
+  container.style.gridTemplateColumns = `repeat(${colCount}, 1fr)`;
+
+  let html = '';
+  for (const stage of stagesToShow) {
+    let sessions = SESSIONS.filter(s =>
+      s.day === currentDay &&
+      s.stage === stage.id &&
+      (activeTrackFilters.has(s.track) || s.track === '')
+    );
+    sessions.sort((a,b) => t(a.start) - t(b.start));
+
+    html += `<div>
+      <div class="stage-col-header" style="background:${stage.color}20;border:1px solid ${stage.color}40">
+        <span style="width:8px;height:8px;border-radius:50%;background:${stage.color};display:inline-block;flex-shrink:0"></span>
+        ${stage.label}
+      </div>
+      <div class="stage-col-body" style="margin-top:8px">
+        ${sessions.length > 0 ? sessions.map(s => buildCard(s)).join('') : '<div style="padding:16px;color:var(--text-dim);font-size:12px;text-align:center">Keine Sessions</div>'}
+      </div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+
+// ══════════════════════════════════════════
+// RENDER MOBILE
+// ══════════════════════════════════════════
+function renderMobile() {
+  const swipeContainer = document.getElementById('mobile-swipe-container');
+  const dotsContainer = document.getElementById('stage-dots');
+  const stageNameEl = document.getElementById('mobile-stage-name');
+  if (!swipeContainer) return;
+
+  const stages = STAGES;
+  let html = '';
+  for (const stage of stages) {
+    let sessions = SESSIONS.filter(s =>
+      s.day === currentDay && s.stage === stage.id
+    );
+    sessions.sort((a,b) => t(a.start) - t(b.start));
+
+    html += `<div class="mobile-stage-panel">
+      ${sessions.length > 0 ? sessions.map(s => buildCard(s)).join('') : '<div style="padding:24px;color:var(--text-dim);font-size:12px;text-align:center">Keine Sessions</div>'}
+    </div>`;
+  }
+  swipeContainer.innerHTML = html;
+
+  // Dots
+  dotsContainer.innerHTML = stages.map((s,i) =>
+    `<div class="stage-dot-nav ${i===mobileStageIndex?'active':''}" style="${i===mobileStageIndex?`background:${s.color}`:''}"></div>`
+  ).join('');
+
+  // Name
+  const cur = stages[mobileStageIndex];
+  stageNameEl.textContent = cur.label;
+  stageNameEl.style.color = cur.color;
+
+  // Position
+  swipeContainer.style.transform = `translateX(-${mobileStageIndex * 100}%)`;
+  swipeContainer.style.width = `${stages.length * 100}%`;
+  swipeContainer.querySelectorAll('.mobile-stage-panel').forEach(p => {
+    p.style.width = `${100/stages.length}%`;
+  });
+}
+
+function mobileStageStep(dir) {
+  mobileStageIndex = Math.max(0, Math.min(STAGES.length-1, mobileStageIndex + dir));
+  renderMobile();
+}
+
+// ══════════════════════════════════════════
+// TOUCH SWIPE
+// ══════════════════════════════════════════
+let touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40 && !showingFavs) {
+    mobileStageStep(dx < 0 ? 1 : -1);
+  }
+}, { passive: true });
+
+// ══════════════════════════════════════════
+// FAVORITES
+// ══════════════════════════════════════════
+function toggleFav(id) {
+  if (favorites.has(id)) {
+    favorites.delete(id);
+  } else {
+    favorites.add(id);
+  }
+  saveFavs();
+  updateFavCount();
+  renderAll();
+}
+
+function updateFavCount() {
+  const n = favorites.size;
+  const badge = document.getElementById('fav-count-badge');
+  const mfav = document.getElementById('mobile-fav-tab');
+  const count = document.getElementById('fav-count');
+  if (badge) {
+    count.textContent = n;
+    badge.classList.toggle('empty', n === 0);
+  }
+  if (mfav) {
+    mfav.textContent = n > 0 ? `♥ ${n}` : '♡';
+    mfav.classList.toggle('has-favs', n > 0);
+  }
+}
+
+function showFavs(mobile = false) {
+  showingFavs = true;
+  document.getElementById('desktop-grid').style.display = 'none';
+  document.getElementById('favs-view').style.display = 'block';
+  document.getElementById('mobile-sessions').style.display = 'none';
+  document.getElementById('mobile-stage-nav').style.display = 'none';
+
+  // Update day buttons
+  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('favs-btn-sidebar')?.classList.add('active');
+
+  document.getElementById('header-day-label').textContent = 'Meine Favoriten';
+  document.getElementById('header-stage-label').textContent = '';
+
+  renderFavs();
+}
+
+function renderFavs() {
+  const listEl = document.getElementById('favs-list');
+  const conflictEl = document.getElementById('conflict-warning');
+  const conflictText = document.getElementById('conflict-text');
+
+  const favSessions = SESSIONS.filter(s => favorites.has(s.id));
+  favSessions.sort((a,b) => a.day - b.day || t(a.start) - t(b.start));
+
+  if (favSessions.length === 0) {
+    listEl.innerHTML = `<div class="favs-empty">
+      <div class="favs-empty-icon">♡</div>
+      <div class="favs-empty-text">Noch keine Favoriten.<br>Tippe auf ♡ bei einer Session.</div>
+    </div>`;
+    conflictEl.style.display = 'none';
+    return;
+  }
+
+  const conflicts = getFavConflicts();
+  if (conflicts.length > 0) {
+    conflictEl.style.display = 'flex';
+    conflictText.innerHTML = conflicts.map(([a,b]) =>
+      `<strong>${a.title.substring(0,30)}…</strong> und <strong>${b.title.substring(0,30)}…</strong> überschneiden sich`
+    ).join('<br>');
+  } else {
+    conflictEl.style.display = 'none';
+  }
+
+  let html = '';
+  let lastDay = -1;
+  for (const s of favSessions) {
+    if (s.day !== lastDay) {
+      html += `<div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);padding:16px 0 8px;border-top:${lastDay===-1?'none':'1px solid var(--border)'}">${s.day === 0 ? 'Dienstag, 28. April' : 'Mittwoch, 29. April'}</div>`;
+      lastDay = s.day;
+    }
+    html += buildCard(s, true);
+  }
+
+  listEl.innerHTML = html;
+}
+
+// ══════════════════════════════════════════
+// CONTROLS
+// ══════════════════════════════════════════
+function setDay(day, mobile = false) {
+  currentDay = day;
+  showingFavs = false;
+  mobileStageIndex = 0;
+
+  document.getElementById('desktop-grid').style.display = '';
+  document.getElementById('favs-view').style.display = 'none';
+  document.getElementById('mobile-sessions').style.display = '';
+  document.getElementById('mobile-stage-nav').style.display = '';
+
+  document.querySelectorAll('.day-btn').forEach((b,i) => b.classList.toggle('active', i === day));
+  document.querySelectorAll('.mobile-day-tab').forEach((b,i) => b.classList.toggle('active', i === day));
+  document.getElementById('favs-btn-sidebar')?.classList.remove('active');
+
+  const labels = ['Dienstag, 28. April 2026', 'Mittwoch, 29. April 2026'];
+  document.getElementById('header-day-label').textContent = labels[day];
+
+  renderAll();
+}
+
+function filterStage(stageId) {
+  currentStageFilter = stageId;
+  document.querySelectorAll('[id^="sb-"]').forEach(b => b.classList.remove('active'));
+  document.getElementById('sb-' + (stageId === 'all' ? 'all' : stageId))?.classList.add('active');
+  const stageInfo = STAGES.find(s => s.id === stageId);
+  document.getElementById('header-stage-label').textContent = stageInfo ? '— ' + stageInfo.label : '';
+  renderDesktop();
+}
+
+function toggleTrack(key) {
+  if (activeTrackFilters.has(key)) {
+    if (activeTrackFilters.size > 1) activeTrackFilters.delete(key);
+  } else {
+    activeTrackFilters.add(key);
+  }
+  document.querySelectorAll('.track-pill-btn').forEach(b => {
+    const tk = b.dataset.track;
+    b.classList.toggle('active', activeTrackFilters.has(tk));
+  });
+  renderDesktop();
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('gces_theme', isDark ? 'light' : 'dark');
+}
+
+function renderAll() {
+  if (showingFavs) { renderFavs(); return; }
+  renderDesktop();
+  renderMobile();
+  updateFavCount();
+}
+
+// ══════════════════════════════════════════
+// CLOCK
+// ══════════════════════════════════════════
+function updateClock() {
+  const now = new Date();
+  const str = now.toLocaleTimeString('de-DE', { hour:'2-digit', minute:'2-digit' });
+  const sc = document.getElementById('sidebar-clock');
+  const mc = document.getElementById('mobile-clock');
+  if (sc) sc.textContent = str;
+  if (mc) mc.textContent = str;
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+// Restore theme
+const savedTheme = localStorage.getItem('gces_theme');
+if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+
+updateClock();
+setInterval(updateClock, 10000);
+setInterval(renderAll, 60000); // refresh live indicators
+
+renderAll();
+updateFavCount();
+</script>
+</body>
+</html>
