@@ -26,9 +26,9 @@
   /* Stage colors — all within GCES palette */
   --c-k6:        #FF5139;   /* orange-red */
   --c-k4:        #4B0346;   /* deep violet */
-  --c-k2:        #C653B8;   /* bright pink-violet */
-  --c-p1:        #E87040;   /* warm orange */
-  --c-foyer:     #F0A0E0;   /* soft pink */
+  --c-k2:        #9B3AA8;   /* bright pink-violet */
+  --c-p1:        #C05820;   /* warm orange */
+  --c-foyer:     #A04898;   /* soft pink */
   --c-alabama:   #8B1A84;   /* dark magenta */
 
   /* Track colors — no blue, no green */
@@ -47,8 +47,9 @@
   --border:     rgba(240,160,224,0.12);
   --text:       #f8eef8;
   --text2:      #c090b8;
-  --text3:      #7a4872;
+  --text3:      #b070a0;
   --sidebar-bg: #0a000a;
+  --accent-text: #FF5139;
 }
 [data-theme="light"] {
   --bg:         #f8f0f8;
@@ -57,8 +58,9 @@
   --border:     rgba(75,3,70,0.1);
   --text:       #000000;
   --text2:      #4B0346;
-  --text3:      #9a6098;
+  --text3:      #624060;
   --sidebar-bg: #4B0346;
+  --accent-text: #CC3520;
 }
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { -webkit-text-size-adjust: 100%; }
@@ -200,7 +202,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text3); display: flex; align-items: center; gap: 3px;
   transition: color var(--tr);
 }
-.card.clickable:hover .card-info-hint { color: var(--accent); }
+.card.clickable:hover .card-info-hint { color: var(--accent-text); }
 .card-icon-btn.fav-on { color: var(--accent); }
 .card-icon-btn.note-on { color: var(--accent); }
 .card-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; padding-right: 52px; }
@@ -271,7 +273,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: none; font-family: inherit; cursor: pointer;
   min-height: 36px; display: flex; align-items: center;
 }
-.notes-nav-btn.has-notes { border-color: var(--accent); color: var(--accent); }
+.notes-nav-btn.has-notes { border-color: var(--accent-text); color: var(--accent-text); }
 .notes-download-btn {
   padding: 8px 16px; border-radius: 8px;
   border: 1px solid var(--border); background: var(--bg3);
@@ -279,9 +281,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--tr);
   display: inline-flex; align-items: center; gap: 6px;
 }
-.notes-download-btn:hover { border-color: var(--accent); color: var(--accent); }
+.notes-download-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
 .print-header { display: none; }
-[data-theme="dark"] .notes-nav-btn.has-notes { color: var(--accent); border-color: var(--accent); }
+
 .favs-view { padding: 20px 22px 60px; }
 .conflict-banner { background: rgba(255,81,57,.1); border: 1px solid rgba(255,81,57,.3); border-radius: var(--radius); padding: 12px 16px; font-size: 12px; color: var(--accent); margin-bottom: 16px; display: flex; gap: 8px; }
 .favs-day-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text3); padding: 16px 0 8px; border-top: 1px solid var(--border); margin-top: 4px; }
@@ -315,7 +317,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border: 1px solid var(--border); font-size: 16px; color: var(--text2); transition: var(--tr);
   min-height: 36px; display: flex; align-items: center;
 }
-.mob-fav-tab.has-favs { border-color: var(--accent); color: var(--accent); }
+.mob-fav-tab.has-favs { border-color: var(--accent-text); color: var(--accent-text); }
 
 /* Stage nav bar */
 .mob-stage-nav {
@@ -657,8 +659,8 @@ const BASE_URL = 'https://german-creative-economy-summit.de/programm/';
 const STAGES = [
   {id:'K6',      label:'K6 Main Stage', color:'#FF5139'},
   {id:'K4',      label:'K4',            color:'#7B5EA7'},
-  {id:'K2',      label:'K2',            color:'#C653B8'},
-  {id:'P1',      label:'P1 Workshop',   color:'#E87040'},
+  {id:'K2',      label:'K2',            color:'#9B3AA8'},
+  {id:'P1',      label:'P1 Workshop',   color:'#C05820'},
   {id:'Foyer',   label:'Foyer',         color:'#F2994A'},
   {id:'Alabama', label:'Alabama Kino',  color:'#EB5757'},
 ];
@@ -898,7 +900,7 @@ function renderNotesView(listId){
       <div class="note-card-time">${s.start}&#8211;${s.end} &middot; ${STAGES.find(x=>x.id===s.stage)?.label||s.stage}</div>
       <div class="note-card-title">${s.title}</div>
       <div class="note-card-text">${notes[s.id].replace(/\n/g,'<br>')}</div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text3);margin-top:8px">&#9998; Bearbeiten</div>
+      <div class="card-icon-row" style="position:static;margin-top:8px;justify-content:flex-end"><button class="card-icon-btn note-on" onclick="event.stopPropagation();openNote(${s.id})" title="Bearbeiten">&#9998;</button></div>
     </div>`;
   }
   el.innerHTML=html;
