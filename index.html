@@ -2,6 +2,9 @@
 <html lang="de" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GCES 2026 – Programm</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,6 +194,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .card.clickable { cursor: pointer; }
 .card.clickable:active { opacity: .85; }
+.card-info-hint {
+  margin-top: 8px;
+  font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--text3); display: flex; align-items: center; gap: 3px;
+  transition: color var(--tr);
+}
+.card.clickable:hover .card-info-hint { color: var(--accent); }
 .card-icon-btn.fav-on { color: var(--accent); }
 .card-icon-btn.note-on { color: var(--accent); }
 .card-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; padding-right: 52px; }
@@ -200,7 +210,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .note-modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 1000;
   background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
-  align-items: center; justify-content: center; padding: 20px;
+  align-items: flex-start; justify-content: center;
+  padding: 20px; overflow-y: auto;
 }
 .note-modal-overlay.open { display: flex; }
 .note-modal {
@@ -208,16 +219,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 14px; width: 100%; max-width: 500px;
   padding: 22px; display: flex; flex-direction: column; gap: 14px;
   box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  margin-top: 12px; margin-bottom: 20px;
+}
+@media (min-width: 600px) {
+  .note-modal-overlay { align-items: center; }
+  .note-modal { margin-top: 0; }
 }
 .note-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .note-modal-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
 .note-modal-close { font-size: 18px; color: var(--text3); cursor: pointer; flex-shrink: 0; transition: var(--tr); background: none; border: none; font-family: inherit; }
 .note-modal-close:hover { color: var(--text); }
 .note-textarea {
-  width: 100%; min-height: 140px; resize: vertical;
+  width: 100%; height: 120px; min-height: 80px; max-height: 200px; resize: none;
   background: var(--bg3); border: 1px solid var(--border); border-radius: 8px;
-  padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 13px;
+  padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 16px;
   color: var(--text); line-height: 1.5; transition: border-color var(--tr);
+}
+@media (min-width: 600px) {
+  .note-textarea { height: 140px; font-size: 13px; resize: vertical; max-height: none; }
 }
 .note-textarea:focus { outline: none; border-color: var(--accent); }
 .note-textarea::placeholder { color: var(--text3); }
@@ -253,6 +272,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   min-height: 36px; display: flex; align-items: center;
 }
 .notes-nav-btn.has-notes { border-color: var(--accent); color: var(--accent); }
+.notes-download-btn {
+  padding: 8px 16px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg3);
+  color: var(--text2); font-family: inherit;
+  font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--tr);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.notes-download-btn:hover { border-color: var(--accent); color: var(--accent); }
+.print-header { display: none; }
 [data-theme="dark"] .notes-nav-btn.has-notes { color: var(--accent); border-color: var(--accent); }
 .favs-view { padding: 20px 22px 60px; }
 .conflict-banner { background: rgba(255,81,57,.1); border: 1px solid rgba(255,81,57,.3); border-radius: var(--radius); padding: 12px 16px; font-size: 12px; color: var(--accent); margin-bottom: 16px; display: flex; gap: 8px; }
@@ -328,6 +356,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+@media print {
+  .sidebar, .d-topbar, .mob-header, .mob-stage-nav,
+  .mob-sessions-wrap, #m-favs-view, #m-notes-view,
+  .note-modal-overlay, #d-grid, #d-favs-view,
+  .notes-download-btn, .card-icon-row, .card-info-hint,
+  .track-pill, .fmt-pill { display: none !important; }
+  .main-area { margin-left: 0 !important; }
+  #d-notes-view { display: block !important; padding: 0 !important; }
+  .favs-view { padding: 0 !important; }
+  .print-header { display: block !important; margin-bottom: 24px; }
+  .note-card {
+    break-inside: avoid; page-break-inside: avoid;
+    border: 1px solid #ccc !important; border-left: 3px solid #FF5139 !important;
+    background: #fff !important; color: #000 !important;
+    margin-bottom: 12px !important; padding: 12px !important;
+    border-radius: 6px !important;
+  }
+  .note-card-time { color: #888 !important; font-size: 10px !important; }
+  .note-card-title { color: #000 !important; font-size: 13px !important; font-weight: 600 !important; }
+  .note-card-text { color: #222 !important; font-size: 12px !important; white-space: pre-wrap; }
+  .note-card [style*="Bearbeiten"] { display: none !important; }
+  .favs-day-label { color: #666 !important; border-color: #ddd !important; font-size: 10px !important; }
+}
 </style>
 </head>
 <body>
@@ -384,6 +436,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div id="d-favs-list"></div>
   </div>
   <div class="favs-view" id="d-notes-view" style="display:none">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><button class="notes-download-btn" onclick="downloadNotesPDF()">&#8659; Als PDF speichern</button></div>
     <div id="d-notes-list"></div>
   </div>
 </div>
@@ -423,7 +476,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </div>
 
 <div class="favs-view mob-favs-view" id="m-notes-view" style="display:none;padding:14px 14px 80px">
+  <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><button class="notes-download-btn" onclick="downloadNotesPDF()">&#8659; Als PDF speichern</button></div>
   <div id="m-notes-list"></div>
+</div>
+
+<div class="print-header" id="print-header">
+  <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#000;margin-bottom:4px">GCES 2026 – Meine Notizen</div>
+  <div style="font-size:12px;color:#888;margin-bottom:4px">German Creative Economy Summit · 28.–29. April · Kampnagel Hamburg</div>
+  <hr style="border:none;border-top:1px solid #ddd;margin:12px 0 20px">
 </div>
 
 <!-- ── NOTE MODAL ── -->
@@ -433,11 +493,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="note-modal-title" id="note-modal-title"></div>
       <button class="note-modal-close" onclick="closeNote()">&#10005;</button>
     </div>
-    <textarea class="note-textarea" id="note-textarea" placeholder="Notizen zur Session..."></textarea>
     <div class="note-modal-actions">
       <button class="note-delete-btn" id="note-delete-btn" onclick="deleteNote()" style="display:none">L&ouml;schen</button>
       <button class="note-save-btn" onclick="saveNote()">Speichern</button>
     </div>
+    <textarea class="note-textarea" id="note-textarea" placeholder="Notizen zur Session..."></textarea>
   </div>
 </div>
 
@@ -726,6 +786,7 @@ function buildCard(s,showStage=false){
       <button class="card-icon-btn${fav?' fav-on':''}" onclick="event.stopPropagation();toggleFav(${s.id})" title="${fav?'Favorit entfernen':'Zu Favoriten hinzufügen'}">${fav?'&#9829;':'&#9825;'}</button>
       <button class="card-icon-btn${hasNote?' note-on':''}" onclick="event.stopPropagation();openNote(${s.id})" title="Notiz">&#9998;</button>
     </div>
+    ${clickable?`<div class="card-info-hint">Mehr Info &#8250;</div>`:''}
   </div>`;
 }
 
@@ -833,11 +894,11 @@ function renderNotesView(listId){
       lastDay=s.day;
     }
     const sc=stageColor(s.stage);
-    html+=`<div class="note-card" style="border-left-color:${sc}">
+    html+=`<div class="note-card clickable" style="border-left-color:${sc};cursor:pointer" onclick="openNote(${s.id})">
       <div class="note-card-time">${s.start}&#8211;${s.end} &middot; ${STAGES.find(x=>x.id===s.stage)?.label||s.stage}</div>
       <div class="note-card-title">${s.title}</div>
       <div class="note-card-text">${notes[s.id].replace(/\n/g,'<br>')}</div>
-      <button class="card-more-link" style="margin-top:8px;cursor:pointer;background:none;border:none;font-family:inherit" onclick="openNote(${s.id})">&#9998; Bearbeiten</button>
+      <div style="font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text3);margin-top:8px">&#9998; Bearbeiten</div>
     </div>`;
   }
   el.innerHTML=html;
@@ -1027,6 +1088,15 @@ function renderAll(){
   renderDesktop();renderMobile();updateFavUI();updateNotesUI();
 }
 
+
+function downloadNotesPDF(){
+  // Render notes into desktop view so print picks them up
+  renderNotesView('d-notes-list');
+  document.getElementById('d-notes-view').style.display='';
+  window.print();
+  // Restore state after print dialog closes
+  if(!viewingNotes) document.getElementById('d-notes-view').style.display='none';
+}
 // INIT
 const savedTheme=localStorage.getItem('gces26_theme');
 if(savedTheme)document.documentElement.setAttribute('data-theme',savedTheme);
