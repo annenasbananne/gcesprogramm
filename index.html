@@ -282,7 +282,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: inline-flex; align-items: center; gap: 6px;
 }
 .notes-download-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
-.print-header { display: none; }
 
 .favs-view { padding: 20px 22px 60px; }
 .conflict-banner { background: rgba(255,81,57,.1); border: 1px solid rgba(255,81,57,.3); border-radius: var(--radius); padding: 12px 16px; font-size: 12px; color: var(--accent); margin-bottom: 16px; display: flex; gap: 8px; }
@@ -360,27 +359,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
 @media print {
-  .sidebar, .d-topbar, .mob-header, .mob-stage-nav,
-  .mob-sessions-wrap, #m-favs-view, #m-notes-view,
-  .note-modal-overlay, #d-grid, #d-favs-view,
-  .notes-download-btn, .card-icon-row, .card-info-hint,
-  .track-pill, .fmt-pill { display: none !important; }
-  .main-area { margin-left: 0 !important; }
-  #d-notes-view { display: block !important; padding: 0 !important; }
-  .favs-view { padding: 0 !important; }
-  .print-header { display: block !important; margin-bottom: 24px; }
-  .note-card {
+  /* Hide everything except the dedicated print container */
+  body > *:not(#print-container) { display: none !important; }
+  #print-container { display: block !important; }
+  .print-note-card {
     break-inside: avoid; page-break-inside: avoid;
-    border: 1px solid #ccc !important; border-left: 3px solid #FF5139 !important;
-    background: #fff !important; color: #000 !important;
-    margin-bottom: 12px !important; padding: 12px !important;
-    border-radius: 6px !important;
+    border: 1px solid #ccc; border-left: 3px solid;
+    border-radius: 6px; padding: 12px 14px;
+    margin-bottom: 12px; background: #fff;
   }
-  .note-card-time { color: #888 !important; font-size: 10px !important; }
-  .note-card-title { color: #000 !important; font-size: 13px !important; font-weight: 600 !important; }
-  .note-card-text { color: #222 !important; font-size: 12px !important; white-space: pre-wrap; }
-  .note-card [style*="Bearbeiten"] { display: none !important; }
-  .favs-day-label { color: #666 !important; border-color: #ddd !important; font-size: 10px !important; }
+  .print-day-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #666;
+    padding: 16px 0 8px; border-top: 1px solid #ddd; margin-top: 4px;
+  }
+  .print-day-label:first-child { border-top: none; padding-top: 0; }
 }
 </style>
 </head>
@@ -480,12 +473,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <div class="favs-view mob-favs-view" id="m-notes-view" style="display:none;padding:14px 14px 80px">
   <div style="display:flex;justify-content:flex-end;margin-bottom:14px"><button class="notes-download-btn" onclick="downloadNotesPDF()">&#8659; Als PDF speichern</button></div>
   <div id="m-notes-list"></div>
-</div>
-
-<div class="print-header" id="print-header">
-  <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#000;margin-bottom:4px">GCES 2026 – Meine Notizen</div>
-  <div style="font-size:12px;color:#888;margin-bottom:4px">German Creative Economy Summit · 28.–29. April · Kampnagel Hamburg</div>
-  <hr style="border:none;border-top:1px solid #ddd;margin:12px 0 20px">
 </div>
 
 <!-- ── NOTE MODAL ── -->
@@ -1092,12 +1079,37 @@ function renderAll(){
 
 
 function downloadNotesPDF(){
-  // Render notes into desktop view so print picks them up
-  renderNotesView('d-notes-list');
-  document.getElementById('d-notes-view').style.display='';
+  // Build print-only HTML from notes data
+  const sessionNotes = SESSIONS
+    .filter(s => notes[s.id] && notes[s.id].trim())
+    .sort((a,b) => a.day - b.day || toMins(a.start) - toMins(b.start));
+
+  if(!sessionNotes.length) {
+    alert('Noch keine Notizen vorhanden.');
+    return;
+  }
+
+  let html = '', lastDay = -1;
+  for(const s of sessionNotes){
+    if(s.day !== lastDay){
+      html += `<div class="print-day-label">${s.day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;
+      lastDay = s.day;
+    }
+    const sc = stageColor(s.stage);
+    const stageName = STAGES.find(x=>x.id===s.stage)?.label || s.stage;
+    const noteText = notes[s.id].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    html += `<div class="print-note-card" style="border-left-color:${sc}">
+      <div style="font-size:10px;font-weight:600;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px">${s.start}&#8211;${s.end} &middot; ${stageName}</div>
+      <div style="font-size:14px;font-weight:600;color:#000;margin-bottom:8px;line-height:1.4">${s.title}</div>
+      ${s.speaker?`<div style="font-size:12px;color:#555;margin-bottom:8px">${s.speaker}</div>`:''}
+      <div style="font-size:13px;color:#222;line-height:1.6">${noteText}</div>
+    </div>`;
+  }
+
+  document.getElementById('print-notes-content').innerHTML = html;
+  document.getElementById('print-container').style.display = 'block';
   window.print();
-  // Restore state after print dialog closes
-  if(!viewingNotes) document.getElementById('d-notes-view').style.display='none';
+  document.getElementById('print-container').style.display = 'none';
 }
 // INIT
 const savedTheme=localStorage.getItem('gces26_theme');
@@ -1109,5 +1121,15 @@ const autoDay=EVENT_DATES.indexOf(new Date().toISOString().slice(0,10));
 if(autoDay!==-1)setDay(autoDay);else renderAll();
 updateNotesUI();
 </script>
+
+<!-- ── PRINT CONTAINER ── -->
+<div id="print-container" style="display:none; padding:32px; font-family:'DM Sans',sans-serif; color:#000; background:#fff;">
+  <div style="margin-bottom:28px">
+    <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#000;margin-bottom:6px">GCES 2026 – Meine Notizen</div>
+    <div style="font-size:12px;color:#666;">German Creative Economy Summit &middot; 28.–29. April &middot; Kampnagel Hamburg</div>
+    <div style="border-top:2px solid #FF5139;margin-top:16px"></div>
+  </div>
+  <div id="print-notes-content"></div>
+</div>
 </body>
 </html>
