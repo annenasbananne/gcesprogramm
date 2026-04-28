@@ -11,32 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* GCES Core Brand */
-  --gces-orange:  #FF5139;   /* primary accent */
-  --gces-violet:  #4B0346;   /* dark/secondary */
-  --gces-pink:    #F0A0E0;   /* highlight */
-  --gces-pink-lt: #FAD4F4;   /* soft highlight */
-  --gces-pink-md: #D468C0;   /* mid pink */
-
+  --gces-orange:  #FF5139;
+  --gces-violet:  #4B0346;
+  --gces-pink:    #F0A0E0;
+  --gces-pink-lt: #FAD4F4;
+  --gces-pink-md: #D468C0;
   --accent:      #FF5139;
   --accent-dim:  rgba(255,81,57,0.12);
   --violet:      #4B0346;
   --pink:        #F0A0E0;
-
-  /* Stage colors — all within GCES palette */
-  --c-k6:        #FF5139;   /* orange-red */
-  --c-k4:        #4B0346;   /* deep violet */
-  --c-k2:        #9B3AA8;   /* bright pink-violet */
-  --c-p1:        #C05820;   /* warm orange */
-  --c-foyer:     #A04898;   /* soft pink */
-  --c-alabama:   #8B1A84;   /* dark magenta */
-
-  /* Track colors — no blue, no green */
-  --c-policy:    #4B0346;   /* deep violet */
-  --c-markets:   #FF5139;   /* orange-red */
-  --c-futures:   #C653B8;   /* bright pink-violet */
-  --c-impact:    #F0A0E0;   /* soft pink */
-
+  --c-k6:        #FF5139;
+  --c-k4:        #4B0346;
+  --c-k2:        #9B3AA8;
+  --c-p1:        #C05820;
+  --c-foyer:     #A04898;
+  --c-alabama:   #8B1A84;
+  --c-policy:    #4B0346;
+  --c-markets:   #FF5139;
+  --c-futures:   #C653B8;
+  --c-impact:    #F0A0E0;
   --radius: 10px;
   --tr: 0.17s ease;
 }
@@ -71,8 +64,6 @@ body {
   transition: background .25s, color .25s;
 }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
-
-/* ── DESKTOP SIDEBAR ── */
 .sidebar {
   width: 210px; background: var(--sidebar-bg);
   position: fixed; top: 0; left: 0; bottom: 0;
@@ -83,10 +74,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .logo-eyebrow { font-family: 'Syne', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
 .logo-name { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 800; color: #fff; line-height: 1.35; }
 .logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 4px; }
-
-.logo-sub { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 0; }
-
-[data-theme="light"] 
 .sb-section { padding: 14px 10px 4px; }
 .sb-label { font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 0 8px; margin-bottom: 6px; }
 .sb-btn {
@@ -114,8 +101,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .sb-clock { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .04em; }
 .theme-btn { background: rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 9px; font-size: 12px; color: rgba(255,255,255,0.5); transition: var(--tr); }
 .theme-btn:hover { background: rgba(255,255,255,0.13); color: #fff; }
-
-/* ── DESKTOP MAIN ── */
 .main-area { margin-left: 210px; }
 .d-topbar {
   background: var(--bg2); border-bottom: 1px solid var(--border);
@@ -143,8 +128,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
   letter-spacing: .09em; text-transform: uppercase; color: #fff; margin-bottom: 8px;
 }
-
-/* ── CARDS ── */
 .card {
   background: var(--bg2); border: 1px solid var(--border);
   border-left: 3px solid; border-radius: var(--radius);
@@ -161,7 +144,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .live-dot { display: inline-block; width: 5px; height: 5px; background: #22dd88; border-radius: 50%; animation: blink 1.3s infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
 .fmt-pill { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 1px 5px; border-radius: 3px; background: var(--bg3); color: var(--text3); }
-.card-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; padding-right: 22px; }
+.card-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; padding-right: 52px; }
 .card-speaker { font-size: 11px; color: var(--text2); margin-bottom: 6px; line-height: 1.3; }
 .track-pill { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; border: 1px solid; }
 .track-policy  { color: #fff;      border-color: rgba(75,3,70,.7);      background: #4B0346; }
@@ -171,8 +154,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .track-none    { color: var(--text3); border-color: var(--border);      background: transparent; }
 .conflict-dot { font-size: 11px; color: var(--accent); }
 .no-sessions { padding: 20px; text-align: center; font-size: 12px; color: var(--text3); }
-
-/* ── CARD ICON ROW (fav + note) ── */
 .card-icon-row {
   position: absolute; top: 9px; right: 9px;
   display: flex; gap: 6px; align-items: center;
@@ -183,32 +164,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: color var(--tr), transform var(--tr);
   min-width: 32px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center;
 }
-.info-modal-meta {
-  font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--text3); margin-bottom: 4px;
-}
-.info-modal-speaker {
-  font-size: 12px; color: var(--text2); margin: 8px 0 12px; line-height: 1.4;
-}
-.info-modal-desc {
-  font-size: 13px; color: var(--text); line-height: 1.6;
-  max-height: 50vh; overflow-y: auto;
-}
+.info-modal-meta { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.info-modal-speaker { font-size: 12px; color: var(--text2); margin: 8px 0 12px; line-height: 1.4; }
+.info-modal-desc { font-size: 13px; color: var(--text); line-height: 1.6; max-height: 50vh; overflow-y: auto; }
 .card.clickable { cursor: pointer; }
 .card.clickable:active { opacity: .85; }
-.card-info-hint {
-  margin-top: 8px;
-  font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
-  color: var(--text3); display: flex; align-items: center; gap: 3px;
-  transition: color var(--tr);
-}
+.card-info-hint { margin-top: 8px; font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--text3); display: flex; align-items: center; gap: 3px; transition: color var(--tr); }
 .card.clickable:hover .card-info-hint { color: var(--accent-text); }
 .card-icon-btn.fav-on { color: var(--accent); }
 .card-icon-btn.note-on { color: var(--accent); }
-.card-title { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; padding-right: 52px; }
-
-
-/* ── NOTE MODAL ── */
 .note-modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 1000;
   background: rgba(0,0,0,.6); backdrop-filter: blur(4px);
@@ -223,10 +187,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: 0 20px 60px rgba(0,0,0,.4);
   margin-top: 12px; margin-bottom: 20px;
 }
-@media (min-width: 600px) {
-  .note-modal-overlay { align-items: center; }
-  .note-modal { margin-top: 0; }
-}
+@media (min-width: 600px) { .note-modal-overlay { align-items: center; } .note-modal { margin-top: 0; } }
 .note-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .note-modal-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; flex: 1; }
 .note-modal-close { font-size: 18px; color: var(--text3); cursor: pointer; flex-shrink: 0; transition: var(--tr); background: none; border: none; font-family: inherit; }
@@ -237,36 +198,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 12px; font-family: 'DM Sans', sans-serif; font-size: 16px;
   color: var(--text); line-height: 1.5; transition: border-color var(--tr);
 }
-@media (min-width: 600px) {
-  .note-textarea { height: 140px; font-size: 13px; resize: vertical; max-height: none; }
-}
+@media (min-width: 600px) { .note-textarea { height: 140px; font-size: 13px; resize: vertical; max-height: none; } }
 .note-textarea:focus { outline: none; border-color: var(--accent); }
 .note-textarea::placeholder { color: var(--text3); }
 .note-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
-.note-save-btn {
-  padding: 8px 18px; background: var(--accent); color: #fff;
-  border: none; border-radius: 7px; font-family: 'DM Sans', sans-serif;
-  font-size: 13px; font-weight: 600; cursor: pointer; transition: var(--tr);
-}
+.note-save-btn { padding: 8px 18px; background: var(--accent); color: #fff; border: none; border-radius: 7px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: var(--tr); }
 .note-save-btn:hover { opacity: .88; }
-.note-delete-btn {
-  padding: 8px 14px; background: transparent; color: var(--text3);
-  border: 1px solid var(--border); border-radius: 7px;
-  font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; transition: var(--tr);
-}
+.note-delete-btn { padding: 8px 14px; background: transparent; color: var(--text3); border: 1px solid var(--border); border-radius: 7px; font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer; transition: var(--tr); }
 .note-delete-btn:hover { color: var(--accent); border-color: var(--accent); }
-
-/* ── NOTE CARDS ── */
-.note-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-left: 3px solid; border-radius: var(--radius);
-  padding: 12px 14px; margin-bottom: 9px;
-}
+.note-card { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid; border-radius: var(--radius); padding: 12px 14px; margin-bottom: 9px; }
 .note-card-time { font-size: 10px; color: var(--text3); font-weight: 600; letter-spacing: .06em; margin-bottom: 4px; }
 .note-card-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.4; }
 .note-card-text { font-size: 12px; color: var(--text2); line-height: 1.55; white-space: pre-wrap; }
-
-/* ── NOTES NAV BTN ── */
 .notes-nav-btn {
   flex-shrink: 0; padding: 8px 14px; border-radius: 20px;
   border: 1px solid var(--border); font-size: 16px; color: var(--text2); transition: var(--tr);
@@ -274,62 +217,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   min-height: 36px; display: flex; align-items: center;
 }
 .notes-nav-btn.has-notes { border-color: var(--accent-text); color: var(--accent-text); }
-.notes-download-btn {
-  padding: 8px 16px; border-radius: 8px;
-  border: 1px solid var(--border); background: var(--bg3);
-  color: var(--text2); font-family: inherit;
-  font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--tr);
-  display: inline-flex; align-items: center; gap: 6px;
-}
+.notes-download-btn { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg3); color: var(--text2); font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: var(--tr); display: inline-flex; align-items: center; gap: 6px; }
 .notes-download-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
-
 .favs-view { padding: 20px 22px 60px; }
 .conflict-banner { background: rgba(255,81,57,.1); border: 1px solid rgba(255,81,57,.3); border-radius: var(--radius); padding: 12px 16px; font-size: 12px; color: var(--accent); margin-bottom: 16px; display: flex; gap: 8px; }
-
-/* ── CONFLICT GROUP ── */
-.conflict-group {
-  border: 2px solid var(--accent);
-  border-radius: calc(var(--radius) + 2px);
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.conflict-group-header {
-  background: var(--accent);
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.conflict-group-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--accent);
-}
-.conflict-group-cards .card {
-  border-radius: 0;
-  border: none;
-  border-left: 3px solid;
-  margin: 0;
-}
+.conflict-group { border: 2px solid var(--accent); border-radius: calc(var(--radius) + 2px); overflow: hidden; margin-bottom: 10px; }
+.conflict-group-header { background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; display: flex; align-items: center; gap: 6px; }
+.conflict-group-cards { display: flex; flex-direction: column; gap: 1px; background: var(--accent); }
+.conflict-group-cards .card { border-radius: 0; border: none; border-left: 3px solid; margin: 0; }
 .favs-day-label { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text3); padding: 16px 0 8px; border-top: 1px solid var(--border); margin-top: 4px; }
 .favs-day-label:first-child { border-top: none; padding-top: 0; }
 .favs-empty { text-align: center; padding: 60px 20px; color: var(--text3); }
 .favs-empty-icon { font-size: 36px; margin-bottom: 10px; }
 .favs-cards { display: flex; flex-direction: column; gap: 9px; }
-
-/* ══════════════════════════════════════════
-   MOBILE
-══════════════════════════════════════════ */
-.mob-header {
-  display: none; background: var(--bg2); border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 200;
-}
+.mob-header { display: none; background: var(--bg2); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 200; }
 .mob-top { display: flex; align-items: center; padding: 12px 16px; gap: 10px; }
 .mob-logo { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; flex: 1; }
 .mob-logo span { color: var(--accent); }
@@ -337,30 +238,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .mob-theme-btn { font-size: 20px; padding: 6px 10px; border-radius: 8px; color: var(--text2); min-width: 40px; min-height: 40px; display: flex; align-items: center; justify-content: center; }
 .mob-day-tabs { display: flex; padding: 0 12px 10px; gap: 6px; overflow-x: auto; scrollbar-width: none; }
 .mob-day-tabs::-webkit-scrollbar { display: none; }
-.mob-day-tab {
-  flex-shrink: 0; padding: 8px 16px; border-radius: 20px;
-  border: 1px solid var(--border); font-size: 13px; font-weight: 500; color: var(--text2); transition: var(--tr);
-  min-height: 36px;
-}
+.mob-day-tab { flex-shrink: 0; padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 13px; font-weight: 500; color: var(--text2); transition: var(--tr); min-height: 36px; }
 .mob-day-tab.active { background: var(--violet); border-color: var(--violet); color: #fff; font-weight: 700; }
-.mob-fav-tab {
-  margin-left: auto; flex-shrink: 0; padding: 8px 14px; border-radius: 20px;
-  border: 1px solid var(--border); font-size: 16px; color: var(--text2); transition: var(--tr);
-  min-height: 36px; display: flex; align-items: center;
-}
+.mob-fav-tab { margin-left: auto; flex-shrink: 0; padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border); font-size: 16px; color: var(--text2); transition: var(--tr); min-height: 36px; display: flex; align-items: center; }
 .mob-fav-tab.has-favs { border-color: var(--accent-text); color: var(--accent-text); }
-
-/* Stage nav bar */
-.mob-stage-nav {
-  display: none; background: var(--bg2); border-bottom: 1px solid var(--border);
-  padding: 10px 14px; align-items: center; gap: 10px;
-  position: sticky; top: 98px; z-index: 150;
-}
-.stage-arrow {
-  width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border);
-  background: var(--bg3); font-size: 22px; color: var(--text2);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--tr);
-}
+.mob-stage-nav { display: none; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 10px 14px; align-items: center; gap: 10px; position: sticky; top: 98px; z-index: 150; }
+.stage-arrow { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg3); font-size: 22px; color: var(--text2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--tr); }
 .stage-arrow:hover { color: var(--text); border-color: var(--accent); }
 .stage-arrow:disabled { opacity: .3; pointer-events: none; }
 .stage-nav-center { flex: 1; text-align: center; }
@@ -369,63 +252,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .stage-nav-dots { display: flex; justify-content: center; gap: 5px; margin-top: 5px; }
 .stage-nav-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--border); transition: var(--tr); }
 .stage-nav-dot.active { transform: scale(1.4); }
-
-/* Swipe panels */
 .mob-sessions-wrap { display: none; overflow: hidden; width: 100%; }
 .mob-swipe-track { display: flex; transition: transform .28s cubic-bezier(.4,0,.2,1); will-change: transform; }
 .mob-stage-panel { flex-shrink: 0; padding: 14px 14px 80px; display: flex; flex-direction: column; gap: 9px; }
-
-/* ── RESPONSIVE SWITCH ── */
-@media (max-width: 900px) {
-  .sidebar, .main-area { display: none !important; }
-  .mob-header { display: block; }
-  .mob-stage-nav { display: flex; }
-  .mob-sessions-wrap { display: block; }
-}
-@media (min-width: 901px) {
-  .mob-header, .mob-stage-nav, .mob-sessions-wrap, .mob-favs-view { display: none !important; }
-}
-
+@media (max-width: 900px) { .sidebar, .main-area { display: none !important; } .mob-header { display: block; } .mob-stage-nav { display: flex; } .mob-sessions-wrap { display: block; } }
+@media (min-width: 901px) { .mob-header, .mob-stage-nav, .mob-sessions-wrap, .mob-favs-view { display: none !important; } }
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
 @media print {
-  /* Hide everything except the dedicated print container */
   body > *:not(#print-container) { display: none !important; }
   #print-container { display: block !important; }
-  .print-note-card {
-    break-inside: avoid; page-break-inside: avoid;
-    border: 1px solid #ccc; border-left: 3px solid;
-    border-radius: 6px; padding: 12px 14px;
-    margin-bottom: 12px; background: #fff;
-  }
-  .print-day-label {
-    font-size: 10px; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; color: #666;
-    padding: 16px 0 8px; border-top: 1px solid #ddd; margin-top: 4px;
-  }
+  .print-note-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc; border-left: 3px solid; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; background: #fff; }
+  .print-day-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #666; padding: 16px 0 8px; border-top: 1px solid #ddd; margin-top: 4px; }
   .print-day-label:first-child { border-top: none; padding-top: 0; }
 }
-
-/* ── CONTACT ICONS ── */
-.contact-icons {
-  display: flex; align-items: center; gap: 6px;
-}
-.contact-icon-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 8px;
-  border: 1px solid var(--border); background: var(--bg3);
-  color: var(--text2); text-decoration: none;
-  transition: var(--tr); flex-shrink: 0;
-}
+.contact-icons { display: flex; align-items: center; gap: 6px; }
+.contact-icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg3); color: var(--text2); text-decoration: none; transition: var(--tr); flex-shrink: 0; }
 .contact-icon-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
 .contact-icon-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 </style>
 </head>
 <body>
 
-<!-- ── DESKTOP ── -->
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-eyebrow">GCES 2026</div>
@@ -469,13 +318,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <button class="d-fav-btn" id="d-fav-btn" onclick="showFavs()">&#9829; Favoriten</button>
     <button class="notes-nav-btn" id="d-notes-btn" onclick="showNotesView()" style="margin-left:6px">&#9998; Notizen</button>
     <div class="contact-icons">
-  <a class="contact-icon-btn" href="https://de.linkedin.com/in/anne-kaiser-27530220b" target="_blank" rel="noopener" title="Anne Kaiser auf LinkedIn">
-    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
-  </a>
-  <a class="contact-icon-btn" href="mailto:anne@awieanne.com?subject=Meet%20at%20GCES" title="E-Mail an Anne Kaiser">
-    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-  </a>
-</div>
+      <a class="contact-icon-btn" href="https://de.linkedin.com/in/anne-kaiser-27530220b" target="_blank" rel="noopener" title="Anne Kaiser auf LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
+      </a>
+      <a class="contact-icon-btn" href="mailto:anne@awieanne.com?subject=Meet%20at%20GCES" title="E-Mail an Anne Kaiser">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </a>
+    </div>
   </div>
   <div class="d-grid" id="d-grid">
     <div class="stage-grid" id="stage-grid"></div>
@@ -490,18 +339,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </div>
 
-<!-- ── MOBILE ── -->
 <div class="mob-header">
   <div class="mob-top">
     <div class="mob-logo">GCES <span>'26</span></div>
     <div class="contact-icons">
-  <a class="contact-icon-btn" href="https://de.linkedin.com/in/anne-kaiser-27530220b" target="_blank" rel="noopener" title="Anne Kaiser auf LinkedIn">
-    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
-  </a>
-  <a class="contact-icon-btn" href="mailto:anne@awieanne.com?subject=Meet%20at%20GCES" title="E-Mail an Anne Kaiser">
-    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-  </a>
-</div>
+      <a class="contact-icon-btn" href="https://de.linkedin.com/in/anne-kaiser-27530220b" target="_blank" rel="noopener" title="Anne Kaiser auf LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
+      </a>
+      <a class="contact-icon-btn" href="mailto:anne@awieanne.com?subject=Meet%20at%20GCES" title="E-Mail an Anne Kaiser">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </a>
+    </div>
     <div class="mob-clock" id="m-clock">--:--</div>
     <button class="mob-theme-btn" onclick="toggleTheme()">◐</button>
   </div>
@@ -537,7 +385,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div id="m-notes-list"></div>
 </div>
 
-<!-- ── NOTE MODAL ── -->
 <div class="note-modal-overlay" id="note-modal" onclick="if(event.target===this)closeNote()">
   <div class="note-modal">
     <div class="note-modal-header">
@@ -552,7 +399,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </div>
 
-<!-- ── INFO MODAL ── -->
 <div class="note-modal-overlay" id="info-modal" onclick="if(event.target===this)closeInfo()">
   <div class="note-modal">
     <div class="note-modal-header">
@@ -566,141 +412,105 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 </div>
 
 <script>
-// ── SESSION DESCRIPTIONS & URLS ──
 const DESC = {
   1: '',
   2: 'Statement von Carsten Brosda - Senator der Hamburger Behörde für Kultur und Medien',
   3: 'Statement von Gitta Connemann - Parlamentarische Staatssekretärin Bundesministerium für Wirtschaft und Energie',
   4: 'Statement von Björn Böhning – Staatssekretär im Bundesministerium der Finanzen.',
   5: 'Digitales Grußwort von Wolfram Weimer – Staatsminister für Kultur und Medien, Beauftragter der Bundesregierung für Kultur und Medien.',
-  6: 'Wie skaliert ein Unternehmen, wenn KI-Assistenten fester Teil der Organisation werden? Dieser Talk gibt Einblick in den Aufbau einer hybriden Arbeitsweise aus Menschen und aktuell 50 KI-Assistenten – inklusive klarer Rollen, "Personalakten" und strukturierter Feedbackgespräche zur Qualitätsentwicklung. Im Mittelpunkt stehen Best Practices für Einführung, Betrieb und Governance: Welche Prozesse reduzieren Kosten, wie lassen sich Engpässe am Arbeitsmarkt abfedern und wo entsteht echte Skalierung? Außerdem geht es um den nächsten Entwicklungsschritt: KI-Manager, die künftig Verantwortung übernehmen und die Assistenten führen.',
-  7: 'Was bedeutet es, wenn KI zur Infrastruktur wird? Bei FUNKE ist sie kein Sonderprojekt mehr, sondern fester Bestandteil des Alltags – ein Werkzeug, das Prozesse vereinfacht, Publishing beschleunigt und Qualität verbessert. Paul Elvers gibt Einblick, wie dieses Umdenken praktisch aussieht und welche neuen Möglichkeiten entstehen, wenn man KI nicht als Ersatz, sondern als Verstärker begreift. Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung und Creator*innen Workflow, Wertschöpfung, Wachstum – wie verändert KI Geschäftsmodelle in der Kreativwirtschaft? In jeweils 15-minütigen Impulsen präsentieren Akteur*innen aus wirtschaftsstarken Teilmärkten wie Design, Werbung und Presse konkre',
-  8: 'Von Unsicherheit zu Wachstum: KI als Hebel für Solo-Selbstständige Generative KI verändert kreative Arbeit grundlegend – und gerade für Solo-Selbstständige entstehen neue Möglichkeiten, effizienter zu arbeiten, Angebote zu schärfen und Wachstum zu gestalten. Jenny Habermehl nimmt euch mit auf ihre Reise durch die letzten Jahre ihrer Selbständigkeit: Wo hat sie gestartet, welche Experimente haben funktioniert – und wie sind daraus neue Leistungen und Produkte entstanden? Der Impuls gibt einen ehrlichen Einblick in Chancen, Unsicherheiten und Entscheidungen entlang dieses Weges und zeigt, wie KI kreative Prozesse verschiebt und damit neue unternehmerische Perspektiven für Kreativschaffende erö',
-  9: 'Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung und Creator*innen Workflow, Wertschöpfung, Wachstum – wie verändert KI Geschäftsmodelle in der Kreativwirtschaft? In jeweils 15-minütigen Impulsen präsentieren Akteur*innen aus wirtschaftsstarken Teilmärkten wie Design, Werbung und Presse konkrete, skalierbare Geschäftsmodelle im Zeitalter von KI: Von KI-gestützten Produktionsprozessen über datengetriebene Services und Subscription-Strategien. Der Fokus: Wirtschaftliche Tragfähigkeit, faire Wertschöpfung und unternehmerische Resilienz im digitalen Wandel. Unlocking AI-Agent Economy mit Masumi | Nina Matzat & Katrin Krall (Plan.Net) KI wird Infrastruktur: Wie FUNKE Redaktionen befä',
-  10: 'Digital Erwachsen: Warum wir wissen müssen, was Digitalisierung ist – um sie zu ändern In dieser Keynote geht es um die Grundlagen der Idee der Digitalisierung, ihre Entwicklung und ihre kulturellen Zusammenhänge zur Industrialisierung und nun in der Wissensökonomie. Plattformen, Technokraten und autoritäre Tendenzen in großen Konzernen zeigen uns, dass wir dringend die Idee der selbstbestimmten, menschengerechten Digitalisierung nach vorne bringen müssen. Dazu können wir an gute Traditionen anknüpfen. "Wir haben die Wahl zwischen unmündigen Konsument*innen und Gestalter*innen der Technik. Die Entscheidung fällt jetzt", so Wolf Lotter.',
-  11: 'MAIA & CyberLÄND: Wie 3D-Avatare Community, Content und Business verbinden MAIA ist die 3D-Avatarin von CyberLÄND, der Metaverse-Kompetenzplattform Baden-Württembergs, und steht für den Brückenschlag zwischen KI, Kreativwirtschaft und digitaler Ökonomie. Als interaktive, KI-gestützte Figur wirkt sie als Wissensvermittlerin, Storytellerin und Community-Host – im Web und in immersiven Räumen. Der Vortrag zeigt praxisnah, wie MAIA generative KI mit konkreten Use Cases verbindet: von automatisierter Content-Kuration bis zur Moderation virtueller Events, u. a. auf der CyberLÄND-Website, in der Community-Plattform und als Leitfigur einer Apple-Vision-Pro-Experience für die MFG. Anhand von Beispiel',
-  12: 'Städte als Sandboxes der Zukunft: Lernen aus Test in Heidelberg Viele Start-ups scheitern nicht an der Idee, sondern an der Realität: Annahmen passen nicht, Hürden tauchen zu spät auf. Genau hier werden Städte zu Gamechangern – als Sandboxes, die geschützte Räume für Experimente, Feedback und Iteration bieten. Am Beispiel "Test in Heidelberg" zeigen wir, wie urbane Testfelder praxisnahe Erprobung für Start-ups und Unternehmen ermöglichen – inspiriert vom Programm "Test in Tallinn". Mit Fokus auf KI, Mobilität sowie Energieeffizienz und erneuerbare Energien wird deutlich: Testing for the Good macht Städte zu lebendigen Innovationslaboren, die Lösungen schneller in Wirkung bringen – zum Nutzen',
-  13: 'Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter Kreativität wird zur wichtigsten Währung im KI-Zeitalter – und genau darin liegt ein Bruch: KI skaliert Mittelmaß schneller, billiger und oft besser. Was bleibt dann „wirklich kreativ“ – und wie lässt sich das erkennen, begründen und verantworten? Der Vortrag spannt den Bogen zwischen Automatisierung und Originalität, zeigt, wo menschliche Gestaltungsmacht beginnt, und warum daraus eine ethische Pflicht entsteht. Für Kreativschaffende bedeutet das: neu entscheiden, wofür man steht – und was man bewusst nicht delegiert. Künstliche Intelligenz stellt die Kreativwirtschaft vor Grundsatzfragen: Wie gelingt Innovation, die Ku',
-  14: 'Künstliche Intelligenz stellt die Kreativwirtschaft vor Grundsatzfragen: Wie gelingt Innovation, die Kultur, Gesellschaft und Wirtschaft stärkt – ohne Werte und Rechte zu unterlaufen? In diesem Panel treffen drei Perspektiven aufeinander: Florian Scheible zeigt, wie Datenqualität, KI-Architekturen und der EU AI Act Verantwortung in Planung und Prozesse übersetzen. Eric Bartoletti beleuchtet KI-Lizenzierung, TDM-Opt-Out und neue Publishing-Modelle. Dorothea Winter ordnet philosophisch ein, was KI mit Entscheidungen, Verantwortung und unserem Miteinander macht. Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter Kreativität wird zur wichtigsten Währung im KI-Zeitalter – und',
-  15: 'Wahrheit im Feed: Journalismus zwischen Plattformlogik, KI und Bildung Gen Z und Gen Alpha finden Nachrichten längst nicht mehr zuerst auf Startseiten, sondern im Feed. Das verändert Reichweiten, Formate – und die Verantwortung des Journalismus. In diesem Panel mit dem NDR diskutieren wir, was journalistische Arbeit im Plattformzeitalter bedeutet, wenn es nicht nur um das Vermitteln von Inhalten geht, sondern auch um Orientierung: Wie lassen sich junge Zielgruppen erreichen, ohne der Logik von Empörung und Klicks zu folgen? Welche Rolle spielt KI bei Produktion, Distribution und Desinformation? Und wie kann Journalismus aktiv Medienkompetenz stärken – mit Formaten, Transparenz und Tools, die',
-  16: 'KI, Urheberrecht, Business: Wem gehört Kreativität im neuen KI-Zeitalter? Künstliche Intelligenz verändert die kreative Wirtschaft – von automatisierter Content-Produktion bis hin zu neuen Geschäftsmodellen. Doch mit den Chancen wachsen die Konflikte: Wem gehören KI-generierte Werke? Wie lassen sich Rechte von Kreativen sichern und die Entwertung geistigen Eigentums verhindern? In drei Impulsen und einer anschließenden Paneldiskussion diskutieren Expert*innen aus Politik, Recht und Praxis die zentralen Spannungsfelder zwischen Innovation, Schutz und Markt. Dabei geht es um konkrete Leitplanken, faire Vergütung, praxistaugliche Lizenzmodelle und die Frage, wie Wertschöpfung mit KI gelingen ka',
-  17: 'Reinventing Manufacturing Through XR-Based Skill Transfer and AI This session explores how XR and AI technologies are transforming skill transfer and manufacturing processes in the face of global workforce shortages. Osamu Oji will introduce “SHUGI,” an innovative system that enables real-time sharing of expert techniques through spatial computing devices, allowing skills to be transmitted beyond physical and geographical limitations. The presentation will highlight how XR-based remote collaboration can enhance productivity, reduce training time, and enable new forms of digital manufacturing. By integrating AI and real-time feedback, the system supports intuitive learning and preserves tacit',
-  18: 'Interaktive Audioformate: Neue Chancen für Verlage, Games und Marken Interaktive Audioformate verbinden Storytelling, Technologie und Nutzerinteraktion auf eine neue Weise und eröffnen Verlagen, Game Studios und Marken völlig neue Möglichkeiten. Statt passivem Konsum werden Hörer*innen aktiv eingebunden und treffen Entscheidungen, die Geschichten, Lerninhalte oder Markenerlebnisse beeinflussen. Der Vortrag zeigt, wie interaktive Hörbücher, Audio-Games und sprachbasierte Formate heute bereits erfolgreich eingesetzt werden – von IP-Erweiterungen im Publishing über Marketing- und Community-Formate bis hin zu neuen Use Cases im Automotive- und Brand-Kontext. Anhand konkreter Praxisbeispiele wird',
-  19: 'Wir sind gegenwärtig mit einer rechten Metapolitik konfrontiert, die mit kulturellen Setzungen versucht zivilgesellschaftliche Überzeugungen und kulturelle Diskurse zu verändern. Während das Konzept der Metapolitik eigentlich für den Aufbau einer demokratischen Zivilgesellschaft gedacht war, zielt die sogenannte Neue Rechte darauf ab, gesellschaftliche Komplexität auf essentialistische Vorstellungen von Kultur, Nation und Volk zu reduzieren. Im Ringen um die kulturelle Hegemonie entwendet sie auch den Künsten ihre Strategien. Sie kehrt das kritische Potential der Künste in eine affirmative Symbolhaftigkeit um und verwendet dessen progressives Moment für regressiven Ideen. Die antifaschistisc',
-  20: '',
-  21: 'Viele nutzen KI bereits punktuell – doch was passiert nach dem Prompt? Wie kann KI als unterstützende Ressource im Team eingesetzt werden, um Arbeit zu erleichtern, Mehrwert zu schaffen und effizienter zu gestalten? Dieser interaktive Workshop von der Hamburg Media School richtet sich an Professionals am Anfang ihrer KI-Reise und fokussiert die sinnvolle Einbindung von KI in bestehende Arbeitsprozesse und Teamstrukturen. Die Teilnehmenden reflektieren ihren aktuellen Umgang mit KI, identifizieren konkrete Einsatzmöglichkeiten im eigenen Arbeitskontext und experimentieren hands-on mit einem KI-Tool ihrer Wahl. In Gruppenarbeit wird diskutiert, welche Rolle KI künftig im Team übernimmt und was',
-  22: 'Zukunft KKW 2030: Welche Visionen tragen uns durch den Wandel? Wie sieht die Kultur- und Kreativwirtschaft im Jahr 2030 aus? Was sind idealen Zukünfte für Unternehmer*innen, Institutionen und Unterstützer*innen der Branche? Der KreativBund lädt euch ein, eure idealen Zukunftsbilder einzusprechen: Kurze Sprachnachrichten, die während des GCES mit einem KI-Tool gesammelt, geclustert und in wiederkehrende Themen, Chancen und Spannungsfelder übersetzt werden. In dieser Session werden die verdichteten Visionen gemeinsam mit Expert*innen diskutiert und weiterentwickelt: Welche Szenarien sind wünschenswert, welche realistisch – und welche Schritte können Teilbranchen heute starten, um 2030 zu wirke',
-  23: 'Decoding AI – Künstliche Intelligenz in der Content Produktion KI ist längst Teil der Content-Produktion – aber was passiert jenseits der bekannten Tools? In diesem Workshop zeigt Intermate, wie moderne AI-Workflows zu wirklich innovativen Ergebnissen führen. Ihr bekommt exklusive Einblicke in State-of-the-Art-Strategien, Use Cases, kreative Experimente und unerwartete Workarounds – inklusive Hands-on-Session zu Googles AI-Funktionen und einem Blick hinter die Kulissen realer Produktionen. Außerdem diskutiert ihr, wo KI bewusst nicht eingesetzt wird und welche ethischen, rechtlichen und kreativen Hürden sowie Chancen den Weg zur zukunftsfähigen Content Creation prägen.',
-  24: '"Smart Hans" ist die künstlich intelligente Reinkarnation des klugen Hans, dem "gedankenlesenden" Pferd, das Anfang des letzten Jahrhunderts lebte. Die interaktive Installation zeigt ein animiertes Pferd, dass mittels Gestenerkennung erraten kann, an welche Zahl man gerade denkt.',
-  25: 'Mit dem XR-Showreel THE CREATIVE LÄND wird eine Anwendung präsentiert, die in enger Zusammenarbeit mit der MFG Baden-Württemberg für die Gamescom 2025 entwickelt wurde und dort bereits für Begeisterung sorgte. Auf der Apple Vision Pro (AVP) erleben Besucher ein atmosphärisches Showroom-Interface, das 3D-Inhalte, 360°-Erlebnisse und interaktive Medien intuitiv über Blick und Gesten erfahrbar macht. Eine besondere Verbindung entsteht durch MAIA: In der AVP taucht die Löwin MAIA als ikonisches Visual wieder auf, während gleichzeitig der KI-Avatar MAIA der CyberLÄND-Community-Plattform vorgestellt wird: eine identitätsstiftende Figur, die die Story des Landes auf emotionale wie technologische We',
-  26: 'Ein Resonanzraum für den Kulturwandel – durch gelebte Co-Creation im Zeitalter von KI und Digitalisierung.',
-  27: 'COLLIMBO ist ein Kartenset für kollaborative KI-gestützte Kreativprozesse — entwickelt von Tanz- und Theatervermittlerin Sandra Freygarten und Kulturwissenschaftlerin Dr. Lucia Rainer.',
-  28: 'Die Zukunft der KI-Ökonomie wird nicht nur programmiert – sie wird akzeptiert oder verweigert. In der Musikbranche zeigt sich diese Dynamik besonders früh: Junge Zielgruppen sind keine passiven Konsumierenden, sondern aktive Akteur*innen, die entscheiden, welche KI-Anwendungen, Plattformmodelle und Werte gesellschaftliche Legitimität bekommen. KI scheitert selten an Performance, sondern an Vertrauen. Der Impuls verbindet diese Perspektive mit europäischen Debatten rund um EU AI Act, Digital Services Act und Plattformverantwortung – und macht deutlich: Nachhaltige digitale Ökonomien entstehen nicht allein durch Compliance, sondern durch Partizipation und Erleben.',
-  29: 'Jenseits klassischer Payments: Blockchain-Märkte für Kreative am Beispiel worksheer',
-  30: 'Welche Erkenntnisse liefert die wissenschaftliche Forschung über den Einsatz von KI im Event Marketing? Prof. Dr. Oliver Lohmar von der Macromedia University präsentiert aktuelle Befunde und Praxisimplikationen.',
-  31: 'Was ist unsere einzigartige menschliche Qualität in einer Welt voller KI? Dieser Impuls fragt, wie wir unsere Unique Shining Proposition – das, was uns unverwechselbar macht – stärken und sichtbar machen können.',
-  32: 'Curating AI: Gestaltung und Verantwortung in Kulturinstitutionen Künstliche Intelligenz verändert kreative Prozesse schnell und spürbar. Doch wie lässt sie sich in Kulturbetrieben sinnvoll und verantwortungsvoll einsetzen? Dieses Panel bringt zwei konkrete Berliner Praxisbeispiele auf die Bühne. Die KI-gestützte Kampagnenentwicklung für die Deutsche Oper Berlin und die Neukonzeption der Besucher-App für das Museum Barberini. Wir zeigen, wie KI gestalterische Vielfalt erweitert und Teams souverän mit Technologie arbeiten lässt. Und wie sie zugleich Prozesse verschlankt, Ressourcen entlastet und Angebote konsequent an Nutzer*innen ausrichtet. Im Zentrum stehen Tools, Gestaltungsprozesse und Le',
-  33: '#ImpactNOW ist eine Bewegung von Macherinnen mit Haltung – getragen von Frauen aus der Wirtschaft und erweitert um Menschen und Institutionen, die Veränderung wirklich wollen. Im Talk geht es um Geschlechtergerechtigkeit in der Kreativbranche und die Frage: Where are we now – und was folgt daraus konkret? Mit Blick auf Digitalisierung und KI wird diskutiert, wie sich Rollen, Zusammenarbeit und Entscheidungsräume verschieben. Anhand von Beispielen aus der Kreativwirtschaft und anderen Industrien entsteht ein Praxischeck: Raus aus der Schockstarre, rein in die Aktion – mit Einladung zum Mitmachen. Women in Design – Where Are We Now? Geschlechtergerechtigkeit in der Kreativbranche Wo stehen Fra',
-  34: 'Future Collaboration: Neue Formen der Zusammenarbeit für eine komplexe Welt Unsere Welt wird komplexer, verändert sich schneller und lässt sich immer weniger linear planen. Zukunftsfähige Strategien entstehen daher zunehmend durch kollektive Ideenentwicklung, geteilte Verantwortung und die produktive Verbindung unterschiedlicher Perspektiven – zugleich braucht es Klarheit und Fokus, um in der Vielfalt der Optionen Orientierung zu behalten. In dieser Keynote zeigt Nina Mönich, wie Co-Creation und KI genau hier zusammenwirken können: Wie gemeinsames Denken im Raum, kollaborative Prozesse und KI-gestützte Arbeit sich sinnvoll ergänzen. Nicht als Ersatz für menschliche Zusammenarbeit, sondern al',
-  35: 'Back to Real Life? Warum die Gen Z den physischen Raum neu entdeckt Die Gen Z hat ein klares Bedürfnis nach echten Begegnungen – Trends wie die "Pudding mit Gabel"-Treffen zeigen, wie stark der physische Raum als soziale Bühne zurückkehrt. Doch was passiert, wenn sich Kommunikation, Kultur und Community weiter ins Digitale verlagern? Muss der physische Raum mithalten – oder wird er gerade deshalb wertvoller? Dieses Gespräch fragt, welche Funktionen Orte im digitalen Zeitalter erfüllen, wie Atmosphäre, Zugehörigkeit und Vertrauen entstehen und wo digitale Formate an Grenzen stoßen. Im Fokus: Wie physischer und digitaler Raum zusammenspielen – und welche Chancen daraus für die Kreativwirtschaf',
-  36: 'Wer nur optimiert, verliert – Wie Cross Innovation über Wettbewerbsfähigkeit entscheidet Warum reicht Optimierung nicht mehr – und was macht Unternehmen wirklich zukunftsfähig? Das Panel zeigt, weshalb echte Innovation kreative Kompetenz braucht. Nach einem kurzen Trailer zum Film "Der Unternehmer, das Dorf und die Künstler" diskutieren Dr. Martin Kiel, Georg Reckhaus und Dr. Juliane Kronen, wie Cross Innovation Wandel auslöst: Von neuen Perspektiven über verantwortungsvolle Entscheidungen bis zu frischer Wertschöpfung und langfristiger Wettbewerbsfähigkeit. Im Anschluss wird der Film "Der Unternehmer, das Dorf und die Künstler" vollständig gezeigt.',
-  37: 'Ein Unternehmer und zwei Konzeptkünstler planen in Deppendorf eine Aktion der ungewöhnlichen Art: Werbegag, Instrumentalisierung – oder die mitreißende Kraft der Kunst? Die umstrittene Idee stiftet Sinn und Gemeinschaft, bis die Grenzen des Zumutbaren erreicht sind. Der Film erzählt die 2012 geplante und dokumentierte Kunstaktion "Fliegen retten in Deppendorf" in all ihrer Ambivalenz, Absurdität und Menschlichkeit – als Found-Footage-Geschichte, ohne zu bewerten. Gleichzeitig zeigt er, wie die Aktion einen bis heute andauernden Unternehmenswandel und die Bewegung "Retten statt Töten" anstieß.',
-  38: 'Von Politik zu Kapital: Wie öffentliche Mittel private Kreativ-Investments hebeln In ihrer Keynote zeigt Caroline Norbury, wie Public-Private-Partnerships ein Umfeld schaffen, in dem Kultur- und Kreativwirtschaft als wirtschaftliche Priorität anerkannt und langfristig gestärkt wird. Sie skizziert Rollen, Schlüsselakteure und Institutionen, die solche Ökosysteme tragen – von Politik über Förderlogiken bis zur Umsetzung im Markt. Im Fokus steht zudem die Forschung- und Innovationscommunity als Katalysator: Welche Strategien helfen, in neues IP, neue Talente und kreatives Risiko zu investieren? Und wie kann öffentliche Finanzierung private Mittel gezielt mobilisieren und Wirkung skalieren?',
-  39: 'Decoding Political Influence: Wie Social Media die politische Kommunikation neu definiert Ein*e Influencer*in kann heute mehr Menschen erreichen als ein Leitartikel in der größten deutschsprachigen Tageszeitung, der BILD. Unser Medienwandel hat die Wirkungslogik politischer Kommunikation grundlegend verändert, Budgets sind erstmal egal. Wer versteht, wie die Algorithmen funktionieren, kann Einfluss gewinnen. Dieser Impulsvortrag dekodiert praxisnah, wie sich dieser Wandel auf politische Akteur*innen, Marken, Medien und Creator*innen auswirkt, welche Mechanismen dahinterstecken und wie unsere kommunikationsstrategische Antwort aussehen kann. From Content to Community: Creator Economy zwischen',
-  40: 'From Content to Community: Creator Economy zwischen Unternehmertum und demokratischer Verantwortung Creator*innen sind längst mehr als bloße Content-Produzent*innen. Sie bauen Marken, entwickeln Geschäftsmodelle, formen Communitys und beeinflussen damit gesellschaftliche Diskurse. Als eigenständige Unternehmer*innen agieren sie an der Schnittstelle von Kreativwirtschaft, Plattformökonomie und öffentlicher Meinungsbildung. Das Panel beleuchtet, was Unternehmertum in der Creator Economy heute bedeutet und welche demokratische Verantwortung damit einhergeht. Im Fokus stehen Fragen nach nachhaltigen Geschäftsmodellen ebenso wie nach Vertrauen, Teilhabe und Community Building: Welche Kompetenzen ',
-  41: 'Made in Europe: Der Datenraum als Rückenwind für KI und Kreative Europa steht an einem Wendepunkt: Während globale Tech-Giganten den KI-Markt prägen und digitale Öffentlichkeiten dominieren, wächst der Druck, digitale Souveränität zu stärken, kreative Inhalte wirksam zu schützen und demokratische Vielfalt im digitalen Raum zu sichern. Dieses Panel bringt Stimmen aus Politik, Kreativwirtschaft und Forschung zusammen und fragt, wie ein europäischer Daten- und KI-Raum entstehen kann, der Innovation ermöglicht, faire Wettbewerbsbedingungen schafft und Wertschöpfung in Europa hält. Diskutiert werden Chancen und Hürden – von leistungsfähiger Infrastruktur und Datenzugängen über regulatorische Rahm',
-  42: 'Let\'s Join Creative Forces: Politische Positionierung der Kreativwirtschaft für die Zukunft Die Kultur- und Kreativwirtschaft ist Motor für Innovation, Zusammenhalt und wirtschaftliche Dynamik – doch im KI-Zeitalter wächst der Druck, politisch klarer und gemeinsamer aufzutreten. Welche Rahmenbedingungen braucht es, damit Kreativität und Technologie in Balance bleiben? Wie gelingt Qualifizierung, wenn Automatisierung Berufsbilder verschiebt? In diesem Panel diskutieren wir, wie die Branche ihre Vielfalt in politische Schlagkraft übersetzt: Mit gemeinsamen Positionen, konkreten Forderungen und einer Agenda, die Wertschöpfung, fairen Wandel und Zukunftssicherheit zusammen denkt. Ziel ist ein Sc',
-  43: 'The Creative Shift: Transformation, KI und politische Verantwortung für die Kreativwirtschaft Die Kultur‑ und Kreativwirtschaft ist ein zentraler Motor für Innovation, gesellschaftlichen Zusammenhalt und wirtschaftliche Dynamik. Gleichzeitig steht sie vor tiefgreifenden Veränderungen: Künstliche Intelligenz verändert kreative Arbeitsprozesse, automatisiert Tätigkeiten und lässt neue Berufsbilder entstehen, während andere verschwinden. Diese Verschiebungen bleiben in der Kreativwirtschaft oft unsichtbar, denn sie besteht überwiegend aus Soloselbständigen, deren Belastungen, Unsicherheiten und Transformationsprozesse kaum in Statistiken auftauchen. Gerade deshalb braucht es eine politische Deb',
-  44: 'Anleitung zum dezentralen Eskalieren: Underdog-Know-how als Innovationsmotor Kreativarbeit sollte keine Underdog-Story sein – und doch sind es oft die "kleinen" Kreativen, die Strukturwandel beweglich machen. Der Beitrag fragt, wie Lebenserfahrung, Diversität und Know-how von Soloselbständigen bis zu KMU systematisch in dringend benötigte Innovations- und F&E-Vorhaben einfließen können. Im Zentrum steht eine Strategie des "Schockwellenreitens": Skalierungseffekte werden auf viele Schultern verteilt, Experimente werden schnell und pragmatisch möglich. An einem Beispiel wird gezeigt, wie sich im Fahrwasser des KI-Hypes und großer Förderprojekte kleine Paradigmenwechsel erproben lassen – mit de',
-  45: 'KI für eine bessere Welt klingt gut – aber wie stellen wir sicher, dass sie wirklich hilft? Zamina Ahmad, Fair-AI-Expertin und KI-Beraterin, eröffnet den Track mit der entscheidenden Vorfrage: Für wen wird KI eigentlich gebaut? Aus ihrer Arbeit an KI-Projekten sowie Impact- und Bias-Analysen destilliert sie drei Designprinzipien für KI mit echtem gesellschaftlichem Nutzen. Ihr Appell: Wer konsequent nutzerzentriert und impactbewusst gestaltet, entwickelt die bessere KI – und steigert Vertrauen, Akzeptanz und Wirkung.',
-  46: 'Social Impact mit KI: Was Unternehmen aus einem Betroffenensupport-Case lernen Dieser Impuls zeigt einen KI-Chatbot, der das digitale Ökosystem von Betroffenensupport neu denkt: Er unterstützt Menschen nach rassistischer Diskriminierung rechtlich und psychosozial. Anders als allgemeine Sprachmodelle basiert die Lösung nicht auf frei zugänglichem Internetwissen, sondern auf kuratierten, von Expertinnen geprüften und kontinuierlich aktualisierten Fachinhalten. In Verbindung mit technischer Innovation, konsequenter Qualitätssicherung und diskriminierungssensiblem Design entsteht ein deutlich höheres Vertrauensniveau. Ein Praxisbeispiel, das Akteurinnen aus Kreativwirtschaft und digitaler Ökonom',
-  47: 'Inklusion gestalten mit KI: Gesellschaftlicher Mehrwert trifft Business Value Toiletten in Zügen sind ein unterschätzter Faktor der Mobilität und zugleich ein Defizit für die Mobilitätswende. Für viele Menschen sind sie schlicht nicht nutzbar – ein Beispiel dafür, wie mangelndes Design Teilhabe verhindert. In einem EU-geförderten Projekt wurden gemeinsam mit einem internationalen Kunden kreative Designmethoden mit KI-Technologien verbunden und ein funktionaler Raum in einen inklusiven Ort verwandelt, der gesellschaftlichen Mehrwert schafft und wirtschaftliches Potenzial freisetzt. KI spielte dabei sowohl im Gestaltungsprozess als auch in der Lösung selbst eine zentrale Rolle. Durch KI-gestüt',
-  48: 'Women in Design – Where Are We Now? Geschlechtergerechtigkeit in der Kreativbranche Wo stehen Frauen* in der Creative Economy – und was braucht es, um strukturelle Ungleichheiten wirksam zu verändern? Judith Augustin und Sophie Dobrigkeit zeigen anhand ihrer Projekte DDC Women’s Table, Learn & Burn und der Women’s Design Academy (World Design Capital Frankfurt RheinMain 2026), warum Sichtbarkeit mehr ist als Bühne: Sie formt Realität, schafft Vorbilder und macht Machtverhältnisse sichtbar. Entscheidend ist, was danach passiert: Wenn Sichtbarkeit zu Netzwerken und belastbaren Strukturen wird, entsteht nachhaltige Wirkung. Vernetzung wird hier zum strategischen Tool für eine zukunftsfähige Bra',
-  49: '"Kreativwirtschaft als Motor urbaner Prosperität und Wachstumsträger“ – diese Erzählung hat ihren Zenit überschritten. Ernüchterung ist eingekehrt, in Politik und Branche und es ist höchste Zeit für eine neue (Selbst-)beschreibung. Peter Kurz formuliert aus der Erfahrung der lokalen Politik, was die Kreativwirtschaft jenseits von Wachstumsversprechen leistet: Als lokale Gestaltungskraft, die Dichte, Diversität und Interaktion erzeugt – und damit die Grundlage schafft, die Städte und Regionen für Innovation und Resilienz brauchen. Und wie sie sich positionieren muss, um politisch wieder gehört zu werden.',
-  50: 'Bye-bye Parkplatz? Wie neue Mobilität unsere Städte lebenswerter macht Wie sieht die Stadt von morgen aus, wenn Mobilität neu gedacht wird? KI, Digitalisierung und autonomes Fahren verändern nicht nur die Automobilindustrie, sondern auch Alltag, Nachbarschaften und die Nutzung urbaner Flächen. Was bedeutet das für Straßen, Plätze und Quartiere – und wer entscheidet über die neuen Regeln des Zusammenspiels? Dieses Panel bringt Design, Stadtplanung und Politik ins Gespräch und zeigt, wie kreative Methoden technologische Entwicklungen in lebenswerte Lösungen übersetzen: Weniger Reibung, mehr Sicherheit, bessere Teilhabe und attraktivere öffentliche Räume. Im Fokus stehen vernetzte Systeme, neue',
-  51: 'Finanzierung 4.0: KI, digitale Märkte und neue Monetarisierungsstrategien Wie lassen sich kreative Produkte und Dienstleistungen in einer digitalen, KI-geprägten Wirtschaft tragfähig finanzieren? „Finanzierung 4.0“ zeigt, wie Plattformökonomien, Automatisierung und neue Vertriebswege Geschäftsmodelle der Kreativwirtschaft verändern – und welche Monetarisierungsstrategien heute wirklich funktionieren. Diskutiert werden klassische und innovative Ansätze: Auftrags- und Lizenzmodelle, Abonnements, Crowdfunding, Marktplätze sowie datenbasierte Erlösmodelle. Im Mittelpunkt steht, wie sich Finanzierungsstrukturen und Wertschöpfungslogiken durch KI verschieben – von Pricing und Rechten bis zu Reichw',
-  52: 'Nachwuchs vs. KI: Wie junge Kreative Agenturen heute verändern Automatisierte Bildwelten, KI-generierte Claims, datengetriebene Kampagnen: Agenturen arbeiten anders als noch vor wenigen Jahren. Aber was heißt das für den Nachwuchs – wird er überflüssig oder wichtiger denn je? Nina Kirst und Jonas Kratz prechen Klartext über den Einstieg in die Agenturwelt: Welche Skills zählen wirklich, wie viel Tech-Verständnis braucht Talent – und wie gelingt Kreativität als Teamleistung zwischen Mensch und Maschine? Plus: Warum jetzt ein guter Moment ist, einzusteigen.',
-  53: 'Wenn die Brücke wackelt: Resilienz-Baukasten für Cross Innovation Cross Innovation klingt großartig – bis es auf der Brücke zwischen Kultur- und Kreativwirtschaft, Start-ups, Unternehmen, Forschung oder Verwaltung knirscht. In diesem interaktiven Workshop schaut ihr nicht weg, sondern nutzt genau dieses Wackeln als Signal: Ihr macht die entscheidenden Hürden interdisziplinärer Zusammenarbeit sichtbar und übersetzt sie mit Resilienzprinzipien aus der Effectuation-Logik in konkrete Handlungsimpulse. Mit Stationenarbeit und 1:1-Sparring entwickelt ihr einen Resilienz-Baukasten für eure Partnerschaft – plus einen realistischen nächsten Schritt, der euren CO-Prozess handlungsfähig hält. Wahrheit ',
-  54: 'Disruptive Produktinnovationen: Mit Design Futuring das Morgen prägen Wie wird aus einem Zukunftstrend eine konkrete Innovation? In dieser 75-minütigen Masterclass des Cross Innovation Hub erhalten die Teilnehmenden einen verständlichen, praxisnahen Einstieg in Design Futuring. Nach kurzen Einblicken in relevante Trends analysieren sie mit dem "Futures Wheel" mögliche Auswirkungen auf Märkte und Gesellschaft. Darauf aufbauend entwickeln sie mit erprobten Kreativmethoden konkrete, disruptive Produktideen – und lernen, wie sich auch vage, aber entscheidende Trends systematisch in neue Geschäftschancen übersetzen lassen. Die Masterclass richtet sich vor allem an Unternehmer*innen aus Wirtschaft',
-  55: 'Wir sind gegenwärtig mit einer rechten Metapolitik konfrontiert, die mit kulturellen Setzungen versucht zivilgesellschaftliche Überzeugungen und kulturelle Diskurse zu verändern. Während das Konzept der Metapolitik eigentlich für den Aufbau einer demokratischen Zivilgesellschaft gedacht war, zielt die sogenannte Neue Rechte darauf ab, gesellschaftliche Komplexität auf essentialistische Vorstellungen von Kultur, Nation und Volk zu reduzieren. Im Ringen um die kulturelle Hegemonie entwendet sie auch den Künsten ihre Strategien. Sie kehrt das kritische Potential der Künste in eine affirmative Symbolhaftigkeit um und verwendet dessen progressives Moment für regressiven Ideen. Die antifaschistisc',
-  56: '"Smart Hans" ist die künstlich intelligente Reinkarnation des klugen Hans, dem "gedankenlesenden" Pferd, das Anfang des letzten Jahrhunderts lebte. Die interaktive Installation zeigt ein animiertes Pferd, dass mittels Gestenerkennung erraten kann, an welche Zahl man gerade denkt.',
-  57: 'Mit dem XR-Showreel THE CREATIVE LÄND wird eine Anwendung präsentiert, die in enger Zusammenarbeit mit der MFG Baden-Württemberg für die Gamescom 2025 entwickelt wurde und dort bereits für Begeisterung sorgte. Auf der Apple Vision Pro (AVP) erleben Besucher ein atmosphärisches Showroom-Interface, das 3D-Inhalte, 360°-Erlebnisse und interaktive Medien intuitiv über Blick und Gesten erfahrbar macht. Eine besondere Verbindung entsteht durch MAIA: In der AVP taucht die Löwin MAIA als ikonisches Visual wieder auf, während gleichzeitig der KI-Avatar MAIA der CyberLÄND-Community-Plattform vorgestellt wird: eine identitätsstiftende Figur, die die Story des Landes auf emotionale wie technologische We',
-  58: 'Ein Resonanzraum für den Kulturwandel – durch gelebte Co-Creation im Zeitalter von KI und Digitalisierung.',
-  59: 'COLLIMBO ist ein Kartenset für kollaborative KI-gestützte Kreativprozesse — entwickelt von Tanz- und Theatervermittlerin Sandra Freygarten und Kulturwissenschaftlerin Dr. Lucia Rainer.',
-  60: 'KI lernen, Kreativität stärken: Internationale Studienprogramme im Überblick Künstliche Intelligenz verändert kreative Prozesse grundlegend: Generative Tools beschleunigen Ideenfindung, Prototyping und skalierbare Content-Produktion. Gleichzeitig prägt KI das Management – von datenbasierten Entscheidungen über Vorhersagen bis hin zu Lizenz- und Rechtemanagement. Damit steigen die Kompetenzanforderungen: Daten- und AI Literacy, Prompting sowie die Integration KI-gestützter Tools in kreative Workflows. Ulrike Müllers Impulsvortrag zeigt anhand internationaler Beispiele, wie neue Studienprogramme weltweit darauf reagieren: Interdisziplinär, anwendungsnah und mit Modulen zur technologischen, rec',
-  61: 'Innovationsprogramm für Geschäftsmodelle und Pionierlösungen Das Innovationsprogramm für Geschäftsmodelle und Pionierlösungen (IGP) des Bundesministeriums für Wirtschaft und Energie fördert marktnahe, nichttechnische Innovationen – die Kultur- und Kreativwirtschaft ist dabei eine zentrale Zielbranche. In diesem Format erhalten Teilnehmende einen kompakten Überblick über das Förderprogramm, lernen ein gefördertes Projekt an der Schnittstelle von Kultur- und Kreativwirtschaft und Künstlicher Intelligenz kennen und können den Projektbeteiligten direkt Fragen zu Antragstellung, Abläufen und Erfahrungen stellen. Zusätzlich gibt es exklusive Einblicke in die Auswertung des IGP-KI-Calls 2025: Woran',
-  62: 'KI in Gamification und Serious Games: Von Prototyping bis Balancing neu gedacht Welchen Einfluss hat KI auf die Zukunft von Gamification und Serious Games? Der Impuls zeigt, wie KI bereits heute die Spieleentwicklung verändert – von Ideenfindung und Prototyping über Testing bis hin zu Balancing. Im Fokus steht, wie intelligente Systeme Skalierung, Pflege und Weiterentwicklung gamifizierter Lernangebote und Serious Games transformieren: Schneller iterieren, personalisieren, Inhalte dynamisch anpassen und langfristig betreiben. Gleichzeitig geht es um die notwendige Reflexion: KI ist eine mächtige Verbündete, deren Einsatz mit klaren Qualitätskriterien, Verantwortung und gesunder Skepsis gesta',
-  63: 'Stadtentwicklung: Wie Immobilien mit Kreativnutzungen urbane Wirkung entfalten Wie werden Immobilien vom gebauten Container zum strategischen Hebel für lebendige Stadtentwicklung? Dieses Panel zeigt, wie die Zusammenarbeit von Immobilienakteuren und Kreativwirtschaft Orte schafft, die gesellschaftlichen und wirtschaftlichen Impact verbinden. Anhand von Best Practices wie dem Kreativareal CampusVäre, dem Kreativ Quartier Potsdam sowie den Hamburger Kreativräumen Seilerstraße und FABRIC diskutieren die Speaker*innen, wie kreative Nutzungen Freiräume öffnen, Quartiere aktivieren und Städte zukunftsfähig machen – und welche Geschäftsmodelle dahinter langfristig tragen.',
-  64: 'Scaffolding for Transcendence: Die Zukunft der Bildung in einer KI-Ökonomie KI ersetzt Junior Positionen, erschwert jungen Menschen den Berufseinstieg und gefährdet die Lernpipeline zwischen Hochschulen und Unternehmen. Wie erlangen wir künftig Meisterschaft, und wo finden Unternehmen ihre Führungskräfte, wenn das tägliche Üben entfällt? Die Keynote antwortet aus Sicht "Strategischer Kreativität". Jenseits von Wiederholung und Erneuerung, die KI besser beherrscht, liegt die menschliche Stärke in der Transzendenz. Diese erfordert neue Lernstrukturen: Statt bloßer Informationsaufnahme braucht es die Kunst des Fragens, des Ausprobierens und der Entwicklung von Urteilskraft. Wir zeigen "Scaffold',
-  65: 'Where Do We Draw the Vertical Line? Technology, Territory, and the Material Cost of Intelligence What we often conceptualise as "digital" or immaterial technology is in fact deeply embedded in planetary resources, infrastructures and cultural ideas. The lecture will shed light on this shift in perspective and combine approaches from comparative anthropology, indigenous material culture and Achille Mbembe\'s concept of "vertical sovereignty". AI and quantum computing are thus categorised in a longer history of raw material extraction, power and imagination. New questions arise for the creative industries: What narratives characterise technologies? And how can creative actors contribute to tran',
-};
-
-const URLS = {
-  1: 'eroeffnung-egbert-ruehl',
-  2: 'impuls-von-carsten-brodsa',
-  3: 'impuls-von-gitta-connemann',
-  4: 'impuls-von-bjoern-boehning',
-  5: 'digitales-grusswort-von-wolfram-weimer-staatsminister-fuer-kultur-und-medien',
-  6: 'wie-ki-assistenten-dein-business-skalieren',
-  7: 'ki-wird-infrastruktur-wie-funke-redaktionen-befaehigt',
-  8: 'von-unsicherheit-zu-wachstum-ki-als-hebel-fuer-solo-selbststaendige-1',
-  9: 'von-workflow-zu-wertschoepfung-ki-modelle-fuer-presse-werbung-und-creator-innen',
-  10: 'digital-erwachsen',
-  11: 'maia-cyberlaend-wie-3d-avatare-community-content-und-business-verbinden',
-  12: 'staedte-als-sandboxes-der-zukunft-lernen-aus-test-in-heidelberg',
-  13: 'jenseits-des-mittelmasses-kreativitaet-als-verantwortung-im-ki-zeitalter',
-  14: 'ki-ethik-verantwortung-in-der-digitalen-transformation',
-  15: 'wahrheit-im-feed-journalismus-zwischen-plattformlogik-ki-und-bildung',
-  16: 'ki-urheberrecht-business-wem-gehoert-kreativitaet-im-neuen-ki-zeitalter-1',
-  17: 'reinventing-manufacturing-through-xr-based-skill-transfer-and-ai',
-  18: 'interaktive-audioformate-neue-chancen-fuer-verlage-games-und-marken',
-  19: 'antifaschistische-huepfburg',
-  20: 'analog-fokussiert-das-beste-aus-der-bullet-journal-methode',
-  21: 'was-kommt-nach-dem-prompt-wie-ki-teil-deines-teams-wird',
-  22: 'zukunft-kkw-2030-welche-visionen-tragen-uns-durch-den-wandel',
-  23: 'decoding-ai-kuenstliche-intelligenz-in-der-content-produktion',
-  24: 'smart-hans',
-  25: 'the-creative-laend-vr-portal-mit-ki-avatar-maia',
-  26: 'the-rug-project-united-threads',
-  27: 'collimbo-collaborative-artistic-intelligence-in-action-ein-kartenset',
-  28: 'warum-ki-oekonomien-kulturelle-legitimitaet-brauchen',
-  29: 'jenseits-klassischer-payments-blockchain-maerkte-fuer-kreative-am-beispiel-worksheer',
-  30: 'ki-im-event-marketing-erkenntnisse-aus-der-wissenschaftlichen-forschung',
-  31: 'people-not-ai-unsere-unique-shining-proposition-zum-leuchten-bringen',
-  32: 'berlin-als-modellfall-haelt-ki-die-kulturlandschaft-handlungsfaehig',
-  33: 'impact-now-vom-meckern-zum-machen',
-  34: 'future-collaboration-neue-formen-der-zusammenarbeit-fuer-eine-komplexe-welt',
-  35: 'back-to-real-life-warum-die-gen-z-den-physischen-raum-neu-entdeckt',
-  36: 'wer-nur-optimiert-verliert-wie-cross-innovation-ueber-wettbewerbsfaehigkeit-entscheidet',
-  37: 'filmvorfuehrung-der-unternehmer-das-dorf-und-die-kuenstler',
-  38: 'von-politik-zu-kapital-wie-oeffentliche-mittel-private-kreativ-investments-hebeln',
-  39: 'decoding-political-influence-wie-social-media-die-politische-kommunikation-neu-definiert',
-  40: 'from-content-to-community-creator-economy-zwischen-unternehmertum-und-demokratischer-verantwortung',
-  41: 'made-in-europe-der-datenraum-als-rueckenwind-fuer-ki-und-kreative',
-  42: 'let-s-join-creative-forces-die-vereinte-kraft-der-kultur-und-kreativwirtschaft-politische-positionierung-fuer-die-zukunft',
-  43: 'the-creative-shift-transformation-ki-und-politische-verantwortung-fuer-die-kreativwirtschaft',
-  44: 'anleitung-zum-dezentralen-eskalieren-underdog-know-how-als-innovationsmotor',
-  45: 'ki-kann-alles-aber-fuer-wen',
-  46: 'social-impact-mit-ki-was-unternehmen-aus-einem-betroffenensupport-case-lernen',
-  47: 'inklusion-gestalten-mit-ki-gesellschaftlicher-mehrwert-trifft-business-value',
-  48: 'women-in-design-where-are-we-now-geschlechtergerechtigkeit-in-der-kreativbranche',
-  49: 'impuls-von-dr-peter-kurz',
-  50: 'bye-bye-parkplatz-wie-neue-mobilitaet-unsere-staedte-lebenswerter-macht',
-  51: 'finanzierung-4.0-ki-digitale-maerkte-und-neue-monetarisierungsstrategien',
-  52: 'nachwuchs-vs-ki-wie-junge-kreative-agenturen-heute-veraendern',
-  53: 'wenn-die-bruecke-wackelt-resilienz-baukasten-fuer-cross-innovation',
-  54: 'disruptive-produktinnovationen-mit-design-futuring-das-morgen-praegen',
-  55: 'antifaschistische-huepfburg-1',
-  56: 'smart-hans-1',
-  57: 'the-creative-laend-vr-portal-mit-ki-avatar-maia-1',
-  58: 'the-rug-project-united-threads-1',
-  59: 'collimbo-collaborative-artistic-intelligence-in-action-ein-kartenset-1',
-  60: 'ki-lernen-kreativitaet-staerken-internationale-studienprogramme-im-ueberblick',
-  61: 'innovationsprogramm-fuer-geschaeftsmodelle-und-pionierloesungen',
-  62: 'ki-in-gamification-serious-games-von-prototyping-bis-balancing-neu-gedacht',
-  63: 'stadtentwicklung-wie-immobilien-mit-kreativnutzungen-urbane-wirkung-entfalten',
-  64: 'scaffolding-for-transcendence',
-  65: 'vertikale-souveraenitaet-rohstoffe-infrastrukturen-und-der-preis-der-intelligenz',
+  6: '',
+  7: 'Kommerz, Kreativität & KI: Warum die Kultur- & Kreativwirtschaft jetzt Haltung zeigen muss.',
+  8: 'Bewegtbilder von morgen: Neue Technologien & Chancen im Film – Impuls von Michelle Müntefering.',
+  9: 'Wie skaliert ein Unternehmen, wenn KI-Assistenten fester Teil der Organisation werden? Dominic von Proeck gibt Einblick in den Aufbau einer hybriden Arbeitsweise aus Menschen und aktuell 50 KI-Assistenten.',
+  10: 'Mehr als GenAI: Wie KI-Agenten Kreativ-Workflows radikal beschleunigen – Impuls von Nina Matzat.',
+  11: 'KI wird Infrastruktur: Wie FUNKE Redaktionen befähigt – Dr. Paul Elvers gibt Einblick, wie KI als Werkzeug Prozesse vereinfacht, Publishing beschleunigt und Qualität verbessert.',
+  12: 'Von Unsicherheit zu Wachstum: KI als Hebel für Solo-Selbstständige. Jenny Habermehl nimmt euch mit auf ihre Reise durch die letzten Jahre ihrer Selbständigkeit: Wo hat sie gestartet, welche Experimente haben funktioniert – und wie sind daraus neue Leistungen und Produkte entstanden?',
+  13: 'Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung & Creator*innen – Panel mit Jenny Habermehl, Dr. Paul Elvers, Nina Matzat und Holger Volland.',
+  14: 'Digital Erwachsen: Warum wir wissen müssen, was Digitalisierung ist – um sie zu ändern. Plattformen, Technokraten und autoritäre Tendenzen in großen Konzernen zeigen uns, dass wir dringend die Idee der selbstbestimmten, menschengerechten Digitalisierung nach vorne bringen müssen.',
+  15: 'KI auf C‑Level: Geschäftsmodelle im Umbruch – Panel mit Rhys Noelke, Prof. Dieter Gorny, Hannes Jakobsen, Larissa Pohl und Tamara Güçlü.',
+  16: '',
+  17: 'Zoom out, Brain! Was Kreative bei KI bereits fühlen, aber noch nicht durchdacht haben – Interview mit Boris Eldagsen und Tamara Güçlü.',
+  18: '',
+  // Day 2 K6
+  20: 'Human Nature: Was bleibt, wenn Algorithmen Pop entscheiden? – Impuls von Balbina.',
+  21: 'Viele Rollen, eine Stimme & der Mut zur kreativen Vielschichtigkeit – Interview mit Miriam Davoudvandi und Tamara Güçlü.',
+  22: '',
+  23: 'Von Politik zu Kapital: Wie öffentliche Mittel private Kreativ-Investments hebeln – Caroline Norbury zeigt, wie Public-Private-Partnerships ein Umfeld schaffen, in dem Kreativwirtschaft als wirtschaftliche Priorität anerkannt wird.',
+  24: 'Decoding Political Influence: Wie Social Media die politische Kommunikation neu definiert.',
+  25: 'From Content to Community: Creator Economy zwischen Unternehmertum und demokratischer Verantwortung.',
+  26: 'Wem gehört die Aufmerksamkeit und wie frei entscheiden wir online wirklich? – Impuls von Charlotte Freihse.',
+  27: 'Made in Europe: Der Datenraum als Rückenwind für KI und Kreative – Panel mit Dr. Florian Harms, Max Haarich, Martin Andree, Dr. Nikolas Hill und Tamara Güçlü.',
+  28: 'The Creative Shift: Transformation, KI und politische Verantwortung für die Kreativwirtschaft – Panel mit Daniel Knöll, Jörn Freynick, Olaf Zimmermann, Prof. Lena Falkenhagen und Tamara Güçlü.',
+  29: 'KI zwischen Aufbruch und Angst: Eine Standortbestimmung – Interview mit Prof. Nico Hofmann und Tamara Güçlü.',
+  30: '',
+  // K4 Day 1
+  40: 'Let\'s match! Networking & Austausch zur Zukunft der Kreativwirtschaft.',
+  41: 'MAIA & CyberLÄND: Wie 3D-Avatare Community, Content & Business verbinden.',
+  42: 'Cross Innovation Made In Saxony.',
+  43: 'blank spaces: Das Conference-Festival aus Mönchengladbach.',
+  44: 'Zukunftslab Deutschland: Wie Städte, KI & Kreativität neue Räume öffnen.',
+  45: 'Städte als Sandboxes der Zukunft: Lernen aus "Test in Heidelberg".',
+  // K4 Day 2
+  46: 'Innovationsförderung der KfW für den Mittelstand.',
+  47: 'Funding Futures: Finanzierung, die kreative Ideen möglich macht.',
+  48: 'Finanzierungsberatung für Kreativ-Start-ups: Deep Dive & Networking.',
+  49: 'Anleitung zum dezentralen Eskalieren: Underdog-Know-how als Innovationsmotor.',
+  50: 'Creative Connections: Wie internationale Netzwerke neue Perspektiven eröffnen.',
+  51: 'Quantum, Kunst & Kultur, die Europa bewegt: Projekte des Goethe-Instituts.',
+  52: 'Creative Go Global: EU-Förderung leicht gemacht.',
+  53: 'Creative Bureaucracy: Wie kreative Verwaltungen weltweit neue Lösungen schaffen.',
+  54: 'Vom Netzwerk zur Wirkung: Wie das kreativland.tirol kreative Potenziale entfesselt.',
+  // K2 Day 1
+  60: 'Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter.',
+  61: 'KI & Ethik: Verantwortung in der digitalen Transformation – Panel mit Eric Bartoletti, Dr. Dorothea Winter, Florian Scheible, Maike Scholz und Daniel Anibal Bröckerhoff.',
+  62: 'Wahrheit im Feed: Journalismus zwischen Plattformlogik, KI & Bildung – Panel mit Gregor Schmalzried, Svea Eckert, Vera Bauer und Daniel Anibal Bröckerhoff.',
+  63: 'KI, Kreativität, Abhängigkeiten: Was Geopolitik für die Branche bedeutet – Impuls von Prof. Dr. Daniel Mügge.',
+  64: 'Technologische Entwicklungen & ihre Auswirkungen auf kreative Prozesse – Impuls von Svetlana Jakel.',
+  65: 'Unsouverän! Europas Umgang mit Kunst, Kultur & Kreativität – Impuls von Matthias Hornschuh.',
+  66: 'KI, Urheberrecht, Business: Wem gehört Kreativität im neuen KI-Zeitalter? – Panel mit Michael Duderstädt, Dr. Sebastian Rengshausen, Anne Kaiser, Saralisa Volm und Katharina Uppenbrink.',
+  67: 'Reinventing Manufacturing Through XR-Based Skill Transfer and AI – Osamu Oji.',
+  68: 'Interaktive Audioformate: Neue Chancen für Verlage, Games und Marken – Christian Mahnke.',
+  // K2 Day 2
+  70: 'KI kann alles – Aber für wen? Zamina Ahmad, Fair-AI-Expertin und KI-Beraterin, eröffnet den Track mit der entscheidenden Vorfrage: Für wen wird KI eigentlich gebaut?',
+  71: 'Social Impact mit KI: Was Unternehmen aus einem Betroffenensupport-Case lernen – Said Haider.',
+  72: 'Inklusion gestalten mit KI: Gesellschaftlicher Mehrwert trifft Business Value – Claudia S. Friedrich & Timo Wietzke.',
+  73: 'Women in Design – Where Are We Now? Geschlechtergerechtigkeit in der Kreativbranche – Sophie Dobrigheit & Judith Augustin.',
+  74: 'Impuls von Dr. Peter Kurz.',
+  75: 'Bye-bye Parkplatz? Wie neue Mobilität unsere Städte lebenswerter macht – Dr. Anjes Tjarks & Dr. Kirsten Matheus.',
+  76: 'Finanzierung 4.0: KI, digitale Märkte und neue Monetarisierungsstrategien – Aissu Diallo & Kerstin Gold.',
+  77: 'Nachwuchs vs. KI: Wie junge Kreative Agenturen heute verändern – Nina Kirst & Jonas Kratz.',
+  // P1 Day 1
+  80: 'Analog fokussiert: Das Beste aus der Bullet Journal® Methode – Kerstin Schiemenz.',
+  81: 'Was kommt nach dem Prompt? – Wie KI Teil deines Teams wird – Carena Barkow & Stefanie Bilen.',
+  82: 'Zukunft KKW 2030: Welche Visionen tragen uns durch den Wandel? – Lore Kurtz & Tanja Schindler.',
+  83: 'Decoding AI – Künstliche Intelligenz in der Content Produktion – Martin Schlösser.',
+  // P1 Day 2
+  85: 'Wenn die Brücke wackelt: Resilienz-Baukasten für Cross Innovation – Mira Kleine.',
+  86: 'Disruptive Produktinnovationen: Mit Design Futuring das Morgen prägen – Marc Behlau & Kathlen Jost.',
+  // Foyer
+  90: '"Smart Hans" ist die künstlich intelligente Reinkarnation des klugen Hans, dem "gedankenlesenden" Pferd, das Anfang des letzten Jahrhunderts lebte. Die interaktive Installation zeigt ein animiertes Pferd, das mittels Gestenerkennung erraten kann, an welche Zahl man gerade denkt.',
+  91: 'Mit dem XR-Showreel THE CREATIVE LÄND wird eine Anwendung präsentiert, die für die Gamescom 2025 entwickelt wurde. Auf der Apple Vision Pro erleben Besucher ein atmosphärisches Showroom-Interface.',
+  92: 'Ein Resonanzraum für den Kulturwandel – durch gelebte Co-Creation im Zeitalter von KI und Digitalisierung.',
+  93: 'COLLIMBO ist ein Kartenset für kollaborative KI-gestützte Kreativprozesse — entwickelt von Sandra Freygarten und Dr. Lucia Rainer.',
+  94: 'KI lernen, Kreativität stärken: Internationale Studienprogramme im Überblick – Dr. Ulrike Müller.',
+  95: 'Warum KI-Ökonomien kulturelle Legitimität brauchen – Detlef Schwarte.',
+  96: 'Jenseits klassischer Payments: Blockchain-Märkte für Kreative am Beispiel worksheer – Kerstin Groh.',
+  97: 'KI im Event Marketing: Erkenntnisse aus der wissenschaftlichen Forschung – Prof. Dr. Oliver Lohmar.',
+  98: 'People, not AI: Unsere Unique Shining Proposition zum Leuchten bringen – Griselda Welsing.',
+  // Foyer Day 2
+  100: 'Innovationsprogramm für Geschäftsmodelle und Pionierlösungen – Robin von Hardenberg & Joanna Szlauderbach.',
+  101: 'KI in Gamification und Serious Games: Von Prototyping bis Balancing neu gedacht – Dr. Philipp Busch.',
+  // Alabama
+  110: 'Stadtentwicklung: Wie Immobilien mit Kreativnutzungen urbane Wirkung entfalten – Bettina Steindl, Dr. Katja Wolframm, Christopher Weiß.',
+  111: 'Curating AI: Gestaltung und Verantwortung in Kulturinstitutionen – Marion Mair, Daniela Vogel, Felix Becker.',
+  112: 'IMPACT NOW – Vom Meckern zum Machen – Panel mit Marianne Bullwinkel, Judith Augustin, Sophie Dobrigheit, Petra Lammers, Melanie Hölting-Eckert.',
+  113: 'Future Collaboration: Neue Formen der Zusammenarbeit für eine komplexe Welt – Nina Mönich.',
+  114: 'Back to Real Life? Warum die Gen Z den physischen Raum neu entdeckt – Dennis Bajer.',
+  115: 'Wer nur optimiert, verliert – Wie Cross Innovation über Wettbewerbsfähigkeit entscheidet – Panel.',
+  116: 'Filmvorführung: Der Unternehmer, das Dorf und die Künstler.',
+  // Alabama Day 2
+  120: 'Scaffolding for Transcendence: Die Zukunft der Bildung in einer KI-Ökonomie – Prof. Christoph Weckerle & Prof. Dr. Simon Grand.',
+  121: 'Where Do We Draw the Vertical Line? Technology, Territory, and the Material Cost of Intelligence – David Odiase.',
 };
 
 const BASE_URL = 'https://german-creative-economy-summit.de/programm/';
@@ -713,83 +523,133 @@ const STAGES = [
   {id:'Foyer',   label:'Foyer',         color:'#F2994A'},
   {id:'Alabama', label:'Alabama Kino',  color:'#EB5757'},
 ];
+
 const EVENT_DATES = ['2026-04-28','2026-04-29'];
+
+// ─── UPDATED SESSIONS (synced with german-creative-economy-summit.de/programm/) ───
 const SESSIONS = [
-  {id:1, day:0,stage:'K6',start:'09:30',end:'09:45',title:'Begrüßung von Egbert Rühl – Geschäftsführer Hamburg Kreativ Gesellschaft',speaker:'Egbert Rühl',format:'Keynote',track:'Policy'},
-  {id:2, day:0,stage:'K6',start:'09:45',end:'10:00',title:'Impuls von Carsten Brosda – Senator der Hamburger Behörde für Kultur und Medien',speaker:'Dr. Carsten Brosda',format:'Impuls',track:'Policy'},
-  {id:3, day:0,stage:'K6',start:'10:00',end:'10:15',title:'Impuls von Gitta Connemann – Parl. Staatssekretärin, Bundesministerium für Wirtschaft und Energie',speaker:'Gitta Connemann',format:'Impuls',track:'Policy'},
-  {id:4, day:0,stage:'K6',start:'10:15',end:'10:30',title:'Impuls von Björn Böhning – Staatssekretär im Bundesministerium der Finanzen',speaker:'Björn Böhning',format:'Impuls',track:'Policy'},
-  {id:5, day:0,stage:'K6',start:'10:25',end:'10:30',title:'Digitales Grußwort von Wolfram Weimer – Staatsminister für Kultur und Medien',speaker:'Wolfram Weimer',format:'Impuls',track:''},
-  {id:6, day:0,stage:'K6',start:'13:00',end:'13:45',title:'Wie KI-Assistenten dein Business skalieren',speaker:'Dominic von Proeck',format:'Impuls',track:'Markets'},
-  {id:7, day:0,stage:'K6',start:'14:15',end:'14:30',title:'KI wird Infrastruktur: Wie FUNKE Redaktionen befähigt',speaker:'Dr. Paul Elvers',format:'Impuls',track:'Markets'},
-  {id:8, day:0,stage:'K6',start:'14:30',end:'14:45',title:'Von Unsicherheit zu Wachstum: KI als Hebel für Solo-Selbstständige',speaker:'Jenny Habermehl',format:'Impuls',track:'Markets'},
-  {id:9, day:0,stage:'K6',start:'14:45',end:'15:00',title:'Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung und Creator*innen',speaker:'Jenny Habermehl · Dr. Paul Elvers · Nina Matzat · Katrin Krall',format:'Panel',track:'Markets'},
-  {id:10,day:0,stage:'K6',start:'15:30',end:'16:00',title:'Digital Erwachsen: Warum wir wissen müssen, was Digitalisierung ist – um sie zu ändern',speaker:'Wolf Lotter',format:'Keynote',track:'Policy'},
-  {id:11,day:0,stage:'K4',start:'16:00',end:'17:00',title:'MAIA & CyberLÄND: Wie 3D-Avatare Community, Content und Business verbinden',speaker:'Dr. Frank Dürr',format:'Case',track:'Futures'},
-  {id:12,day:0,stage:'K4',start:'16:00',end:'17:00',title:'Städte als Sandboxes der Zukunft: Lernen aus "Test in Heidelberg"',speaker:'Katharina Pelka · Prof. Benjamin Zierock',format:'Case',track:'Futures'},
-  {id:13,day:0,stage:'K2',start:'13:00',end:'13:15',title:'Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter',speaker:'Dr. Dorothea Winter',format:'Impuls',track:'Policy'},
-  {id:14,day:0,stage:'K2',start:'13:15',end:'14:00',title:'KI & Ethik: Verantwortung in der digitalen Transformation',speaker:'Eric Bartoletti · Dr. Dorothea Winter · Florian Scheible · Maike Scholz',format:'Panel',track:'Policy'},
-  {id:15,day:0,stage:'K2',start:'14:00',end:'15:00',title:'Wahrheit im Feed: Journalismus zwischen Plattformlogik, KI und Bildung',speaker:'Gregor Schmalzried · Svea Eckert',format:'Panel',track:'Policy'},
-  {id:16,day:0,stage:'K2',start:'16:15',end:'17:00',title:'KI, Urheberrecht, Business: Wem gehört Kreativität im neuen KI-Zeitalter?',speaker:'Michael Duderstädt · Dr. Sebastian Rengshausen · Katharina Uppenbrink · Anne Kaiser',format:'Panel',track:'Policy'},
-  {id:17,day:0,stage:'K2',start:'17:15',end:'17:30',title:'Reinventing Manufacturing Through XR-Based Skill Transfer and AI',speaker:'Osamu Oji',format:'Case',track:'Markets'},
-  {id:18,day:0,stage:'K2',start:'17:30',end:'17:45',title:'Interaktive Audioformate: Neue Chancen für Verlage, Games und Marken',speaker:'Christian Mahnke',format:'Case',track:'Markets'},
-  {id:19,day:0,stage:'P1',start:'10:00',end:'19:00',title:'Antifaschistische Hüpfburg',speaker:'Frieder Bohaumilitzky',format:'Rahmenprogramm',track:''},
-  {id:20,day:0,stage:'P1',start:'10:45',end:'12:00',title:'Analog fokussiert: Das Beste aus der Bullet Journal® Methode',speaker:'Kerstin Schiemenz',format:'Workshop',track:'Futures'},
-  {id:21,day:0,stage:'P1',start:'13:00',end:'14:30',title:'Was kommt nach dem Prompt? – Wie KI Teil deines Teams wird',speaker:'Carena Barkow · Stefanie Bilen',format:'Workshop',track:'Futures'},
-  {id:22,day:0,stage:'P1',start:'15:30',end:'17:00',title:'Zukunft KKW 2030: Welche Visionen tragen uns durch den Wandel?',speaker:'Lore Kurtz · Tanja Schindler',format:'Workshop',track:'Policy'},
-  {id:23,day:0,stage:'P1',start:'17:00',end:'18:00',title:'Decoding AI – Künstliche Intelligenz in der Content Produktion',speaker:'Martin Schlösser',format:'Workshop',track:'Futures'},
-  {id:24,day:0,stage:'Foyer',start:'09:30',end:'19:00',title:'Smart Hans',speaker:'Max Haarich',format:'Rahmenprogramm',track:''},
-  {id:25,day:0,stage:'Foyer',start:'09:30',end:'19:00',title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA',speaker:'Katja Schurr',format:'Rahmenprogramm',track:''},
-  {id:26,day:0,stage:'Foyer',start:'09:30',end:'19:00',title:'The Rug Project – United Threads',speaker:'Mona Steinhäußer',format:'Rahmenprogramm',track:''},
-  {id:27,day:0,stage:'Foyer',start:'09:30',end:'19:00',title:'COLLIMBO. Collaborative Artistic Intelligence in Action',speaker:'Sandra Freygarten · Dr. Lucia Rainer',format:'Rahmenprogramm',track:''},
-  {id:28,day:0,stage:'Foyer',start:'14:00',end:'14:15',title:'Warum KI-Ökonomien kulturelle Legitimität brauchen',speaker:'Detlef Schwarte',format:'Impuls',track:'Futures'},
-  {id:29,day:0,stage:'Foyer',start:'15:30',end:'15:45',title:'Jenseits klassischer Payments: Blockchain-Märkte für Kreative am Beispiel worksheer',speaker:'Kerstin Groh',format:'Impuls',track:'Futures'},
-  {id:30,day:0,stage:'Foyer',start:'16:30',end:'16:45',title:'KI im Event Marketing: Erkenntnisse aus der wissenschaftlichen Forschung',speaker:'Prof. Dr. Oliver Lohmar',format:'Impuls',track:'Futures'},
-  {id:31,day:0,stage:'Foyer',start:'17:00',end:'17:15',title:'People, not AI: Unsere Unique Shining Proposition zum Leuchten bringen',speaker:'Griselda Welsing',format:'Impuls',track:'Futures'},
-  {id:32,day:0,stage:'Alabama',start:'13:15',end:'14:00',title:'Curating AI: Gestaltung und Verantwortung in Kulturinstitutionen',speaker:'Marion Mair · Daniela Vogel · Felix Becker',format:'Panel',track:'Futures'},
-  {id:33,day:0,stage:'Alabama',start:'14:15',end:'15:00',title:'IMPACT NOW – Vom Meckern zum Machen',speaker:'Marianne Bullwinkel · Judith Augustin · Sophie Dobrigheit · Petra Lammers · Melanie Hölting-Eckert',format:'Panel',track:'Impact'},
-  {id:34,day:0,stage:'Alabama',start:'15:30',end:'16:00',title:'Future Collaboration: Neue Formen der Zusammenarbeit für eine komplexe Welt',speaker:'Nina Mönich',format:'Keynote',track:'Futures'},
-  {id:35,day:0,stage:'Alabama',start:'16:00',end:'17:00',title:'Back to Real Life? Warum die Gen Z den physischen Raum neu entdeckt',speaker:'Dennis Bajer',format:'Panel',track:'Futures'},
-  {id:36,day:0,stage:'Alabama',start:'17:00',end:'18:00',title:'Wer nur optimiert, verliert – Wie Cross Innovation über Wettbewerbsfähigkeit entscheidet',speaker:'Robin Bühlmann · Prof. Dr. Martin Kiel · Christian Weyers u.a.',format:'Panel',track:'Futures'},
-  {id:37,day:0,stage:'Alabama',start:'18:15',end:'19:30',title:'Filmvorführung: Der Unternehmer das Dorf und die Künstler',speaker:'',format:'Film',track:'Futures'},
-  {id:38,day:1,stage:'K6',start:'10:15',end:'10:45',title:'Von Politik zu Kapital: Wie öffentliche Mittel private Kreativ-Investments hebeln',speaker:'Caroline Norbury',format:'Impuls',track:'Policy'},
-  {id:39,day:1,stage:'K6',start:'11:00',end:'11:15',title:'Decoding Political Influence: Wie Social Media die politische Kommunikation neu definiert',speaker:'Maurice van gen Hassend',format:'Impuls',track:'Policy'},
-  {id:40,day:1,stage:'K6',start:'11:15',end:'12:00',title:'From Content to Community: Creator Economy zwischen Unternehmertum und demokratischer Verantwortung',speaker:'Maurice van gen Hassend · Peter Hoffmann',format:'Panel',track:''},
-  {id:41,day:1,stage:'K6',start:'13:15',end:'14:00',title:'Made in Europe: Der Datenraum als Rückenwind für KI und Kreative',speaker:'Dr. Florian Harms · Max Haarich · Martin Andree · Dr. Nikolas Hill',format:'Panel',track:'Policy'},
-  {id:42,day:1,stage:'K6',start:'14:00',end:'15:00',title:"Let's Join Creative Forces: Politische Positionierung der Kreativwirtschaft",speaker:'Egbert Rühl · Daniel Knöll u.a.',format:'Panel',track:'Policy'},
-  {id:43,day:1,stage:'K6',start:'14:45',end:'15:45',title:'The Creative Shift: Transformation, KI und politische Verantwortung für die Kreativwirtschaft',speaker:'Daniel Knöll · Jörn Freynick · Olaf Zimmermann · Prof. Lena Falkenhagen',format:'Panel',track:'Policy'},
-  {id:44,day:1,stage:'K4',start:'10:30',end:'10:35',title:'Anleitung zum dezentralen Eskalieren: Underdog-Know-how als Innovationsmotor',speaker:'Jakob Jochmann',format:'Case',track:'Markets'},
-  {id:45,day:1,stage:'K2',start:'09:30',end:'09:45',title:'KI kann alles – Aber für wen?',speaker:'Zamina Ahmad',format:'Impuls',track:'Impact'},
-  {id:46,day:1,stage:'K2',start:'09:30',end:'11:00',title:'Social Impact mit KI: Was Unternehmen aus einem Betroffenensupport-Case lernen',speaker:'Said Haider',format:'Impuls',track:'Impact'},
-  {id:47,day:1,stage:'K2',start:'09:45',end:'10:00',title:'Inklusion gestalten mit KI: Gesellschaftlicher Mehrwert trifft Business Value',speaker:'Claudia S. Friedrich · Timo Wietzke',format:'Impuls',track:'Impact'},
-  {id:48,day:1,stage:'K2',start:'10:15',end:'10:30',title:'Women in Design – Where Are We Now?',speaker:'Sophie Dobrigheit · Judith Augustin',format:'Impuls',track:'Impact'},
-  {id:49,day:1,stage:'K2',start:'11:00',end:'11:15',title:'Impuls von Dr. Peter Kurz',speaker:'Dr. Peter Kurz',format:'Impuls',track:'Policy'},
-  {id:50,day:1,stage:'K2',start:'13:00',end:'14:00',title:'Bye-bye Parkplatz? Wie neue Mobilität unsere Städte lebenswerter macht',speaker:'Dr. Anjes Tjarks · Dr. Kirsten Matheus',format:'Panel',track:'Markets'},
-  {id:51,day:1,stage:'K2',start:'14:00',end:'15:00',title:'Finanzierung 4.0: KI, digitale Märkte und neue Monetarisierungsstrategien',speaker:'Aissu Diallo · Kerstin Gold',format:'Panel',track:'Markets'},
-  {id:52,day:1,stage:'K2',start:'15:00',end:'15:30',title:'Nachwuchs vs. KI: Wie junge Kreative Agenturen heute verändern',speaker:'Nina Kirst · Jonas Kratz',format:'Q&A',track:'Futures'},
-  {id:53,day:1,stage:'P1',start:'09:30',end:'10:45',title:'Wenn die Brücke wackelt: Resilienz-Baukasten für Cross Innovation',speaker:'Mira Kleine u.a.',format:'Workshop',track:'Futures'},
-  {id:54,day:1,stage:'P1',start:'10:45',end:'12:00',title:'Disruptive Produktinnovationen: Mit Design Futuring das Morgen prägen',speaker:'Marc Behlau · Kathlen Jost',format:'Workshop',track:'Futures'},
-  {id:55,day:1,stage:'P1',start:'12:00',end:'16:00',title:'Antifaschistische Hüpfburg',speaker:'Frieder Bohaumilitzky',format:'Rahmenprogramm',track:''},
-  {id:56,day:1,stage:'Foyer',start:'09:30',end:'16:00',title:'Smart Hans',speaker:'Max Haarich',format:'Rahmenprogramm',track:''},
-  {id:57,day:1,stage:'Foyer',start:'09:30',end:'16:00',title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA',speaker:'Katja Schurr',format:'Rahmenprogramm',track:''},
-  {id:58,day:1,stage:'Foyer',start:'09:30',end:'16:00',title:'The Rug Project – United Threads',speaker:'Mona Steinhäußer',format:'Rahmenprogramm',track:''},
-  {id:59,day:1,stage:'Foyer',start:'09:30',end:'16:00',title:'COLLIMBO. Collaborative Artistic Intelligence in Action',speaker:'Sandra Freygarten · Dr. Lucia Rainer',format:'Rahmenprogramm',track:''},
-  {id:60,day:1,stage:'Foyer',start:'11:00',end:'11:15',title:'KI lernen, Kreativität stärken: Internationale Studienprogramme im Überblick',speaker:'Dr. Ulrike Müller',format:'Impuls',track:'Futures'},
-  {id:61,day:1,stage:'Foyer',start:'13:00',end:'13:30',title:'Innovationsprogramm für Geschäftsmodelle und Pionierlösungen',speaker:'Robin von Hardenberg · Joanna Szlauderbach',format:'Impuls',track:'Markets'},
-  {id:62,day:1,stage:'Foyer',start:'13:30',end:'13:45',title:'KI in Gamification und Serious Games: Von Prototyping bis Balancing neu gedacht',speaker:'Dr. Philipp Busch',format:'Impuls',track:'Futures'},
-  {id:63,day:1,stage:'Alabama',start:'09:30',end:'10:15',title:'Stadtentwicklung: Wie Immobilien mit Kreativnutzungen urbane Wirkung entfalten',speaker:'Bettina Steindl · Dr. Katja Wolframm · Christopher Weiß',format:'Panel',track:'Futures'},
-  {id:64,day:1,stage:'Alabama',start:'11:30',end:'12:00',title:'Scaffolding for Transcendence: Die Zukunft der Bildung in einer KI-Ökonomie',speaker:'Prof. Christoph Weckerle · Prof. Dr. Simon Grand',format:'Impuls',track:'Futures'},
-  {id:65,day:1,stage:'Alabama',start:'14:15',end:'14:45',title:'Where Do We Draw the Vertical Line? Technology, Territory, and the Material Cost of Intelligence',speaker:'David Odiase',format:'Keynote',track:'Impact'},
+  // ══ DAY 0 – K6 ══
+  {id:1,  day:0, stage:'K6', start:'09:30', end:'09:45', title:'Eröffnung und Begrüßung durch Egbert Rühl – Geschäftsführer Hamburg Kreativ Gesellschaft', speaker:'Egbert Rühl', format:'Keynote', track:'Policy'},
+  {id:2,  day:0, stage:'K6', start:'09:45', end:'10:00', title:'Statement von Dr. Carsten Brosda – Senator der Hamburger Behörde für Kultur und Medien', speaker:'Dr. Carsten Brosda', format:'Keynote', track:'Policy'},
+  {id:3,  day:0, stage:'K6', start:'10:00', end:'10:15', title:'Statement von Gitta Connemann – Parl. Staatssekretärin, Bundesministerium für Wirtschaft und Energie', speaker:'Gitta Connemann', format:'Keynote', track:'Policy'},
+  {id:4,  day:0, stage:'K6', start:'10:15', end:'10:30', title:'Statement von Björn Böhning – Staatssekretär im Bundesministerium der Finanzen', speaker:'Björn Böhning', format:'Keynote', track:'Policy'},
+  {id:5,  day:0, stage:'K6', start:'10:30', end:'10:45', title:'Digitales Grußwort von Wolfram Weimer – Staatsminister für Kultur und Medien', speaker:'Wolfram Weimer', format:'', track:'Policy'},
+  {id:6,  day:0, stage:'K6', start:'10:30', end:'10:40', title:'LÙISA', speaker:'LÙISA', format:'Rahmenprogramm', track:''},
+  {id:7,  day:0, stage:'K6', start:'10:40', end:'10:55', title:'Kommerz, Kreativität & KI: Warum die Kultur- & Kreativwirtschaft jetzt Haltung zeigen muss', speaker:'Prof. Dieter Gorny', format:'Keynote', track:'Policy'},
+  {id:8,  day:0, stage:'K6', start:'11:05', end:'11:15', title:'Bewegtbilder von morgen: Neue Technologien & Chancen im Film', speaker:'Michelle Müntefering', format:'Impuls', track:'Markets'},
+  {id:15, day:0, stage:'K6', start:'11:15', end:'12:00', title:'KI auf C‑Level: Geschäftsmodelle im Umbruch', speaker:'Rhys Noelke · Prof. Dieter Gorny · Hannes Jakobsen · Larissa Pohl · Tamara Güçlü', format:'Panel', track:'Policy'},
+  {id:9,  day:0, stage:'K6', start:'13:00', end:'13:45', title:'Wie KI-Assistenten dein Business skalieren', speaker:'Dominic von Proeck · Tamara Güçlü', format:'Impuls', track:'Markets'},
+  {id:10, day:0, stage:'K6', start:'14:00', end:'14:15', title:'Mehr als GenAI: Wie KI-Agenten Kreativ-Workflows radikal beschleunigen', speaker:'Nina Matzat', format:'Impuls', track:'Markets'},
+  {id:11, day:0, stage:'K6', start:'14:15', end:'14:30', title:'KI wird Infrastruktur: Wie FUNKE Redaktionen befähigt', speaker:'Dr. Paul Elvers', format:'Impuls', track:'Markets'},
+  {id:12, day:0, stage:'K6', start:'14:30', end:'14:45', title:'Von Unsicherheit zu Wachstum: KI als Hebel für Solo-Selbstständige', speaker:'Jenny Habermehl', format:'Impuls', track:'Markets'},
+  {id:13, day:0, stage:'K6', start:'14:45', end:'15:00', title:'Von Workflow zu Wertschöpfung: KI-Modelle für Presse, Werbung & Creator*innen', speaker:'Jenny Habermehl · Dr. Paul Elvers · Nina Matzat · Holger Volland', format:'Panel', track:'Markets'},
+  {id:14, day:0, stage:'K6', start:'15:30', end:'15:45', title:'Digital Erwachsen: Warum wir wissen müssen, was Digitalisierung ist – um sie zu ändern', speaker:'Wolf Lotter · Tamara Güçlü', format:'Keynote', track:'Policy'},
+  {id:16, day:0, stage:'K6', start:'16:00', end:'17:00', title:'Live-Podcast "Die Boss"', speaker:'Simone Menne · Virginie Briand', format:'Live-Podcast', track:'Futures'},
+  {id:17, day:0, stage:'K6', start:'17:15', end:'17:45', title:'Zoom out, Brain! Was Kreative bei KI bereits fühlen, aber noch nicht durchdacht haben', speaker:'Boris Eldagsen · Tamara Güçlü', format:'Impuls', track:'Policy'},
+  {id:18, day:0, stage:'K6', start:'17:45', end:'18:00', title:'Wrap-up: Was nehmen wir nach dem ersten GCES-Tag mit?', speaker:'Tamara Güçlü', format:'Impuls', track:''},
+
+  // ══ DAY 1 – K6 ══
+  {id:20, day:1, stage:'K6', start:'09:30', end:'09:45', title:'Human Nature: Was bleibt, wenn Algorithmen Pop entscheiden?', speaker:'Balbina', format:'Impuls', track:'Policy'},
+  {id:21, day:1, stage:'K6', start:'09:45', end:'10:05', title:'Viele Rollen, eine Stimme & der Mut zur kreativen Vielschichtigkeit', speaker:'Miriam Davoudvandi · Tamara Güçlü', format:'Interview', track:'Impact'},
+  {id:22, day:1, stage:'K6', start:'10:05', end:'10:15', title:'Statement von Nathanael Liminski – Minister für Bundes- und Europaangelegenheiten, Internationales sowie Medien NRW', speaker:'Nathanael Liminski', format:'Keynote', track:''},
+  {id:23, day:1, stage:'K6', start:'10:15', end:'10:45', title:'Von Politik zu Kapital: Wie öffentliche Mittel private Kreativ-Investments hebeln', speaker:'Caroline Norbury · Tamara Güçlü', format:'Impuls', track:'Policy'},
+  {id:24, day:1, stage:'K6', start:'11:00', end:'11:15', title:'Decoding Political Influence: Wie Social Media die politische Kommunikation neu definiert', speaker:'Maurice van gen Hassend', format:'Impuls', track:'Policy'},
+  {id:25, day:1, stage:'K6', start:'11:15', end:'12:00', title:'From Content to Community: Creator Economy zwischen Unternehmertum & demokratischer Verantwortung', speaker:'Fabian Grischkat · Maurice van gen Hassend · Peter Hoffmann · Paula Lauterbach', format:'Panel', track:''},
+  {id:26, day:1, stage:'K6', start:'13:00', end:'13:15', title:'Wem gehört die Aufmerksamkeit und wie frei entscheiden wir online wirklich?', speaker:'Charlotte Freihse', format:'Impuls', track:'Policy'},
+  {id:27, day:1, stage:'K6', start:'13:15', end:'14:00', title:'Made in Europe: Der Datenraum als Rückenwind für KI und Kreative', speaker:'Dr. Florian Harms · Max Haarich · Martin Andree · Dr. Nikolas Hill · Tamara Güçlü', format:'Panel', track:'Policy'},
+  {id:28, day:1, stage:'K6', start:'14:15', end:'15:15', title:'The Creative Shift: Transformation, KI & politische Verantwortung für die Kreativwirtschaft', speaker:'Daniel Knöll · Jörn Freynick · Olaf Zimmermann · Prof. Lena Falkenhagen · Tamara Güçlü', format:'Panel', track:'Policy'},
+  {id:29, day:1, stage:'K6', start:'15:15', end:'15:45', title:'KI zwischen Aufbruch und Angst: Eine Standortbestimmung', speaker:'Prof. Nico Hofmann · Tamara Güçlü', format:'Interview', track:'Policy'},
+  {id:30, day:1, stage:'K6', start:'15:45', end:'16:00', title:'Wrap-up: Wo stehen wir nach zwei Tagen GCES?', speaker:'Tamara Güçlü', format:'Impuls', track:''},
+
+  // ══ DAY 0 – K4 ══
+  {id:40, day:0, stage:'K4', start:'13:00', end:'14:30', title:'Let\'s match! Networking & Austausch zur Zukunft der Kreativwirtschaft', speaker:'Dr. Anna Heugel · Christina Schenten · Miriam Abada · Marc Behlau · Laura Rohloff', format:'Networking', track:'Futures'},
+  {id:41, day:0, stage:'K4', start:'16:00', end:'18:00', title:'MAIA & CyberLÄND: Wie 3D-Avatare Community, Content & Business verbinden', speaker:'Dr. Frank Dürr', format:'Case', track:'Futures'},
+  {id:42, day:0, stage:'K4', start:'16:00', end:'18:00', title:'Cross Innovation Made In Saxony', speaker:'Christian Rost · Claudia Muntschick · Henrike Terheyden', format:'Case', track:'Futures'},
+  {id:43, day:0, stage:'K4', start:'16:00', end:'18:00', title:'blank spaces: Das Conference-Festival aus Mönchengladbach', speaker:'Clemens Brück', format:'Case', track:'Futures'},
+  {id:44, day:0, stage:'K4', start:'16:00', end:'18:00', title:'Zukunftslab Deutschland: Wie Städte, KI & Kreativität neue Räume öffnen', speaker:'Dr. Frank Dürr · Katharina Pelka · Prof. Benjamin Zierock · Clemens Brück · Kübra Sekin', format:'Case', track:'Futures'},
+  {id:45, day:0, stage:'K4', start:'16:00', end:'18:00', title:'Städte als Sandboxes der Zukunft: Lernen aus "Test in Heidelberg"', speaker:'Katharina Pelka · Prof. Benjamin Zierock', format:'Case', track:'Futures'},
+
+  // ══ DAY 1 – K4 ══
+  {id:46, day:1, stage:'K4', start:'10:00', end:'12:00', title:'Innovationsförderung der KfW für den Mittelstand', speaker:'Anja Bukowski', format:'Case', track:'Markets'},
+  {id:47, day:1, stage:'K4', start:'10:00', end:'12:00', title:'Funding Futures: Finanzierung, die kreative Ideen möglich macht', speaker:'Jakob Jochmann · Silvia Taschner · Helene Berling · Anja Bukowski · Kübra Sekin', format:'Case', track:'Markets'},
+  {id:48, day:1, stage:'K4', start:'10:00', end:'12:00', title:'Finanzierungsberatung für Kreativ-Start-ups: Deep Dive & Networking', speaker:'Silvia Taschner · Helene Berling', format:'Networking', track:'Markets'},
+  {id:49, day:1, stage:'K4', start:'10:00', end:'12:00', title:'Anleitung zum dezentralen Eskalieren: Underdog-Know-how als Innovationsmotor', speaker:'Jakob Jochmann', format:'Case', track:'Markets'},
+  {id:50, day:1, stage:'K4', start:'13:00', end:'15:00', title:'Creative Connections: Wie internationale Netzwerke neue Perspektiven eröffnen', speaker:'Noémie Njangiru · Judith Schulde · Dr. Ruth Schaldach · Sabrina Fleischer · Nathan Hayduk · Nico Degenkolb', format:'Case', track:'Markets'},
+  {id:51, day:1, stage:'K4', start:'13:00', end:'15:00', title:'Quantum, Kunst & Kultur, die Europa bewegt: Projekte des Goethe-Instituts', speaker:'Noémie Njangiru · Judith Schulde · Nico Degenkolb', format:'Case', track:'Markets'},
+  {id:52, day:1, stage:'K4', start:'13:00', end:'15:00', title:'Creative Go Global: EU-Förderung leicht gemacht', speaker:'Dr. Ruth Schaldach · Sabrina Fleischer', format:'Case', track:'Markets'},
+  {id:53, day:1, stage:'K4', start:'13:00', end:'15:00', title:'Creative Bureaucracy: Wie kreative Verwaltungen weltweit neue Lösungen schaffen', speaker:'Bernd Fesel', format:'Case', track:'Markets'},
+  {id:54, day:1, stage:'K4', start:'13:00', end:'15:00', title:'Vom Netzwerk zur Wirkung: Wie das kreativland.tirol kreative Potenziale entfesselt', speaker:'Gerald Windisch', format:'Case', track:'Markets'},
+
+  // ══ DAY 0 – K2 ══
+  {id:60, day:0, stage:'K2', start:'13:00', end:'13:15', title:'Jenseits des Mittelmaßes: Kreativität als Verantwortung im KI-Zeitalter', speaker:'Dr. Dorothea Winter', format:'Impuls', track:'Policy'},
+  {id:61, day:0, stage:'K2', start:'13:15', end:'14:00', title:'KI & Ethik: Verantwortung in der digitalen Transformation', speaker:'Eric Bartoletti · Dr. Dorothea Winter · Florian Scheible · Maike Scholz · Daniel Anibal Bröckerhoff', format:'Panel', track:'Policy'},
+  {id:62, day:0, stage:'K2', start:'14:00', end:'15:00', title:'Wahrheit im Feed: Journalismus zwischen Plattformlogik, KI & Bildung', speaker:'Gregor Schmalzried · Svea Eckert · Vera Bauer · Daniel Anibal Bröckerhoff', format:'Panel', track:'Policy'},
+  {id:63, day:0, stage:'K2', start:'15:30', end:'15:45', title:'KI, Kreativität, Abhängigkeiten: Was Geopolitik für die Branche bedeutet', speaker:'Prof. Dr. Daniel Mügge', format:'Impuls', track:'Policy'},
+  {id:64, day:0, stage:'K2', start:'15:45', end:'16:00', title:'Technologische Entwicklungen & ihre Auswirkungen auf kreative Prozesse', speaker:'Svetlana Jakel', format:'Impuls', track:'Policy'},
+  {id:65, day:0, stage:'K2', start:'16:00', end:'16:15', title:'Unsouverän! Europas Umgang mit Kunst, Kultur & Kreativität', speaker:'Matthias Hornschuh · Daniel Anibal Bröckerhoff', format:'Impuls', track:'Policy'},
+  {id:66, day:0, stage:'K2', start:'16:15', end:'17:00', title:'KI, Urheberrecht, Business: Wem gehört Kreativität im neuen KI-Zeitalter?', speaker:'Michael Duderstädt · Dr. Sebastian Rengshausen · Anne Kaiser · Saralisa Volm · Katharina Uppenbrink', format:'Panel', track:'Policy'},
+  {id:67, day:0, stage:'K2', start:'17:15', end:'17:30', title:'Reinventing Manufacturing Through XR-Based Skill Transfer and AI', speaker:'Osamu Oji', format:'Case', track:'Markets'},
+  {id:68, day:0, stage:'K2', start:'17:30', end:'17:45', title:'Interaktive Audioformate: Neue Chancen für Verlage, Games und Marken', speaker:'Christian Mahnke', format:'Case', track:'Markets'},
+
+  // ══ DAY 1 – K2 ══
+  {id:70, day:1, stage:'K2', start:'09:30', end:'09:45', title:'KI kann alles – Aber für wen?', speaker:'Zamina Ahmad', format:'Impuls', track:'Impact'},
+  {id:71, day:1, stage:'K2', start:'09:30', end:'11:00', title:'Social Impact mit KI: Was Unternehmen aus einem Betroffenensupport-Case lernen', speaker:'Said Haider', format:'Impuls', track:'Impact'},
+  {id:72, day:1, stage:'K2', start:'09:45', end:'10:00', title:'Inklusion gestalten mit KI: Gesellschaftlicher Mehrwert trifft Business Value', speaker:'Claudia S. Friedrich · Timo Wietzke', format:'Impuls', track:'Impact'},
+  {id:73, day:1, stage:'K2', start:'10:15', end:'10:30', title:'Women in Design – Where Are We Now?', speaker:'Sophie Dobrigheit · Judith Augustin', format:'Impuls', track:'Impact'},
+  {id:74, day:1, stage:'K2', start:'11:00', end:'11:15', title:'Impuls von Dr. Peter Kurz', speaker:'Dr. Peter Kurz', format:'Impuls', track:'Policy'},
+  {id:75, day:1, stage:'K2', start:'13:00', end:'14:00', title:'Bye-bye Parkplatz? Wie neue Mobilität unsere Städte lebenswerter macht', speaker:'Dr. Anjes Tjarks · Dr. Kirsten Matheus', format:'Panel', track:'Markets'},
+  {id:76, day:1, stage:'K2', start:'14:00', end:'15:00', title:'Finanzierung 4.0: KI, digitale Märkte und neue Monetarisierungsstrategien', speaker:'Aissu Diallo · Kerstin Gold', format:'Panel', track:'Markets'},
+  {id:77, day:1, stage:'K2', start:'15:00', end:'15:30', title:'Nachwuchs vs. KI: Wie junge Kreative Agenturen heute verändern', speaker:'Nina Kirst · Jonas Kratz', format:'Q&A', track:'Futures'},
+
+  // ══ DAY 0 – P1 ══
+  {id:80, day:0, stage:'P1', start:'10:45', end:'12:00', title:'Analog fokussiert: Das Beste aus der Bullet Journal® Methode', speaker:'Kerstin Schiemenz', format:'Workshop', track:'Futures'},
+  {id:81, day:0, stage:'P1', start:'13:00', end:'14:30', title:'Was kommt nach dem Prompt? – Wie KI Teil deines Teams wird', speaker:'Carena Barkow · Stefanie Bilen', format:'Workshop', track:'Futures'},
+  {id:82, day:0, stage:'P1', start:'15:30', end:'17:00', title:'Zukunft KKW 2030: Welche Visionen tragen uns durch den Wandel?', speaker:'Lore Kurtz · Tanja Schindler', format:'Workshop', track:'Policy'},
+  {id:83, day:0, stage:'P1', start:'17:00', end:'18:00', title:'Decoding AI – Künstliche Intelligenz in der Content Produktion', speaker:'Martin Schlösser', format:'Workshop', track:'Futures'},
+
+  // ══ DAY 1 – P1 ══
+  {id:85, day:1, stage:'P1', start:'09:30', end:'10:45', title:'Wenn die Brücke wackelt: Resilienz-Baukasten für Cross Innovation', speaker:'Mira Kleine u.a.', format:'Workshop', track:'Futures'},
+  {id:86, day:1, stage:'P1', start:'10:45', end:'12:00', title:'Disruptive Produktinnovationen: Mit Design Futuring das Morgen prägen', speaker:'Marc Behlau · Kathlen Jost', format:'Workshop', track:'Futures'},
+
+  // ══ DAY 0 – FOYER ══
+  {id:90, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'Smart Hans', speaker:'Max Haarich', format:'Rahmenprogramm', track:''},
+  {id:91, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA', speaker:'Katja Schurr', format:'Rahmenprogramm', track:''},
+  {id:92, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'The Rug Project – United Threads', speaker:'Mona Steinhäußer', format:'Rahmenprogramm', track:''},
+  {id:93, day:0, stage:'Foyer', start:'09:30', end:'19:00', title:'COLLIMBO. Collaborative Artistic Intelligence in Action', speaker:'Sandra Freygarten · Dr. Lucia Rainer', format:'Rahmenprogramm', track:''},
+  {id:95, day:0, stage:'Foyer', start:'14:00', end:'14:15', title:'Warum KI-Ökonomien kulturelle Legitimität brauchen', speaker:'Detlef Schwarte', format:'Impuls', track:'Futures'},
+  {id:96, day:0, stage:'Foyer', start:'15:30', end:'15:45', title:'Jenseits klassischer Payments: Blockchain-Märkte für Kreative am Beispiel worksheer', speaker:'Kerstin Groh', format:'Impuls', track:'Futures'},
+  {id:97, day:0, stage:'Foyer', start:'16:30', end:'16:45', title:'KI im Event Marketing: Erkenntnisse aus der wissenschaftlichen Forschung', speaker:'Prof. Dr. Oliver Lohmar', format:'Impuls', track:'Futures'},
+  {id:98, day:0, stage:'Foyer', start:'17:00', end:'17:15', title:'People, not AI: Unsere Unique Shining Proposition zum Leuchten bringen', speaker:'Griselda Welsing', format:'Impuls', track:'Futures'},
+
+  // ══ DAY 1 – FOYER ══
+  {id:90+10, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'Smart Hans', speaker:'Max Haarich', format:'Rahmenprogramm', track:''},
+  {id:91+10, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'THE CREATIVE LÄND VR-Portal mit KI-Avatar MAIA', speaker:'Katja Schurr', format:'Rahmenprogramm', track:''},
+  {id:92+10, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'The Rug Project – United Threads', speaker:'Mona Steinhäußer', format:'Rahmenprogramm', track:''},
+  {id:93+10, day:1, stage:'Foyer', start:'09:30', end:'16:00', title:'COLLIMBO. Collaborative Artistic Intelligence in Action', speaker:'Sandra Freygarten · Dr. Lucia Rainer', format:'Rahmenprogramm', track:''},
+  {id:94, day:1, stage:'Foyer', start:'11:00', end:'11:15', title:'KI lernen, Kreativität stärken: Internationale Studienprogramme im Überblick', speaker:'Dr. Ulrike Müller', format:'Impuls', track:'Futures'},
+  {id:100, day:1, stage:'Foyer', start:'13:00', end:'13:30', title:'Innovationsprogramm für Geschäftsmodelle und Pionierlösungen', speaker:'Robin von Hardenberg · Joanna Szlauderbach', format:'Impuls', track:'Markets'},
+  {id:101, day:1, stage:'Foyer', start:'13:30', end:'13:45', title:'KI in Gamification und Serious Games: Von Prototyping bis Balancing neu gedacht', speaker:'Dr. Philipp Busch', format:'Impuls', track:'Futures'},
+
+  // ══ DAY 0 – ALABAMA ══
+  {id:111, day:0, stage:'Alabama', start:'13:15', end:'14:00', title:'Curating AI: Gestaltung und Verantwortung in Kulturinstitutionen', speaker:'Marion Mair · Daniela Vogel · Felix Becker', format:'Panel', track:'Futures'},
+  {id:112, day:0, stage:'Alabama', start:'14:15', end:'15:00', title:'IMPACT NOW – Vom Meckern zum Machen', speaker:'Marianne Bullwinkel · Judith Augustin · Sophie Dobrigheit · Petra Lammers · Melanie Hölting-Eckert', format:'Panel', track:'Impact'},
+  {id:113, day:0, stage:'Alabama', start:'15:30', end:'16:00', title:'Future Collaboration: Neue Formen der Zusammenarbeit für eine komplexe Welt', speaker:'Nina Mönich', format:'Keynote', track:'Futures'},
+  {id:114, day:0, stage:'Alabama', start:'16:00', end:'17:00', title:'Back to Real Life? Warum die Gen Z den physischen Raum neu entdeckt', speaker:'Dennis Bajer', format:'Panel', track:'Futures'},
+  {id:115, day:0, stage:'Alabama', start:'17:00', end:'18:00', title:'Wer nur optimiert, verliert – Wie Cross Innovation über Wettbewerbsfähigkeit entscheidet', speaker:'Robin Bühlmann · Prof. Dr. Martin Kiel · Christian Weyers u.a.', format:'Panel', track:'Futures'},
+  {id:116, day:0, stage:'Alabama', start:'18:15', end:'19:30', title:'Filmvorführung: Der Unternehmer, das Dorf und die Künstler', speaker:'', format:'Film', track:'Futures'},
+
+  // ══ DAY 1 – ALABAMA ══
+  {id:110, day:1, stage:'Alabama', start:'09:30', end:'10:15', title:'Stadtentwicklung: Wie Immobilien mit Kreativnutzungen urbane Wirkung entfalten', speaker:'Bettina Steindl · Dr. Katja Wolframm · Christopher Weiß', format:'Panel', track:'Futures'},
+  {id:120, day:1, stage:'Alabama', start:'11:30', end:'12:00', title:'Scaffolding for Transcendence: Die Zukunft der Bildung in einer KI-Ökonomie', speaker:'Prof. Christoph Weckerle · Prof. Dr. Simon Grand', format:'Impuls', track:'Futures'},
+  {id:121, day:1, stage:'Alabama', start:'14:15', end:'14:45', title:'Where Do We Draw the Vertical Line? Technology, Territory, and the Material Cost of Intelligence', speaker:'David Odiase', format:'Keynote', track:'Impact'},
 ];
 
 // STATE
 let currentDay=0, currentStage='all', viewingFavs=false, viewingNotes=false, mobileStageIdx=0;
 let activeTracks=new Set(['Policy','Markets','Futures','Impact']);
 let favorites=new Set(JSON.parse(localStorage.getItem('gces26_favs')||'[]'));
-let expanded=new Set(); // expand state lives in JS, survives re-renders
-let notes=JSON.parse(localStorage.getItem('gces26_notes')||'{}'); // {sessionId: 'text'}
+let notes=JSON.parse(localStorage.getItem('gces26_notes')||'{}');
 
-// HELPERS
 function toMins(s){const[h,m]=s.split(':').map(Number);return h*60+m;}
 function nowMins(){const n=new Date();return n.getHours()*60+n.getMinutes();}
 function todayStr(){return new Date().toISOString().slice(0,10);}
@@ -841,16 +701,11 @@ function buildCard(s,showStage=false){
   </div>`;
 }
 
-
-
-// ── INFO MODAL ──
 function openInfo(sessionId){
-  const s=SESSIONS.find(x=>x.id===sessionId);
-  if(!s)return;
+  const s=SESSIONS.find(x=>x.id===sessionId);if(!s)return;
   const si=STAGES.find(x=>x.id===s.stage);
   const sc=stageColor(s.stage);
-  document.getElementById('info-modal-meta').innerHTML=
-    `<span style="color:${sc}">${si?si.label:s.stage}</span> &nbsp;·&nbsp; ${s.start}&#8211;${s.end} &nbsp;·&nbsp; ${s.format||''}`;
+  document.getElementById('info-modal-meta').innerHTML=`<span style="color:${sc}">${si?si.label:s.stage}</span> &nbsp;·&nbsp; ${s.start}&#8211;${s.end} &nbsp;·&nbsp; ${s.format||''}`;
   document.getElementById('info-modal-title').textContent=s.title;
   const speakerEl=document.getElementById('info-modal-speaker');
   speakerEl.textContent=s.speaker||'';
@@ -858,62 +713,41 @@ function openInfo(sessionId){
   document.getElementById('info-modal-desc').textContent=DESC[s.id]||'';
   document.getElementById('info-modal').classList.add('open');
 }
-function closeInfo(){
-  document.getElementById('info-modal').classList.remove('open');
-}
+function closeInfo(){document.getElementById('info-modal').classList.remove('open');}
 
-// ── NOTES ──
 function openNote(sessionId){
-  const s=SESSIONS.find(x=>x.id===sessionId);
-  if(!s)return;
+  const s=SESSIONS.find(x=>x.id===sessionId);if(!s)return;
   const modal=document.getElementById('note-modal');
-  const title=document.getElementById('note-modal-title');
-  const textarea=document.getElementById('note-textarea');
-  const delBtn=document.getElementById('note-delete-btn');
-  title.textContent=s.title;
-  textarea.value=notes[sessionId]||'';
+  document.getElementById('note-modal-title').textContent=s.title;
+  document.getElementById('note-textarea').value=notes[sessionId]||'';
   modal.dataset.sid=sessionId;
   modal.classList.add('open');
-  textarea.focus();
-  delBtn.style.display=notes[sessionId]?'inline-block':'none';
+  document.getElementById('note-textarea').focus();
+  document.getElementById('note-delete-btn').style.display=notes[sessionId]?'inline-block':'none';
 }
-
-function closeNote(){
-  document.getElementById('note-modal').classList.remove('open');
-}
-
+function closeNote(){document.getElementById('note-modal').classList.remove('open');}
 function saveNote(){
   const modal=document.getElementById('note-modal');
   const sid=parseInt(modal.dataset.sid);
   const val=document.getElementById('note-textarea').value.trim();
-  if(val) notes[sid]=val; else delete notes[sid];
-  saveNotes();
-  closeNote();
-  updateNotesUI();
-  renderAll();
+  if(val)notes[sid]=val;else delete notes[sid];
+  saveNotes();closeNote();updateNotesUI();renderAll();
 }
-
 function deleteNote(){
   const modal=document.getElementById('note-modal');
   const sid=parseInt(modal.dataset.sid);
-  delete notes[sid];
-  saveNotes();
-  closeNote();
-  updateNotesUI();
-  renderAll();
+  delete notes[sid];saveNotes();closeNote();updateNotesUI();renderAll();
 }
-
 function updateNotesUI(){
   const n=notesCount();
-  const btns=document.querySelectorAll('.notes-nav-btn');
-  btns.forEach(b=>{
+  document.querySelectorAll('.notes-nav-btn').forEach(b=>{
     b.innerHTML=n>0?`&#9998; ${n}`:'&#9998;';
     b.classList.toggle('has-notes',n>0);
   });
 }
 
 function showNotesView(mobile=false){
-  viewingFavs=false; viewingNotes=true;
+  viewingFavs=false;viewingNotes=true;
   document.getElementById('d-grid').style.display='none';
   document.getElementById('d-favs-view').style.display='none';
   document.getElementById('d-notes-view').style.display='';
@@ -925,25 +759,18 @@ function showNotesView(mobile=false){
   document.querySelectorAll('.mob-day-tab').forEach(b=>b.classList.remove('active'));
   document.getElementById('d-day-label').textContent='Meine Notizen';
   document.getElementById('d-stage-label').textContent='';
-  renderNotesView('d-notes-list');
-  renderNotesView('m-notes-list');
+  renderNotesView('d-notes-list');renderNotesView('m-notes-list');
 }
 
 function renderNotesView(listId){
-  const el=document.getElementById(listId);
-  if(!el)return;
-  const sessionNotes=SESSIONS.filter(s=>notes[s.id]&&notes[s.id].trim())
-    .sort((a,b)=>a.day-b.day||toMins(a.start)-toMins(b.start));
+  const el=document.getElementById(listId);if(!el)return;
+  const sessionNotes=SESSIONS.filter(s=>notes[s.id]&&notes[s.id].trim()).sort((a,b)=>a.day-b.day||toMins(a.start)-toMins(b.start));
   if(!sessionNotes.length){
-    el.innerHTML=`<div class="favs-empty"><div class="favs-empty-icon">&#9998;</div><div>Noch keine Notizen.<br>Tippe auf &#9998; bei einer Session.</div></div>`;
-    return;
+    el.innerHTML=`<div class="favs-empty"><div class="favs-empty-icon">&#9998;</div><div>Noch keine Notizen.<br>Tippe auf &#9998; bei einer Session.</div></div>`;return;
   }
   let html='',lastDay=-1;
   for(const s of sessionNotes){
-    if(s.day!==lastDay){
-      html+=`<div class="favs-day-label">${s.day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;
-      lastDay=s.day;
-    }
+    if(s.day!==lastDay){html+=`<div class="favs-day-label">${s.day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;lastDay=s.day;}
     const sc=stageColor(s.stage);
     html+=`<div class="note-card clickable" style="border-left-color:${sc};cursor:pointer" onclick="openNote(${s.id})">
       <div class="note-card-time">${s.start}&#8211;${s.end} &middot; ${STAGES.find(x=>x.id===s.stage)?.label||s.stage}</div>
@@ -955,7 +782,6 @@ function renderNotesView(listId){
   el.innerHTML=html;
 }
 
-// RENDER DESKTOP
 function renderDesktop(){
   const grid=document.getElementById('stage-grid');if(!grid)return;
   const stages=currentStage==='all'?STAGES:STAGES.filter(s=>s.id===currentStage);
@@ -975,7 +801,6 @@ function renderDesktop(){
   grid.innerHTML=html;
 }
 
-// RENDER MOBILE
 function renderMobile(){
   const track=document.getElementById('mob-swipe-track');
   const dots=document.getElementById('m-stage-dots');
@@ -983,8 +808,6 @@ function renderMobile(){
   const prev=document.getElementById('m-arrow-prev');
   const next=document.getElementById('m-arrow-next');
   if(!track)return;
-
-  // Build panels
   let html='';
   for(const stage of STAGES){
     const sessions=SESSIONS.filter(s=>s.day===currentDay&&s.stage===stage.id).sort((a,b)=>toMins(a.start)-toMins(b.start));
@@ -995,26 +818,14 @@ function renderMobile(){
   track.innerHTML=html;
   track.style.width=`${STAGES.length*100}%`;
   track.style.transform=`translateX(-${mobileStageIdx*(100/STAGES.length)}%)`;
-
-  // Name + color
   const cur=STAGES[mobileStageIdx];
-  name.textContent=cur.label;
-  name.style.color=cur.color;
-
-  // Dots
+  name.textContent=cur.label;name.style.color=cur.color;
   dots.innerHTML=STAGES.map((s,i)=>`<div class="stage-nav-dot${i===mobileStageIdx?' active':''}" style="${i===mobileStageIdx?'background:'+s.color:''}"></div>`).join('');
-
-  // Arrow states
-  prev.disabled=mobileStageIdx===0;
-  next.disabled=mobileStageIdx===STAGES.length-1;
+  prev.disabled=mobileStageIdx===0;next.disabled=mobileStageIdx===STAGES.length-1;
 }
 
-function mobileStep(dir){
-  mobileStageIdx=Math.max(0,Math.min(STAGES.length-1,mobileStageIdx+dir));
-  renderMobile();
-}
+function mobileStep(dir){mobileStageIdx=Math.max(0,Math.min(STAGES.length-1,mobileStageIdx+dir));renderMobile();}
 
-// TOUCH SWIPE
 let tx=0,ty=0;
 document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
 document.addEventListener('touchend',e=>{
@@ -1023,143 +834,44 @@ document.addEventListener('touchend',e=>{
   if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>45)mobileStep(dx<0?1:-1);
 },{passive:true});
 
-// FAVORITES
-function toggleFav(id){
-  favorites.has(id)?favorites.delete(id):favorites.add(id);
-  saveFavs();updateFavUI();renderAll();
-}
+function toggleFav(id){favorites.has(id)?favorites.delete(id):favorites.add(id);saveFavs();updateFavUI();renderAll();}
 function updateFavUI(){
   const n=favorites.size;
-  const db=document.getElementById('d-fav-btn');
-  const mt=document.getElementById('m-fav-tab');
+  const db=document.getElementById('d-fav-btn');const mt=document.getElementById('m-fav-tab');
   if(db){db.innerHTML=n>0?`&#9829; Favoriten (${n})`:'&#9829; Favoriten';db.classList.toggle('has-favs',n>0);}
   if(mt){mt.innerHTML=n>0?`&#9829; ${n}`:'&#9825;';mt.classList.toggle('has-favs',n>0);}
 }
+
 function renderFavs(listId,bannerId,textId){
-  const list=document.getElementById(listId);
-  const banner=document.getElementById(bannerId);
-  if(!list)return;
+  const list=document.getElementById(listId);const banner=document.getElementById(bannerId);if(!list)return;
   const fs=SESSIONS.filter(s=>favorites.has(s.id)).sort((a,b)=>a.day-b.day||toMins(a.start)-toMins(b.start));
-  if(!fs.length){
-    list.innerHTML='<div class="favs-empty"><div class="favs-empty-icon">&#9825;</div><div>Noch keine Favoriten –<br>tippe auf &#9825; bei einer Session.</div></div>';
-    banner.style.display='none';
-    return;
-  }
-
+  if(!fs.length){list.innerHTML='<div class="favs-empty"><div class="favs-empty-icon">&#9825;</div><div>Noch keine Favoriten –<br>tippe auf &#9825; bei einer Session.</div></div>';banner.style.display='none';return;}
   const conflicts=allConflicts();
-  banner.style.display='none'; // no longer needed — conflicts shown inline
-
-  // Build a set of IDs that are part of a conflict pair
-  // Group conflicts: collect all unique pairs per day, sorted by start time
-  // Sessions that conflict get shown inside a conflict-group block
-  // Sessions not in any conflict are shown normally
-
-  // Flatten all conflicting IDs
+  banner.style.display='none';
   const conflictingIds=new Set(conflicts.flatMap(([a,b])=>[a.id,b.id]));
-
-  // Build conflict groups: merge overlapping pairs into groups
-  // (A–B and B–C become one group [A,B,C])
   const groups=[];
-  const assigned=new Set();
   for(const [a,b] of conflicts){
-    // Find existing group containing a or b
     let found=null;
-    for(const g of groups){
-      if(g.has(a.id)||g.has(b.id)){found=g;break;}
-    }
-    if(found){found.add(a.id);found.add(b.id);}
-    else groups.push(new Set([a.id,b.id]));
+    for(const g of groups){if(g.has(a.id)||g.has(b.id)){found=g;break;}}
+    if(found){found.add(a.id);found.add(b.id);}else groups.push(new Set([a.id,b.id]));
   }
-
-  // Render: go day by day
-  const days=[0,1];
-  let html='';
+  const days=[0,1];let html='';
   for(const day of days){
-    const daySessions=fs.filter(s=>s.day===day);
-    if(!daySessions.length)continue;
+    const daySessions=fs.filter(s=>s.day===day);if(!daySessions.length)continue;
     html+=`<div class="favs-day-label">${day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;
-
-    // Find conflict groups for this day
-    const dayConflictGroups=groups.map(g=>{
-      const members=fs.filter(s=>s.day===day&&g.has(s.id)).sort((a,b)=>toMins(a.start)-toMins(b.start));
-      return members;
-    }).filter(m=>m.length>0);
-
-    // Track which IDs have been rendered
+    const dayConflictGroups=groups.map(g=>{const members=fs.filter(s=>s.day===day&&g.has(s.id)).sort((a,b)=>toMins(a.start)-toMins(b.start));return members;}).filter(m=>m.length>0);
     const rendered=new Set();
-
-    // Go through sessions in time order; if session is in a conflict group not yet rendered, render the whole group
     for(const s of daySessions){
       if(rendered.has(s.id))continue;
-
-      // Check if this session belongs to a conflict group
       const group=dayConflictGroups.find(g=>g.some(m=>m.id===s.id));
       if(group){
-        // Render entire conflict group as one block
-        html+=`<div class="conflict-group">
-          <div class="conflict-group-header">&#9889; Zeitkonflikt – eine Session auswählen</div>
-          <div class="conflict-group-cards">
-            ${group.map(m=>{rendered.add(m.id);return buildCard(m,true);}).join('')}
-          </div>
-        </div>`;
-      } else {
-        html+=buildCard(s,true);
-        rendered.add(s.id);
-      }
+        html+=`<div class="conflict-group"><div class="conflict-group-header">&#9889; Zeitkonflikt – eine Session auswählen</div><div class="conflict-group-cards">${group.map(m=>{rendered.add(m.id);return buildCard(m,true);}).join('')}</div></div>`;
+      }else{html+=buildCard(s,true);rendered.add(s.id);}
     }
   }
   list.innerHTML=html;
 }
 
-function showFavs(mobile=false){
-  viewingFavs=true;
-  document.getElementById('d-grid').style.display='none';
-  document.getElementById('d-favs-view').style.display='';
-  document.getElementById('mob-sessions-wrap').style.display='none';
-  document.getElementById('mob-stage-nav').style.display='none';
-  document.getElementById('m-favs-view').style.display='';
-  document.querySelectorAll('.sb-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('d-day-fav')?.classList.add('active');
-  document.querySelectorAll('.mob-day-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('d-day-label').textContent='Meine Favoriten';
-  document.getElementById('d-stage-label').textContent='';
-  renderFavs('d-favs-list','d-conflict-banner','d-conflict-text');
-  renderFavs('m-favs-list','m-conflict-banner','m-conflict-text');
-}
-
-// CONTROLS
-function setDay(day,mobile=false){
-  currentDay=day;viewingFavs=false;viewingNotes=false;mobileStageIdx=0;
-  document.getElementById('d-grid').style.display='';
-  document.getElementById('d-favs-view').style.display='none';
-  document.getElementById('d-notes-view').style.display='none';
-  document.getElementById('mob-sessions-wrap').style.display='';
-  document.getElementById('mob-stage-nav').style.display='flex';
-  document.getElementById('m-favs-view').style.display='none';
-  document.getElementById('m-notes-view').style.display='none';
-  ['d-day-0','d-day-1','d-day-fav'].forEach((id,i)=>document.getElementById(id)?.classList.toggle('active',i===day));
-  ['m-day-0','m-day-1'].forEach((id,i)=>document.getElementById(id)?.classList.toggle('active',i===day));
-  document.getElementById('d-day-label').textContent=day===0?'Di, 28. April 2026':'Mi, 29. April 2026';
-  renderAll();
-}
-function setStage(id){
-  currentStage=id;
-  document.querySelectorAll('[id^="d-st-"]').forEach(b=>b.classList.remove('active'));
-  document.getElementById('d-st-'+(id==='all'?'all':id))?.classList.add('active');
-  const s=STAGES.find(x=>x.id===id);
-  document.getElementById('d-stage-label').textContent=s?'— '+s.label:'';
-  renderDesktop();
-}
-function toggleTrack(key){
-  if(activeTracks.has(key)){if(activeTracks.size>1)activeTracks.delete(key);}else activeTracks.add(key);
-  document.querySelectorAll('.track-btn').forEach(b=>b.classList.toggle('active',activeTracks.has(b.dataset.track)));
-  renderDesktop();
-}
-function toggleTheme(){
-  const isDark=document.documentElement.getAttribute('data-theme')!=='light';
-  document.documentElement.setAttribute('data-theme',isDark?'light':'dark');
-  localStorage.setItem('gces26_theme',isDark?'light':'dark');
-}
 function showFavs(mobile=false){
   viewingFavs=true;viewingNotes=false;
   document.getElementById('d-grid').style.display='none';
@@ -1178,7 +890,42 @@ function showFavs(mobile=false){
   renderFavs('m-favs-list','m-conflict-banner','m-conflict-text');
 }
 
-// CLOCK
+function setDay(day,mobile=false){
+  currentDay=day;viewingFavs=false;viewingNotes=false;mobileStageIdx=0;
+  document.getElementById('d-grid').style.display='';
+  document.getElementById('d-favs-view').style.display='none';
+  document.getElementById('d-notes-view').style.display='none';
+  document.getElementById('mob-sessions-wrap').style.display='';
+  document.getElementById('mob-stage-nav').style.display='flex';
+  document.getElementById('m-favs-view').style.display='none';
+  document.getElementById('m-notes-view').style.display='none';
+  ['d-day-0','d-day-1','d-day-fav'].forEach((id,i)=>document.getElementById(id)?.classList.toggle('active',i===day));
+  ['m-day-0','m-day-1'].forEach((id,i)=>document.getElementById(id)?.classList.toggle('active',i===day));
+  document.getElementById('d-day-label').textContent=day===0?'Di, 28. April 2026':'Mi, 29. April 2026';
+  renderAll();
+}
+
+function setStage(id){
+  currentStage=id;
+  document.querySelectorAll('[id^="d-st-"]').forEach(b=>b.classList.remove('active'));
+  document.getElementById('d-st-'+(id==='all'?'all':id))?.classList.add('active');
+  const s=STAGES.find(x=>x.id===id);
+  document.getElementById('d-stage-label').textContent=s?'— '+s.label:'';
+  renderDesktop();
+}
+
+function toggleTrack(key){
+  if(activeTracks.has(key)){if(activeTracks.size>1)activeTracks.delete(key);}else activeTracks.add(key);
+  document.querySelectorAll('.track-btn').forEach(b=>b.classList.toggle('active',activeTracks.has(b.dataset.track)));
+  renderDesktop();
+}
+
+function toggleTheme(){
+  const isDark=document.documentElement.getAttribute('data-theme')!=='light';
+  document.documentElement.setAttribute('data-theme',isDark?'light':'dark');
+  localStorage.setItem('gces26_theme',isDark?'light':'dark');
+}
+
 function updateClock(){
   const n=new Date(),s=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
   const sc=document.getElementById('sb-clock'),mc=document.getElementById('m-clock');
@@ -1191,41 +938,27 @@ function renderAll(){
   renderDesktop();renderMobile();updateFavUI();updateNotesUI();
 }
 
-
 function downloadNotesPDF(){
-  // Build print-only HTML from notes data
-  const sessionNotes = SESSIONS
-    .filter(s => notes[s.id] && notes[s.id].trim())
-    .sort((a,b) => a.day - b.day || toMins(a.start) - toMins(b.start));
-
-  if(!sessionNotes.length) {
-    alert('Noch keine Notizen vorhanden.');
-    return;
-  }
-
-  let html = '', lastDay = -1;
+  const sessionNotes=SESSIONS.filter(s=>notes[s.id]&&notes[s.id].trim()).sort((a,b)=>a.day-b.day||toMins(a.start)-toMins(b.start));
+  if(!sessionNotes.length){alert('Noch keine Notizen vorhanden.');return;}
+  let html='',lastDay=-1;
   for(const s of sessionNotes){
-    if(s.day !== lastDay){
-      html += `<div class="print-day-label">${s.day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;
-      lastDay = s.day;
-    }
-    const sc = stageColor(s.stage);
-    const stageName = STAGES.find(x=>x.id===s.stage)?.label || s.stage;
-    const noteText = notes[s.id].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
-    html += `<div class="print-note-card" style="border-left-color:${sc}">
+    if(s.day!==lastDay){html+=`<div class="print-day-label">${s.day===0?'Dienstag, 28. April':'Mittwoch, 29. April'}</div>`;lastDay=s.day;}
+    const sc=stageColor(s.stage);const stageName=STAGES.find(x=>x.id===s.stage)?.label||s.stage;
+    const noteText=notes[s.id].replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    html+=`<div class="print-note-card" style="border-left-color:${sc}">
       <div style="font-size:10px;font-weight:600;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px">${s.start}&#8211;${s.end} &middot; ${stageName}</div>
       <div style="font-size:14px;font-weight:600;color:#000;margin-bottom:8px;line-height:1.4">${s.title}</div>
       ${s.speaker?`<div style="font-size:12px;color:#555;margin-bottom:8px">${s.speaker}</div>`:''}
       <div style="font-size:13px;color:#222;line-height:1.6">${noteText}</div>
     </div>`;
   }
-
-  document.getElementById('print-notes-content').innerHTML = html;
-  document.getElementById('print-container').style.display = 'block';
+  document.getElementById('print-notes-content').innerHTML=html;
+  document.getElementById('print-container').style.display='block';
   window.print();
-  document.getElementById('print-container').style.display = 'none';
+  document.getElementById('print-container').style.display='none';
 }
-// INIT
+
 const savedTheme=localStorage.getItem('gces26_theme');
 if(savedTheme)document.documentElement.setAttribute('data-theme',savedTheme);
 updateClock();
@@ -1236,7 +969,6 @@ if(autoDay!==-1)setDay(autoDay);else renderAll();
 updateNotesUI();
 </script>
 
-<!-- ── PRINT CONTAINER ── -->
 <div id="print-container" style="display:none; padding:32px; font-family:'DM Sans',sans-serif; color:#000; background:#fff;">
   <div style="margin-bottom:28px">
     <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#000;margin-bottom:6px">GCES 2026 – Meine Notizen</div>
